@@ -34,8 +34,8 @@
         </div>
         
         <!-- Navigation Tabs -->
-        <nav class="bg-amber-50/90 border-b border-amber-200 text-amber-800">
-            <div class="max-w-5xl mx-auto px-4 flex space-x-8 text-sm sm:text-base">
+        <nav class="bg-amber-50/90 border-b border-amber-200 text-amber-800 overflow-x-auto">
+            <div class="max-w-5xl mx-auto px-4 flex space-x-6 text-sm sm:text-base whitespace-nowrap">
                 <button onclick="switchTab('overview')" id="tab-overview" class="tab-btn active py-3 flex items-center gap-2">
                     <i class="fa-solid fa-compass"></i> 行程總覽
                 </button>
@@ -44,6 +44,9 @@
                 </button>
                 <button onclick="switchTab('transport')" id="tab-transport" class="tab-btn py-3 flex items-center gap-2">
                     <i class="fa-solid fa-bus"></i> 交通與行李規劃
+                </button>
+                <button onclick="switchTab('expenses')" id="tab-expenses" class="tab-btn py-3 flex items-center gap-2 text-amber-900 font-bold">
+                    <i class="fa-solid fa-calculator"></i> 每日記帳與分帳
                 </button>
             </div>
         </nav>
@@ -54,7 +57,6 @@
 
         <!-- TAB 1: OVERVIEW -->
         <section id="content-overview" class="tab-content space-y-6">
-            <!-- Summary Grid -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div class="bg-white p-5 rounded-xl border border-amber-100 shadow-sm flex items-start gap-4">
                     <div class="p-3 bg-amber-100 text-amber-700 rounded-lg">
@@ -87,7 +89,6 @@
                 </div>
             </div>
 
-            <!-- Route Map / Timeline Overview -->
             <div class="bg-white p-6 rounded-xl border border-amber-100 shadow-sm">
                 <h2 class="text-lg font-bold text-amber-900 mb-4 border-l-4 border-amber-500 pl-3">6 天主路線軸</h2>
                 <div class="relative border-l-2 border-amber-200 ml-4 space-y-6">
@@ -127,7 +128,6 @@
 
         <!-- TAB 2: DAILY ITINERARY -->
         <section id="content-itinerary" class="tab-content hidden space-y-8">
-
             <!-- Day 1 -->
             <div class="bg-white rounded-xl border border-amber-100 shadow-sm overflow-hidden">
                 <div class="bg-amber-600 text-white px-6 py-3 flex justify-between items-center">
@@ -217,13 +217,11 @@
                         <strong><i class="fa-solid fa-truck"></i> 大行李寄送：</strong> 早上從大分飯店，透過黑貓宅急便（ヤマト運輸）托運大行李至隔日博多飯店。
                     </div>
 
-                    <!-- Plan Selector -->
                     <div class="flex gap-2 my-2">
                         <button onclick="toggleAso('planA')" id="btn-planA" class="px-4 py-2 rounded-lg font-bold bg-amber-600 text-white">Plan A：晴天攀登阿蘇中岳</button>
                         <button onclick="toggleAso('planB')" id="btn-planB" class="px-4 py-2 rounded-lg font-bold bg-amber-100 text-amber-800">Plan B：雨天/管制備案（上色見熊野+小火車）</button>
                     </div>
 
-                    <!-- Plan A Content -->
                     <div id="aso-planA" class="space-y-2 border-l-2 border-amber-500 pl-4">
                         <div class="text-xs text-amber-700 font-bold uppercase tracking-wider">Plan A 行程亮點</div>
                         <p><strong>07:23 - 09:14</strong> 熊本站搭機場接駁巴士（提早10分等車）➔ 抵達阿蘇站（行李放阿蘇站寄物）。</p>
@@ -233,7 +231,6 @@
                         <p><strong>16:45 - 18:21</strong> 搭乘【九州橫斷特急】（阿蘇 ➔ 大分，<span class="text-rose-600 font-bold">待劃位</span>）。</p>
                     </div>
 
-                    <!-- Plan B Content -->
                     <div id="aso-planB" class="hidden space-y-2 border-l-2 border-orange-500 pl-4">
                         <div class="text-xs text-orange-700 font-bold uppercase tracking-wider">Plan B 行程亮點</div>
                         <p><strong>08:25 - 09:23</strong> 熊本搭乘 JR 九州橫斷特急 1 號 ➔ 立野站。</p>
@@ -275,13 +272,10 @@
                     博多站搭乘福岡市營地鐵，僅需 5 分鐘直達「福岡機場站」，便利搭機返台。
                 </div>
             </div>
-
         </section>
 
         <!-- TAB 3: TRANSPORTATION & LOGISTICS -->
         <section id="content-transport" class="tab-content hidden space-y-6">
-
-            <!-- JR Pass Usage Table -->
             <div class="bg-white p-6 rounded-xl border border-amber-100 shadow-sm">
                 <h3 class="text-lg font-bold text-amber-900 mb-4 border-l-4 border-amber-500 pl-3">JR 全九州 Pass 3 日券使用範圍與劃位規劃 (Day 3 - Day 5)</h3>
                 <div class="overflow-x-auto">
@@ -324,7 +318,6 @@
                 </div>
             </div>
 
-            <!-- Bus Timetables & Links -->
             <div class="bg-white p-6 rounded-xl border border-amber-100 shadow-sm space-y-4">
                 <h3 class="text-lg font-bold text-amber-900 border-l-4 border-amber-500 pl-3">巴士與地方鐵道時刻表連結</h3>
                 <ul class="space-y-2 text-sm text-amber-800 underline">
@@ -334,13 +327,141 @@
                     <li><a href="https://www.jrkyushu.co.jp/chinese/train/yufuin_no_mori.html" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> JR 九州 由布院之森官方介紹與劃位說明</a></li>
                 </ul>
             </div>
+        </section>
+
+        <!-- TAB 4: EXPENSES & SPLIT BILL (新增記帳與分帳) -->
+        <section id="content-expenses" class="tab-content hidden space-y-6">
+            
+            <!-- 成員與匯率設定 -->
+            <div class="bg-white p-5 rounded-xl border border-amber-100 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex items-center gap-3 w-full md:w-auto">
+                    <i class="fa-solid fa-users text-amber-600 text-xl"></i>
+                    <div>
+                        <label class="text-xs font-bold text-amber-800 block">旅伴成員 (用逗號分隔)</label>
+                        <input type="text" id="group-members" value="小明, 小華, 阿強" onchange="saveSettings()" class="border border-amber-200 rounded px-2 py-1 text-sm w-full md:w-64 focus:outline-none focus:ring-1 focus:ring-amber-500">
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 w-full md:w-auto">
+                    <i class="fa-solid fa-coins text-amber-600 text-xl"></i>
+                    <div>
+                        <label class="text-xs font-bold text-amber-800 block">日幣對台幣匯率 (1 JPY = ? TWD)</label>
+                        <input type="number" step="0.001" id="exchange-rate" value="0.215" onchange="saveSettings()" class="border border-amber-200 rounded px-2 py-1 text-sm w-28 focus:outline-none focus:ring-1 focus:ring-amber-500">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 新增記帳表單 -->
+            <div class="bg-white p-6 rounded-xl border border-amber-100 shadow-sm space-y-4">
+                <h3 class="text-lg font-bold text-amber-900 border-l-4 border-amber-500 pl-3">新增消費紀錄</h3>
+                <form id="expense-form" onsubmit="addExpense(event)" class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                    <div>
+                        <label class="block text-xs font-semibold text-amber-800 mb-1">日期</label>
+                        <select id="exp-day" class="w-full border border-amber-200 rounded p-2 focus:outline-none focus:ring-1 focus:ring-amber-500">
+                            <option value="D1">Day 1 (11/19)</option>
+                            <option value="D2">Day 2 (11/20)</option>
+                            <option value="D3">Day 3 (11/21)</option>
+                            <option value="D4">Day 4 (11/22)</option>
+                            <option value="D5">Day 5 (11/23)</option>
+                            <option value="D6">Day 6 (11/24)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-amber-800 mb-1">消費項目/內容</label>
+                        <input type="text" id="exp-item" placeholder="例如：丸尾溫泉市場黑豬肉包" required class="w-full border border-amber-200 rounded p-2 focus:outline-none focus:ring-1 focus:ring-amber-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-amber-800 mb-1">類別</label>
+                        <select id="exp-category" class="w-full border border-amber-200 rounded p-2 focus:outline-none focus:ring-1 focus:ring-amber-500">
+                            <option value="餐飲">餐飲 🍱</option>
+                            <option value="交通">交通 🚌</option>
+                            <option value="門票">門票/活動 🎫</option>
+                            <option value="住宿">住宿 🏨</option>
+                            <option value="購物">購物/伴手禮 🛍️</option>
+                            <option value="其他">其他 💡</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-amber-800 mb-1">金額與幣別</label>
+                        <div class="flex gap-2">
+                            <input type="number" id="exp-amount" placeholder="金額" required step="any" class="w-full border border-amber-200 rounded p-2 focus:outline-none focus:ring-1 focus:ring-amber-500">
+                            <select id="exp-currency" class="border border-amber-200 rounded p-2 focus:outline-none focus:ring-1 focus:ring-amber-500 shrink-0">
+                                <option value="JPY">日幣 (¥)</option>
+                                <option value="TWD">台幣 ($)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-amber-800 mb-1">先付錢的人 (付款人)</label>
+                        <select id="exp-payer" class="w-full border border-amber-200 rounded p-2 focus:outline-none focus:ring-1 focus:ring-amber-500"></select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-amber-800 mb-1">分攤成員 (預設全體平分)</label>
+                        <div id="exp-split-members" class="flex flex-wrap gap-2 pt-1 text-xs"></div>
+                    </div>
+                    <div class="md:col-span-3 text-right">
+                        <button type="submit" class="bg-amber-600 hover:bg-amber-700 text-white font-bold px-6 py-2 rounded-lg shadow-sm transition">
+                            <i class="fa-solid fa-plus"></i> 新增紀錄
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- 自動分帳結算面板 -->
+            <div class="bg-amber-50/80 p-6 rounded-xl border border-amber-200 shadow-sm space-y-4">
+                <h3 class="text-lg font-bold text-amber-900 flex items-center gap-2">
+                    <i class="fa-solid fa-scale-balanced text-amber-600"></i> 分帳結算總覽 (以台幣 TWD 結算)
+                </h3>
+                <div id="split-summary-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <!-- JS 動態生成每人應補/應收金額 -->
+                </div>
+            </div>
+
+            <!-- 每日消費明細表 -->
+            <div class="bg-white p-6 rounded-xl border border-amber-100 shadow-sm space-y-4">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-bold text-amber-900 border-l-4 border-amber-500 pl-3">每日消費明細</h3>
+                    <div class="text-xs text-amber-800">
+                        總累積花費：<span id="total-expenses-jpy" class="font-bold text-amber-900">¥0</span> / <span id="total-expenses-twd" class="font-bold text-amber-900">NT$0</span>
+                    </div>
+                </div>
+
+                <!-- 依天數篩選 -->
+                <div class="flex gap-2 overflow-x-auto pb-2 text-xs">
+                    <button onclick="filterExpenses('ALL')" class="exp-filter-btn px-3 py-1.5 rounded-full bg-amber-600 text-white font-bold">全部天數</button>
+                    <button onclick="filterExpenses('D1')" class="exp-filter-btn px-3 py-1.5 rounded-full bg-amber-100 text-amber-800">D1</button>
+                    <button onclick="filterExpenses('D2')" class="exp-filter-btn px-3 py-1.5 rounded-full bg-amber-100 text-amber-800">D2</button>
+                    <button onclick="filterExpenses('D3')" class="exp-filter-btn px-3 py-1.5 rounded-full bg-amber-100 text-amber-800">D3</button>
+                    <button onclick="filterExpenses('D4')" class="exp-filter-btn px-3 py-1.5 rounded-full bg-amber-100 text-amber-800">D4</button>
+                    <button onclick="filterExpenses('D5')" class="exp-filter-btn px-3 py-1.5 rounded-full bg-amber-100 text-amber-800">D5</button>
+                    <button onclick="filterExpenses('D6')" class="exp-filter-btn px-3 py-1.5 rounded-full bg-amber-100 text-amber-800">D6</button>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left border-collapse">
+                        <thead>
+                            <tr class="bg-amber-100/60 text-amber-900">
+                                <th class="p-2.5 border border-amber-200">天數</th>
+                                <th class="p-2.5 border border-amber-200">項目/類別</th>
+                                <th class="p-2.5 border border-amber-200">金額</th>
+                                <th class="p-2.5 border border-amber-200">付款人</th>
+                                <th class="p-2.5 border border-amber-200">分攤對象</th>
+                                <th class="p-2.5 border border-amber-200 text-center">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="expense-table-body">
+                            <!-- JS 動態渲染列 -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
         </section>
 
     </main>
 
-    <!-- JS for Tabs and Plan Switching -->
+    <!-- JS for Tabs and Plan Switching & Expenses -->
     <script>
+        // 頁籤切換
         function switchTab(tabName) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
             document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
@@ -349,6 +470,7 @@
             document.getElementById('tab-' + tabName).classList.add('active');
         }
 
+        // 阿蘇 Plan A / Plan B 切換
         function toggleAso(plan) {
             const planA = document.getElementById('aso-planA');
             const planB = document.getElementById('aso-planB');
@@ -366,6 +488,192 @@
                 btnB.className = 'px-4 py-2 rounded-lg font-bold bg-orange-600 text-white';
                 btnA.className = 'px-4 py-2 rounded-lg font-bold bg-amber-100 text-amber-800';
             }
+        }
+
+        /* --- 記帳與分帳的核心邏輯 --- */
+        let expenses = JSON.parse(localStorage.getItem('kyushu_expenses')) || [];
+        let currentFilter = 'ALL';
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            loadSettings();
+            updateMemberDropdowns();
+            renderExpenses();
+        });
+
+        // 讀取/儲存設定
+        function saveSettings() {
+            const members = document.getElementById('group-members').value;
+            const rate = document.getElementById('exchange-rate').value;
+            localStorage.setItem('kyushu_members', members);
+            localStorage.setItem('kyushu_rate', rate);
+            updateMemberDropdowns();
+            renderExpenses();
+        }
+
+        function loadSettings() {
+            const savedMembers = localStorage.getItem('kyushu_members');
+            const savedRate = localStorage.getItem('kyushu_rate');
+            if (savedMembers) document.getElementById('group-members').value = savedMembers;
+            if (savedRate) document.getElementById('exchange-rate').value = savedRate;
+        }
+
+        // 更新成員選單與多選框
+        function getMembers() {
+            return document.getElementById('group-members').value.split(',').map(m => m.trim()).filter(m => m);
+        }
+
+        function updateMemberDropdowns() {
+            const members = getMembers();
+            const payerSelect = document.getElementById('exp-payer');
+            const splitContainer = document.getElementById('exp-split-members');
+
+            payerSelect.innerHTML = members.map(m => `<option value="${m}">${m}</option>`).join('');
+            splitContainer.innerHTML = members.map(m => `
+                <label class="inline-flex items-center gap-1 cursor-pointer bg-amber-50 px-2 py-1 rounded border border-amber-200">
+                    <input type="checkbox" name="split-member" value="${m}" checked class="rounded text-amber-600 focus:ring-amber-500">
+                    <span>${m}</span>
+                </label>
+            `).join('');
+        }
+
+        // 新增記帳紀錄
+        function addExpense(e) {
+            e.preventDefault();
+            const day = document.getElementById('exp-day').value;
+            const item = document.getElementById('exp-item').value;
+            const category = document.getElementById('exp-category').value;
+            const amount = parseFloat(document.getElementById('exp-amount').value);
+            const currency = document.getElementById('exp-currency').value;
+            const payer = document.getElementById('exp-payer').value;
+            
+            const splitMembers = Array.from(document.querySelectorAll('input[name="split-member"]:checked')).map(cb => cb.value);
+
+            if (splitMembers.length === 0) {
+                alert('請至少選擇一位分攤成員！');
+                return;
+            }
+
+            const newExpense = {
+                id: Date.now(),
+                day,
+                item,
+                category,
+                amount,
+                currency,
+                payer,
+                splitMembers
+            };
+
+            expenses.push(newExpense);
+            localStorage.setItem('kyushu_expenses', JSON.stringify(expenses));
+            document.getElementById('expense-form').reset();
+            updateMemberDropdowns();
+            renderExpenses();
+        }
+
+        // 刪除紀錄
+        function deleteExpense(id) {
+            expenses = expenses.filter(exp => exp.id !== id);
+            localStorage.setItem('kyushu_expenses', JSON.stringify(expenses));
+            renderExpenses();
+        }
+
+        // 篩選天數
+        function filterExpenses(day) {
+            currentFilter = day;
+            document.querySelectorAll('.exp-filter-btn').forEach(btn => {
+                btn.className = 'exp-filter-btn px-3 py-1.5 rounded-full bg-amber-100 text-amber-800';
+            });
+            event.target.className = 'exp-filter-btn px-3 py-1.5 rounded-full bg-amber-600 text-white font-bold';
+            renderExpenses();
+        }
+
+        // 渲染表格與計算分帳
+        function renderExpenses() {
+            const tbody = document.getElementById('expense-table-body');
+            const rate = parseFloat(document.getElementById('exchange-rate').value) || 0.215;
+            const members = getMembers();
+
+            // 1. 渲染表格
+            const filtered = currentFilter === 'ALL' ? expenses : expenses.filter(e => e.day === currentFilter);
+            
+            if (filtered.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="6" class="p-4 text-center text-amber-700/60">尚無記帳紀錄</td></tr>`;
+            } else {
+                tbody.innerHTML = filtered.map(exp => {
+                    const symbol = exp.currency === 'JPY' ? '¥' : 'NT$';
+                    return `
+                        <tr class="border-b border-amber-50 hover:bg-amber-50/30">
+                            <td class="p-2.5 font-bold text-amber-800">${exp.day}</td>
+                            <td class="p-2.5">
+                                <span class="font-semibold">${exp.item}</span>
+                                <span class="text-xs text-amber-600 block">[${exp.category}]</span>
+                            </td>
+                            <td class="p-2.5 font-bold">${symbol}${exp.amount.toLocaleString()}</td>
+                            <td class="p-2.5 text-amber-900">${exp.payer}</td>
+                            <td class="p-2.5 text-xs text-amber-800">${exp.splitMembers.join(', ')}</td>
+                            <td class="p-2.5 text-center">
+                                <button onclick="deleteExpense(${exp.id})" class="text-rose-600 hover:text-rose-800">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+
+            // 2. 計算總累積消費
+            let totalJPY = 0;
+            let totalTWD = 0;
+            expenses.forEach(e => {
+                if (e.currency === 'JPY') {
+                    totalJPY += e.amount;
+                    totalTWD += e.amount * rate;
+                } else {
+                    totalTWD += e.amount;
+                    totalJPY += e.amount / rate;
+                }
+            });
+            document.getElementById('total-expenses-jpy').innerText = `¥${Math.round(totalJPY).toLocaleString()}`;
+            document.getElementById('total-expenses-twd').innerText = `NT$${Math.round(totalTWD).toLocaleString()}`;
+
+            // 3. 計算每人分帳 (以 TWD 為基準進行結算)
+            const paid = {};
+            const owed = {};
+            members.forEach(m => { paid[m] = 0; owed[m] = 0; });
+
+            expenses.forEach(e => {
+                const amountInTWD = e.currency === 'JPY' ? e.amount * rate : e.amount;
+                // 付款者支付金額加總
+                if (paid[e.payer] !== undefined) paid[e.payer] += amountInTWD;
+                
+                // 參與分攤者分攤金額
+                const perPerson = amountInTWD / e.splitMembers.length;
+                e.splitMembers.forEach(m => {
+                    if (owed[m] !== undefined) owed[m] += perPerson;
+                });
+            });
+
+            // 4. 渲染結算卡片
+            const summaryGrid = document.getElementById('split-summary-grid');
+            summaryGrid.innerHTML = members.map(m => {
+                const balance = paid[m] - owed[m]; // 正數代表多付（應拿回），負數代表少付（應補繳）
+                const isPositive = balance >= 0;
+                return `
+                    <div class="bg-white p-4 rounded-lg border border-amber-100 shadow-sm space-y-1">
+                        <div class="font-bold text-amber-950 text-base">${m}</div>
+                        <div class="text-xs text-amber-700">先代墊金額：NT$ ${Math.round(paid[m]).toLocaleString()}</div>
+                        <div class="text-xs text-amber-700">應分攤花費：NT$ ${Math.round(owed[m]).toLocaleString()}</div>
+                        <div class="pt-2 border-t border-amber-50 flex justify-between items-center text-sm">
+                            <span class="font-semibold text-amber-900">結算狀態：</span>
+                            <span class="font-bold ${isPositive ? 'text-emerald-600' : 'text-rose-600'}">
+                                ${isPositive ? `找回 NT$ ${Math.round(balance).toLocaleString()}` : `補繳 NT$ ${Math.round(Math.abs(balance)).toLocaleString()}`}
+                            </span>
+                        </div>
+                    </div>
+                `;
+            }).join('');
         }
     </script>
 </body>
