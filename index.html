@@ -329,7 +329,7 @@
             </div>
         </section>
 
-        <!-- TAB 4: EXPENSES & SPLIT BILL (新增記帳與分帳) -->
+        <!-- TAB 4: EXPENSES & SPLIT BILL (全新：每日記帳與分帳) -->
         <section id="content-expenses" class="tab-content hidden space-y-6">
             
             <!-- 成員與匯率設定 -->
@@ -425,15 +425,15 @@
                     </div>
                 </div>
 
-                <!-- 依天數篩選 -->
+                <!-- 依天數篩選按鈕 -->
                 <div class="flex gap-2 overflow-x-auto pb-2 text-xs">
-                    <button onclick="filterExpenses('ALL')" class="exp-filter-btn px-3 py-1.5 rounded-full bg-amber-600 text-white font-bold">全部天數</button>
-                    <button onclick="filterExpenses('D1')" class="exp-filter-btn px-3 py-1.5 rounded-full bg-amber-100 text-amber-800">D1</button>
-                    <button onclick="filterExpenses('D2')" class="exp-filter-btn px-3 py-1.5 rounded-full bg-amber-100 text-amber-800">D2</button>
-                    <button onclick="filterExpenses('D3')" class="exp-filter-btn px-3 py-1.5 rounded-full bg-amber-100 text-amber-800">D3</button>
-                    <button onclick="filterExpenses('D4')" class="exp-filter-btn px-3 py-1.5 rounded-full bg-amber-100 text-amber-800">D4</button>
-                    <button onclick="filterExpenses('D5')" class="exp-filter-btn px-3 py-1.5 rounded-full bg-amber-100 text-amber-800">D5</button>
-                    <button onclick="filterExpenses('D6')" class="exp-filter-btn px-3 py-1.5 rounded-full bg-amber-100 text-amber-800">D6</button>
+                    <button onclick="filterExpenses('ALL', this)" class="exp-filter-btn px-3 py-1.5 rounded-full bg-amber-600 text-white font-bold">全部天數</button>
+                    <button onclick="filterExpenses('D1', this)" class="exp-filter-btn px-3 py-1.5 rounded-full bg-amber-100 text-amber-800">D1</button>
+                    <button onclick="filterExpenses('D2', this)" class="exp-filter-btn px-3 py-1.5 rounded-full bg-amber-100 text-amber-800">D2</button>
+                    <button onclick="filterExpenses('D3', this)" class="exp-filter-btn px-3 py-1.5 rounded-full bg-amber-100 text-amber-800">D3</button>
+                    <button onclick="filterExpenses('D4', this)" class="exp-filter-btn px-3 py-1.5 rounded-full bg-amber-100 text-amber-800">D4</button>
+                    <button onclick="filterExpenses('D5', this)" class="exp-filter-btn px-3 py-1.5 rounded-full bg-amber-100 text-amber-800">D5</button>
+                    <button onclick="filterExpenses('D6', this)" class="exp-filter-btn px-3 py-1.5 rounded-full bg-amber-100 text-amber-800">D6</button>
                 </div>
 
                 <div class="overflow-x-auto">
@@ -459,7 +459,7 @@
 
     </main>
 
-    <!-- JS for Tabs and Plan Switching & Expenses -->
+    <!-- JavaScript 邏輯處理 -->
     <script>
         // 頁籤切換
         function switchTab(tabName) {
@@ -518,11 +518,12 @@
             if (savedRate) document.getElementById('exchange-rate').value = savedRate;
         }
 
-        // 更新成員選單與多選框
+        // 取得成員清單
         function getMembers() {
             return document.getElementById('group-members').value.split(',').map(m => m.trim()).filter(m => m);
         }
 
+        // 更新付款人與分攤人核取框
         function updateMemberDropdowns() {
             const members = getMembers();
             const payerSelect = document.getElementById('exp-payer');
@@ -537,7 +538,7 @@
             `).join('');
         }
 
-        // 新增記帳紀錄
+        // 新增紀錄
         function addExpense(e) {
             e.preventDefault();
             const day = document.getElementById('exp-day').value;
@@ -579,23 +580,23 @@
             renderExpenses();
         }
 
-        // 篩選天數
-        function filterExpenses(day) {
+        // 依天數過濾
+        function filterExpenses(day, btnEl) {
             currentFilter = day;
             document.querySelectorAll('.exp-filter-btn').forEach(btn => {
                 btn.className = 'exp-filter-btn px-3 py-1.5 rounded-full bg-amber-100 text-amber-800';
             });
-            event.target.className = 'exp-filter-btn px-3 py-1.5 rounded-full bg-amber-600 text-white font-bold';
+            btnEl.className = 'exp-filter-btn px-3 py-1.5 rounded-full bg-amber-600 text-white font-bold';
             renderExpenses();
         }
 
-        // 渲染表格與計算分帳
+        // 渲染表格與算帳
         function renderExpenses() {
             const tbody = document.getElementById('expense-table-body');
             const rate = parseFloat(document.getElementById('exchange-rate').value) || 0.215;
             const members = getMembers();
 
-            // 1. 渲染表格
+            // 1. 渲染消費明細表格
             const filtered = currentFilter === 'ALL' ? expenses : expenses.filter(e => e.day === currentFilter);
             
             if (filtered.length === 0) {
@@ -614,7 +615,7 @@
                             <td class="p-2.5 text-amber-900">${exp.payer}</td>
                             <td class="p-2.5 text-xs text-amber-800">${exp.splitMembers.join(', ')}</td>
                             <td class="p-2.5 text-center">
-                                <button onclick="deleteExpense(${exp.id})" class="text-rose-600 hover:text-rose-800">
+                                <button onclick="deleteExpense(${exp.id})" class="text-rose-600 hover:text-rose-800" title="刪除此筆">
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
                             </td>
@@ -623,7 +624,7 @@
                 }).join('');
             }
 
-            // 2. 計算總累積消費
+            // 2. 計算累積總金額
             let totalJPY = 0;
             let totalTWD = 0;
             expenses.forEach(e => {
@@ -638,35 +639,35 @@
             document.getElementById('total-expenses-jpy').innerText = `¥${Math.round(totalJPY).toLocaleString()}`;
             document.getElementById('total-expenses-twd').innerText = `NT$${Math.round(totalTWD).toLocaleString()}`;
 
-            // 3. 計算每人分帳 (以 TWD 為基準進行結算)
+            // 3. 核心分帳算帳邏輯 (以 TWD 為統一基準)
             const paid = {};
             const owed = {};
             members.forEach(m => { paid[m] = 0; owed[m] = 0; });
 
             expenses.forEach(e => {
                 const amountInTWD = e.currency === 'JPY' ? e.amount * rate : e.amount;
-                // 付款者支付金額加總
+                // 累加付款人先墊金額
                 if (paid[e.payer] !== undefined) paid[e.payer] += amountInTWD;
                 
-                // 參與分攤者分攤金額
+                // 算個人應分攤金額
                 const perPerson = amountInTWD / e.splitMembers.length;
                 e.splitMembers.forEach(m => {
                     if (owed[m] !== undefined) owed[m] += perPerson;
                 });
             });
 
-            // 4. 渲染結算卡片
+            // 4. 渲染分帳結果
             const summaryGrid = document.getElementById('split-summary-grid');
             summaryGrid.innerHTML = members.map(m => {
-                const balance = paid[m] - owed[m]; // 正數代表多付（應拿回），負數代表少付（應補繳）
+                const balance = paid[m] - owed[m]; // 結算：已付 - 應付
                 const isPositive = balance >= 0;
                 return `
                     <div class="bg-white p-4 rounded-lg border border-amber-100 shadow-sm space-y-1">
                         <div class="font-bold text-amber-950 text-base">${m}</div>
                         <div class="text-xs text-amber-700">先代墊金額：NT$ ${Math.round(paid[m]).toLocaleString()}</div>
-                        <div class="text-xs text-amber-700">應分攤花費：NT$ ${Math.round(owed[m]).toLocaleString()}</div>
+                        <div class="text-xs text-amber-700">應分攤金額：NT$ ${Math.round(owed[m]).toLocaleString()}</div>
                         <div class="pt-2 border-t border-amber-50 flex justify-between items-center text-sm">
-                            <span class="font-semibold text-amber-900">結算狀態：</span>
+                            <span class="font-semibold text-amber-900">最終結算：</span>
                             <span class="font-bold ${isPositive ? 'text-emerald-600' : 'text-rose-600'}">
                                 ${isPositive ? `找回 NT$ ${Math.round(balance).toLocaleString()}` : `補繳 NT$ ${Math.round(Math.abs(balance)).toLocaleString()}`}
                             </span>
