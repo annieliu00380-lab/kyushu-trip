@@ -2,154 +2,164 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 針對智慧型手機與行動裝置最佳化全螢幕滿版畫面 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
     <title>九州 7 天 6 夜火山健行與溫泉之旅 (2027/11/18 - 11/24)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             background-color: #FFFDF9; /* 暖白奶油底 */
+            -webkit-tap-highlight-color: transparent;
         }
         .tab-btn.active {
             border-bottom: 3px solid #E85D04;
             color: #E85D04;
             font-weight: bold;
         }
+        /* 行動裝置隱藏捲軸但可滑動 */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
-<body class="text-amber-950 font-sans leading-relaxed">
+<body class="text-amber-950 font-sans leading-relaxed min-h-screen flex flex-col justify-between">
 
-    <!-- Header -->
+    <!-- Header (手機端滿版固定) -->
     <header class="bg-amber-600 text-white shadow-md sticky top-0 z-50">
-        <div class="max-w-5xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center">
+        <div class="w-full px-4 py-3 flex flex-col sm:flex-row justify-between items-start sm:items-center">
             <div>
-                <h1 class="text-2xl font-bold flex items-center gap-2">
+                <h1 class="text-lg sm:text-2xl font-bold flex items-center gap-2">
                     <i class="fa-solid fa-mountain text-amber-200"></i> 九州 7 天 6 夜火山健行與溫泉之旅
                 </h1>
-                <p class="text-xs text-amber-100 mt-1">日期：2027/11/18 - 11/24 | 霧島韓國岳・阿蘇火山・由布岳・由布院一泊二食</p>
+                <p class="text-[11px] sm:text-xs text-amber-100 mt-0.5">日期：2027/11/18 - 11/24 | 霧島韓國岳・阿蘇火山・由布岳・由布院一泊二食</p>
             </div>
-            <div class="mt-3 sm:mt-0 bg-amber-700/80 px-3 py-1.5 rounded-lg border border-amber-500 text-xs">
+            <div class="mt-2 sm:mt-0 bg-amber-700/90 px-2.5 py-1 rounded border border-amber-400 text-[11px] sm:text-xs">
                 <span class="text-amber-200 font-semibold">JR Pass 3日券：</span>D3 - D5 使用
             </div>
         </div>
         
-        <!-- Navigation Tabs -->
-        <nav class="bg-amber-50/90 border-b border-amber-200 text-amber-800 overflow-x-auto">
-            <div class="max-w-5xl mx-auto px-4 flex space-x-6 text-sm sm:text-base whitespace-nowrap">
-                <button onclick="switchTab('overview')" id="tab-overview" class="tab-btn active py-3 flex items-center gap-2">
+        <!-- Navigation Tabs (手機版可橫向滑動) -->
+        <nav class="bg-amber-50/95 border-b border-amber-200 text-amber-800 overflow-x-auto no-scrollbar">
+            <div class="w-full px-3 flex space-x-4 sm:space-x-6 text-xs sm:text-base whitespace-nowrap">
+                <button onclick="switchTab('overview')" id="tab-overview" class="tab-btn active py-2.5 flex items-center gap-1.5">
                     <i class="fa-solid fa-compass"></i> 行程總覽
                 </button>
-                <button onclick="switchTab('itinerary')" id="tab-itinerary" class="tab-btn py-3 flex items-center gap-2">
+                <button onclick="switchTab('itinerary')" id="tab-itinerary" class="tab-btn py-2.5 flex items-center gap-1.5">
                     <i class="fa-solid fa-calendar-days"></i> 每日詳細行程
                 </button>
-                <button onclick="switchTab('transport')" id="tab-transport" class="tab-btn py-3 flex items-center gap-2">
+                <button onclick="switchTab('transport')" id="tab-transport" class="tab-btn py-2.5 flex items-center gap-1.5">
                     <i class="fa-solid fa-bus"></i> 交通與劃位規劃
                 </button>
-                <button onclick="switchTab('expenses')" id="tab-expenses" class="tab-btn py-3 flex items-center gap-2 text-amber-900 font-bold">
+                <button onclick="switchTab('expenses')" id="tab-expenses" class="tab-btn py-2.5 flex items-center gap-1.5 text-amber-900 font-bold">
                     <i class="fa-solid fa-calculator"></i> 每日記帳與分帳
                 </button>
             </div>
         </nav>
     </header>
 
-    <!-- Main Content Area -->
-    <main class="max-w-5xl mx-auto px-4 py-6">
+    <!-- Main Content Area (滿版寬度) -->
+    <main class="w-full max-w-7xl mx-auto px-3 sm:px-6 py-4 sm:py-6 flex-grow">
 
         <!-- TAB 1: OVERVIEW -->
-        <section id="content-overview" class="tab-content space-y-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="bg-white p-5 rounded-xl border border-amber-100 shadow-sm flex items-start gap-4">
-                    <div class="p-3 bg-amber-100 text-amber-700 rounded-lg">
-                        <i class="fa-solid fa-ticket text-xl"></i>
+        <section id="content-overview" class="tab-content space-y-4 sm:space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+                <div class="bg-white p-4 rounded-xl border border-amber-100 shadow-sm flex items-start gap-3">
+                    <div class="p-2.5 bg-amber-100 text-amber-700 rounded-lg shrink-0">
+                        <i class="fa-solid fa-ticket text-lg"></i>
                     </div>
                     <div>
-                        <h3 class="font-bold text-amber-900">票券與劃位重點</h3>
-                        <p class="text-xs text-amber-700 mt-1">• JR 全九州 3 日券 (D3-D5)<br>• 由布院之森 2 號（<span class="text-rose-600 font-bold">D6 12:01 發車，待劃位</span>）<br>• 新幹線 Sakura 552 號 (D3)</p>
+                        <h3 class="font-bold text-sm sm:text-base text-amber-900">票券與劃位重點</h3>
+                        <p class="text-xs text-amber-700 mt-1">• JR 全九州 3 日券 (D3-D5)<br>• D3 鹿兒島中央站兌換/取票<br>• 由布院之森 2 號（<span class="text-rose-600 font-bold">D6 12:01 發車，待劃位</span>）</p>
                     </div>
                 </div>
 
-                <div class="bg-white p-5 rounded-xl border border-amber-100 shadow-sm flex items-start gap-4">
-                    <div class="p-3 bg-orange-100 text-orange-700 rounded-lg">
-                        <i class="fa-solid fa-person-hiking text-xl"></i>
+                <div class="bg-white p-4 rounded-xl border border-amber-100 shadow-sm flex items-start gap-3">
+                    <div class="p-2.5 bg-orange-100 text-orange-700 rounded-lg shrink-0">
+                        <i class="fa-solid fa-person-hiking text-lg"></i>
                     </div>
                     <div>
-                        <h3 class="font-bold text-amber-900">雙火山＋名峰健行</h3>
+                        <h3 class="font-bold text-sm sm:text-base text-amber-900">雙火山＋名峰健行</h3>
                         <p class="text-xs text-amber-700 mt-1">• D2 韓國岳－大浪池環行<br>• D4 阿蘇中岳火口＋砂千里<br>• D5 由布岳東峰（從容補給出發）</p>
                     </div>
                 </div>
 
-                <div class="bg-white p-5 rounded-xl border border-amber-100 shadow-sm flex items-start gap-4">
-                    <div class="p-3 bg-yellow-100 text-yellow-800 rounded-lg">
-                        <i class="fa-solid fa-truck-ramp-box text-xl"></i>
+                <div class="bg-white p-4 rounded-xl border border-amber-100 shadow-sm flex items-start gap-3">
+                    <div class="p-2.5 bg-yellow-100 text-yellow-800 rounded-lg shrink-0">
+                        <i class="fa-solid fa-truck-ramp-box text-lg"></i>
                     </div>
                     <div>
-                        <h3 class="font-bold text-amber-900">大行李托運策略</h3>
+                        <h3 class="font-bold text-sm sm:text-base text-amber-900">大行李托運策略</h3>
                         <p class="text-xs text-amber-700 mt-1">Day 4 抵達大分飯店後，將大件行李透過黑貓宅急便寄往 Day 6 博多飯店，輕裝登由布岳與入住由布院溫泉。</p>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-white p-6 rounded-xl border border-amber-100 shadow-sm">
-                <h2 class="text-lg font-bold text-amber-900 mb-4 border-l-4 border-amber-500 pl-3">7 天完整主路線軸</h2>
-                <div class="relative border-l-2 border-amber-200 ml-4 space-y-6">
-                    <div class="ml-6 relative">
-                        <span class="absolute -left-9 top-0.5 bg-amber-500 text-white rounded-full w-6 h-6 text-xs flex items-center justify-center font-bold">1</span>
-                        <h4 class="font-bold text-amber-800">11/18 (週四) Day 1：鹿兒島機場 ➔ 霧島溫泉鄉</h4>
-                        <p class="text-sm text-amber-700/80">丸尾瀑布、丸尾溫泉市場蒸氣美食 | 宿：Kirishima Kokusai Hotel（霧島國際飯店）</p>
+            <div class="bg-white p-4 sm:p-6 rounded-xl border border-amber-100 shadow-sm">
+                <h2 class="text-base sm:text-lg font-bold text-amber-900 mb-4 border-l-4 border-amber-500 pl-3">7 天完整主路線軸</h2>
+                <div class="relative border-l-2 border-amber-200 ml-3 sm:ml-4 space-y-5">
+                    <div class="ml-5 sm:ml-6 relative">
+                        <span class="absolute -left-8 sm:-left-9 top-0.5 bg-amber-500 text-white rounded-full w-5 h-5 sm:w-6 sm:h-6 text-[10px] sm:text-xs flex items-center justify-center font-bold">1</span>
+                        <h4 class="font-bold text-sm sm:text-base text-amber-800">11/18 (週四) Day 1：抵達鹿兒島機場 ➔ 霧島溫泉鄉</h4>
+                        <p class="text-xs sm:text-sm text-amber-700/80">丸尾瀑布、丸尾溫泉市場蒸氣美食 | 宿：Kirishima Kokusai Hotel（霧島國際飯店）</p>
                     </div>
-                    <div class="ml-6 relative">
-                        <span class="absolute -left-9 top-0.5 bg-amber-500 text-white rounded-full w-6 h-6 text-xs flex items-center justify-center font-bold">2</span>
-                        <h4 class="font-bold text-amber-800">11/19 (週五) Day 2：韓國岳 – 大浪池火山健行 ➔ 返回丸尾溫泉</h4>
-                        <p class="text-sm text-amber-700/80">蝦野高原、韓國岳大浪池環行 (5.5h) | 宿：霧島溫泉 (丸尾，連住第 2 晚)</p>
+                    <div class="ml-5 sm:ml-6 relative">
+                        <span class="absolute -left-8 sm:-left-9 top-0.5 bg-amber-500 text-white rounded-full w-5 h-5 sm:w-6 sm:h-6 text-[10px] sm:text-xs flex items-center justify-center font-bold">2</span>
+                        <h4 class="font-bold text-sm sm:text-base text-amber-800">11/19 (週五) Day 2：韓國岳 – 大浪池火山健行 ➔ 返回丸尾溫泉</h4>
+                        <p class="text-xs sm:text-sm text-amber-700/80">蝦野高原、韓國岳大浪池環行 (5.5h) | 宿：Kirishima Kokusai Hotel（連住第 2 晚）</p>
                     </div>
-                    <div class="ml-6 relative">
-                        <span class="absolute -left-9 top-0.5 bg-orange-500 text-white rounded-full w-6 h-6 text-xs flex items-center justify-center font-bold">3</span>
-                        <h4 class="font-bold text-orange-800">11/20 (週六) Day 3：丸尾 ➔ 國分/隼人 ➔ 鹿兒島神宮 ➔ 新幹線 Sakura ➔ 熊本城 [JR Pass D1]</h4>
-                        <p class="text-sm text-amber-700/80">參拜鹿兒島神宮、鹿兒島中央黑豚豬排、新幹線至熊本、熊本城 | 宿：熊本站周邊</p>
+                    <div class="ml-5 sm:ml-6 relative">
+                        <span class="absolute -left-8 sm:-left-9 top-0.5 bg-orange-500 text-white rounded-full w-5 h-5 sm:w-6 sm:h-6 text-[10px] sm:text-xs flex items-center justify-center font-bold">3</span>
+                        <h4 class="font-bold text-sm sm:text-base text-orange-800">11/20 (週六) Day 3：丸尾 ➔ 國分/隼人 ➔ 鹿兒島神宮 ➔ 換Pass/新幹線 ➔ 熊本城 [Pass D1]</h4>
+                        <p class="text-xs sm:text-sm text-amber-700/80">參拜鹿兒島神宮、鹿兒島中央站黑豚豬排與領JR Pass、新幹線至熊本、熊本城 | 宿：熊本站周邊</p>
                     </div>
-                    <div class="ml-6 relative">
-                        <span class="absolute -left-9 top-0.5 bg-orange-500 text-white rounded-full w-6 h-6 text-xs flex items-center justify-center font-bold">4</span>
-                        <h4 class="font-bold text-orange-800">11/21 (週日) Day 4：熊本 ➔ 阿蘇火山 / 備案 ➔ 大分 [JR Pass D2]</h4>
-                        <p class="text-sm text-amber-700/80">阿蘇火口與砂千里健行（或上色見熊野座神社）、寄送大行李至博多 | 宿：大分站周邊</p>
+                    <div class="ml-5 sm:ml-6 relative">
+                        <span class="absolute -left-8 sm:-left-9 top-0.5 bg-orange-500 text-white rounded-full w-5 h-5 sm:w-6 sm:h-6 text-[10px] sm:text-xs flex items-center justify-center font-bold">4</span>
+                        <h4 class="font-bold text-sm sm:text-base text-orange-800">11/21 (週日) Day 4：熊本 ➔ 阿蘇火山 / 備案 ➔ 大分 [Pass D2]</h4>
+                        <p class="text-xs sm:text-sm text-amber-700/80">阿蘇火口與砂千里健行（或上色見熊野座神社）、大分寄送大行李至博多 | 宿：大分站周邊</p>
                     </div>
-                    <div class="ml-6 relative">
-                        <span class="absolute -left-9 top-0.5 bg-orange-500 text-white rounded-full w-6 h-6 text-xs flex items-center justify-center font-bold">5</span>
-                        <h4 class="font-bold text-orange-800">11/22 (週一) Day 5：大分 ➔ 充裕採買 ➔ 由布岳 ➔ 由布院溫泉 [JR Pass D3]</h4>
-                        <p class="text-sm text-amber-700/80">由布院站 1 小時充裕採買、登由布岳東峰、下山入住溫泉旅館享用一泊二食 | 宿：由布院溫泉旅館</p>
+                    <div class="ml-5 sm:ml-6 relative">
+                        <span class="absolute -left-8 sm:-left-9 top-0.5 bg-orange-500 text-white rounded-full w-5 h-5 sm:w-6 sm:h-6 text-[10px] sm:text-xs flex items-center justify-center font-bold">5</span>
+                        <h4 class="font-bold text-sm sm:text-base text-orange-800">11/22 (週一) Day 5：大分 ➔ 充裕採買 ➔ 由布岳 ➔ 由布院溫泉 [Pass D3]</h4>
+                        <p class="text-xs sm:text-sm text-amber-700/80">由布院站 1 小時充裕採買、登由布岳東峰、下山入住溫泉旅館享用一泊二食 | 宿：由布院溫泉旅館</p>
                     </div>
-                    <div class="ml-6 relative">
-                        <span class="absolute -left-9 top-0.5 bg-amber-500 text-white rounded-full w-6 h-6 text-xs flex items-center justify-center font-bold">6</span>
-                        <h4 class="font-bold text-amber-800">11/23 (週二) Day 6：金鱗湖 ➔ 由布院之森 2 號 ➔ 博多購物</h4>
-                        <p class="text-sm text-amber-700/80">清晨金鱗湖與湯之坪街道、12:01 由布院之森、博多市區半日購物美食 | 宿：博多站周邊</p>
+                    <div class="ml-5 sm:ml-6 relative">
+                        <span class="absolute -left-8 sm:-left-9 top-0.5 bg-amber-500 text-white rounded-full w-5 h-5 sm:w-6 sm:h-6 text-[10px] sm:text-xs flex items-center justify-center font-bold">6</span>
+                        <h4 class="font-bold text-sm sm:text-base text-amber-800">11/23 (週二) Day 6：金鱗湖 ➔ 退房 ➔ 由布院之森 2 號 ➔ 博多購物</h4>
+                        <p class="text-xs sm:text-sm text-amber-700/80">07:00 金鱗湖散步、09:30 退房與湯之坪街道、12:01 由布院之森、博多市區購物 | 宿：博多站周邊</p>
                     </div>
-                    <div class="ml-6 relative">
-                        <span class="absolute -left-9 top-0.5 bg-amber-500 text-white rounded-full w-6 h-6 text-xs flex items-center justify-center font-bold">7</span>
-                        <h4 class="font-bold text-amber-800">11/24 (週三) Day 7：博多站周邊 ➔ 福岡機場 ➔ 台北</h4>
-                        <p class="text-sm text-amber-700/80">博多最後採買、地鐵 5 分鐘直達福岡機場搭機返台</p>
+                    <div class="ml-5 sm:ml-6 relative">
+                        <span class="absolute -left-8 sm:-left-9 top-0.5 bg-amber-500 text-white rounded-full w-5 h-5 sm:w-6 sm:h-6 text-[10px] sm:text-xs flex items-center justify-center font-bold">7</span>
+                        <h4 class="font-bold text-sm sm:text-base text-amber-800">11/24 (週三) Day 7：博多站周邊 ➔ 福岡機場 ➔ 台北</h4>
+                        <p class="text-xs sm:text-sm text-amber-700/80">博多最後採買、地鐵 5 分鐘直達福岡機場搭機返台</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- TAB 2: DAILY ITINERARY -->
-        <section id="content-itinerary" class="tab-content hidden space-y-8">
+        <section id="content-itinerary" class="tab-content hidden space-y-4 sm:space-y-6">
             <!-- Day 1 -->
             <div class="bg-white rounded-xl border border-amber-100 shadow-sm overflow-hidden">
-                <div class="bg-amber-600 text-white px-6 py-3 flex justify-between items-center">
-                    <h3 class="font-bold text-lg">Day 1 | 11/18 (週四) 抵達鹿兒島機場 ➔ 霧島溫泉鄉</h3>
-                    <span class="text-xs bg-amber-700 px-2 py-1 rounded">宿：Kirishima Kokusai Hotel</span>
+                <div class="bg-amber-600 text-white px-4 sm:px-6 py-2.5 sm:py-3 flex justify-between items-center">
+                    <h3 class="font-bold text-sm sm:text-lg">Day 1 | 11/18 (週四) 抵達鹿兒島機場 ➔ 霧島溫泉鄉</h3>
+                    <span class="text-[10px] sm:text-xs bg-amber-700 px-2 py-0.5 rounded">宿：Kirishima Kokusai Hotel</span>
                 </div>
-                <div class="p-6 space-y-4 text-sm">
-                    <div class="flex gap-4 border-b border-amber-50 pb-3">
-                        <span class="font-bold text-amber-700 w-24 shrink-0"><i class="fa-solid fa-bus"></i> 交通指引</span>
+                <div class="p-4 sm:p-6 space-y-3 text-xs sm:text-sm">
+                    <div class="flex gap-2 sm:gap-4 border-b border-amber-50 pb-2.5">
+                        <span class="font-bold text-amber-700 w-20 sm:w-24 shrink-0"><i class="fa-solid fa-bus"></i> 交通指引</span>
                         <div>鹿兒島機場 2 號月台搭乘「霧島機場巴士（いわさきバス）」直達「丸尾溫泉」（約 30 分鐘，單程 ¥720）。</div>
                     </div>
-                    <div class="flex gap-4 border-b border-amber-50 pb-3">
-                        <span class="font-bold text-orange-700 w-24 shrink-0"><i class="fa-solid fa-utensils"></i> 丸尾溫泉市場</span>
+                    <div class="flex gap-2 sm:gap-4 border-b border-amber-50 pb-2.5">
+                        <span class="font-bold text-orange-700 w-20 sm:w-24 shrink-0"><i class="fa-solid fa-utensils"></i> 丸尾溫泉市場</span>
                         <div>走訪丸尾瀑布、品嚐蒸氣美食（溫泉蒸蛋、溫泉地瓜、黑豬肉包）。</div>
                     </div>
-                    <div class="flex gap-4">
-                        <span class="font-bold text-rose-700 w-24 shrink-0"><i class="fa-solid fa-store"></i> 晚餐推薦</span>
+                    <div class="flex gap-2 sm:gap-4">
+                        <span class="font-bold text-rose-700 w-20 sm:w-24 shrink-0"><i class="fa-solid fa-store"></i> 晚餐推薦</span>
                         <div>「焼肉 厨房 菜の実」（建議預約）或於溫泉飯店內享用黑豬肉料理。</div>
                     </div>
                 </div>
@@ -157,15 +167,15 @@
 
             <!-- Day 2 -->
             <div class="bg-white rounded-xl border border-amber-100 shadow-sm overflow-hidden">
-                <div class="bg-amber-600 text-white px-6 py-3 flex justify-between items-center">
-                    <h3 class="font-bold text-lg">Day 2 | 11/19 (週五) 韓國岳 – 大浪池火山健行 ➔ 返回丸尾溫泉</h3>
-                    <span class="text-xs bg-amber-700 px-2 py-1 rounded">宿：霧島溫泉 (丸尾，連住第 2 晚)</span>
+                <div class="bg-amber-600 text-white px-4 sm:px-6 py-2.5 sm:py-3 flex justify-between items-center">
+                    <h3 class="font-bold text-sm sm:text-lg">Day 2 | 11/19 (週五) 韓國岳 – 大浪池火山健行 ➔ 返回丸尾溫泉</h3>
+                    <span class="text-[10px] sm:text-xs bg-amber-700 px-2 py-0.5 rounded">宿：Kirishima Kokusai Hotel</span>
                 </div>
-                <div class="p-6 space-y-4 text-sm">
-                    <div class="bg-amber-50 p-3 rounded-lg border border-amber-200 text-amber-900">
-                        <strong><i class="fa-solid fa-star"></i> 行程亮點：</strong> 爬完山直接回飯店泡湯舒緩肌肉，連住兩晚不用拖著行李轉車！出發前請先至丸尾 Lawson 備妥午餐。
+                <div class="p-4 sm:p-6 space-y-3 text-xs sm:text-sm">
+                    <div class="bg-amber-50 p-2.5 sm:p-3 rounded-lg border border-amber-200 text-amber-900">
+                        <strong><i class="fa-solid fa-star"></i> 行程亮點：</strong> 入住【Kirishima Kokusai Hotel（霧島國際飯店）】，爬完山直接回飯店泡湯舒緩肌肉，連住兩晚不用拖著行李轉車！出發前請先至丸尾 Lawson 備妥午餐。
                     </div>
-                    <div class="space-y-2 border-l-2 border-amber-500 pl-4 my-3">
+                    <div class="space-y-2 border-l-2 border-amber-500 pl-3 sm:pl-4 my-2">
                         <div class="flex justify-between">
                             <span class="font-semibold text-amber-900">08:31</span>
                             <span>「丸尾」搭乘【霧島連山周遊巴士】</span>
@@ -174,7 +184,7 @@
                             <span class="font-semibold text-amber-900">08:56</span>
                             <span>抵達「蝦野高原（えびの高原）」</span>
                         </div>
-                        <div class="flex justify-between font-bold text-amber-900 bg-amber-100/60 p-2 rounded">
+                        <div class="flex justify-between font-bold text-amber-900 bg-amber-100/60 p-1.5 sm:p-2 rounded">
                             <span>09:00 - 14:30</span>
                             <span>韓國岳 – 大浪池環形健行（約 5 - 5.5 小時）</span>
                         </div>
@@ -186,14 +196,14 @@
                 </div>
             </div>
 
-            <!-- Day 3 (更新：國分/隼人/鹿兒島神宮路線) -->
+            <!-- Day 3 -->
             <div class="bg-white rounded-xl border border-amber-100 shadow-sm overflow-hidden">
-                <div class="bg-orange-600 text-white px-6 py-3 flex justify-between items-center">
-                    <h3 class="font-bold text-lg">Day 3 | 11/20 (週六) 鹿兒島神宮 ➔ 櫻花號新幹線 ➔ 熊本城 [Pass D1]</h3>
-                    <span class="text-xs bg-orange-700 px-2 py-1 rounded">宿：熊本站周邊飯店</span>
+                <div class="bg-orange-600 text-white px-4 sm:px-6 py-2.5 sm:py-3 flex justify-between items-center">
+                    <h3 class="font-bold text-sm sm:text-lg">Day 3 | 11/20 (週六) 鹿兒島神宮 ➔ 兌換票券/新幹線 ➔ 熊本城 [Pass D1]</h3>
+                    <span class="text-[10px] sm:text-xs bg-orange-700 px-2 py-0.5 rounded">宿：熊本站周邊飯店</span>
                 </div>
-                <div class="p-6 space-y-3 text-sm">
-                    <div class="space-y-2 border-l-2 border-amber-500 pl-4 my-3">
+                <div class="p-4 sm:p-6 space-y-3 text-xs sm:text-sm">
+                    <div class="space-y-2 border-l-2 border-amber-500 pl-3 sm:pl-4 my-2">
                         <div class="flex justify-between">
                             <span class="font-semibold text-amber-900">08:19</span>
                             <span>於「丸尾」巴士站搭乘前往國分站方向之巴士</span>
@@ -206,7 +216,7 @@
                             <span class="font-semibold text-amber-900">09:55 - 10:00</span>
                             <span>搭乘電車至 JR 隼人站（或自國分站直接搭計程車前往神宮）</span>
                         </div>
-                        <div class="flex justify-between font-bold text-amber-900 bg-amber-100/60 p-2 rounded">
+                        <div class="flex justify-between font-bold text-amber-900 bg-amber-100/60 p-1.5 sm:p-2 rounded">
                             <span>10:10 - 11:00</span>
                             <span>參拜【鹿兒島神宮】（隼人站步行約 15 分鐘可達）</span>
                         </div>
@@ -214,6 +224,9 @@
                             <span class="font-semibold text-amber-900">11:15 - 12:00</span>
                             <span>返回 JR 隼人站搭乘 JR 日豐本線電車 ➔ 抵達鹿兒島中央站</span>
                         </div>
+                    </div>
+                    <div class="bg-orange-50 p-2.5 rounded-lg border border-orange-200 text-orange-950">
+                        <strong><i class="fa-solid fa-ticket"></i> JR 全九州 Pass 兌換與劃位：</strong> 抵達鹿兒島中央站後，請先至綠色窗口或指定自動售票機領取／兌換【JR 全九州 3 日 Pass】，並預先劃位後續特急列車。
                     </div>
                     <p>• <strong>午餐享用：</strong> 鹿兒島中央站品嚐黑豚豬排（川久或竹亭）。</p>
                     <p>• <strong>12:42 - 13:28</strong> 搭乘新幹線 Sakura 552 號直達熊本站。</p>
@@ -223,21 +236,21 @@
 
             <!-- Day 4 -->
             <div class="bg-white rounded-xl border border-amber-100 shadow-sm overflow-hidden">
-                <div class="bg-orange-600 text-white px-6 py-3 flex justify-between items-center">
-                    <h3 class="font-bold text-lg">Day 4 | 11/21 (週日) 熊本 ➔ 阿蘇火山 / 備案 ➔ 大分 [Pass D2]</h3>
-                    <span class="text-xs bg-orange-700 px-2 py-1 rounded">宿：大分站周邊飯店</span>
+                <div class="bg-orange-600 text-white px-4 sm:px-6 py-2.5 sm:py-3 flex justify-between items-center">
+                    <h3 class="font-bold text-sm sm:text-lg">Day 4 | 11/21 (週日) 熊本 ➔ 阿蘇火山 / 備案 ➔ 大分 [Pass D2]</h3>
+                    <span class="text-[10px] sm:text-xs bg-orange-700 px-2 py-0.5 rounded">宿：大分站周邊飯店</span>
                 </div>
-                <div class="p-6 space-y-4 text-sm">
-                    <div class="bg-amber-50 p-3 rounded-lg border border-amber-200 text-amber-900">
+                <div class="p-4 sm:p-6 space-y-3 text-xs sm:text-sm">
+                    <div class="bg-amber-50 p-2.5 sm:p-3 rounded-lg border border-amber-200 text-amber-900">
                         <strong><i class="fa-solid fa-truck"></i> 行李寄送：</strong> 抵達大分飯店後，辦理將大件行李托運（黑貓宅急便）至 Day 6 的博多飯店。
                     </div>
 
                     <div class="flex gap-2 my-2">
-                        <button onclick="toggleAso('planA')" id="btn-planA" class="px-4 py-2 rounded-lg font-bold bg-amber-600 text-white">方案 A：晴天攀登阿蘇中岳</button>
-                        <button onclick="toggleAso('planB')" id="btn-planB" class="px-4 py-2 rounded-lg font-bold bg-amber-100 text-amber-800">方案 B：雨天/管制備案（上色見熊野座）</button>
+                        <button onclick="toggleAso('planA')" id="btn-planA" class="px-3 py-1.5 rounded-lg font-bold bg-amber-600 text-white text-xs">方案 A：晴天阿蘇中岳</button>
+                        <button onclick="toggleAso('planB')" id="btn-planB" class="px-3 py-1.5 rounded-lg font-bold bg-amber-100 text-amber-800 text-xs">方案 B：雨天備案（上色見熊野座）</button>
                     </div>
 
-                    <div id="aso-planA" class="space-y-2 border-l-2 border-amber-500 pl-4">
+                    <div id="aso-planA" class="space-y-1.5 border-l-2 border-amber-500 pl-3 sm:pl-4">
                         <p><strong>07:15 - 08:39</strong> 【JR 豐肥本線】熊本站 ➔ 阿蘇站（使用 Pass）。</p>
                         <p><strong>09:45 - 10:20</strong> 產交巴士至阿蘇山上 Terminal。</p>
                         <p><strong>10:20 - 15:00 阿蘇健行：</strong> 中岳火口、砂千里健行 4.5 小時。</p>
@@ -245,7 +258,7 @@
                         <p><strong>16:45 - 18:21</strong> 九州橫斷特急 4 號（阿蘇 ➔ 大分）。</p>
                     </div>
 
-                    <div id="aso-planB" class="hidden space-y-2 border-l-2 border-orange-500 pl-4">
+                    <div id="aso-planB" class="hidden space-y-1.5 border-l-2 border-orange-500 pl-3 sm:pl-4">
                         <p>雨天或火山氣體超標時：搭乘南阿蘇鐵道 ➔ 轉計程車前往【上色見熊野座神社】參拜。</p>
                         <p>午後返回阿蘇站，搭乘 16:45 九州橫斷特急 4 號至大分。</p>
                     </div>
@@ -254,20 +267,20 @@
 
             <!-- Day 5 -->
             <div class="bg-white rounded-xl border border-amber-100 shadow-sm overflow-hidden">
-                <div class="bg-orange-600 text-white px-6 py-3 flex justify-between items-center">
-                    <h3 class="font-bold text-lg">Day 5 | 11/22 (週一) 大分 ➔ 充裕採買 ➔ 由布岳 ➔ 由布院溫泉 [Pass D3]</h3>
-                    <span class="text-xs bg-orange-700 px-2 py-1 rounded">宿：由布院溫泉旅館</span>
+                <div class="bg-orange-600 text-white px-4 sm:px-6 py-2.5 sm:py-3 flex justify-between items-center">
+                    <h3 class="font-bold text-sm sm:text-lg">Day 5 | 11/22 (週一) 大分 ➔ 充裕採買 ➔ 由布岳 ➔ 由布院溫泉 [Pass D3]</h3>
+                    <span class="text-[10px] sm:text-xs bg-orange-700 px-2 py-0.5 rounded">宿：由布院溫泉旅館</span>
                 </div>
-                <div class="p-6 space-y-4 text-sm">
-                    <div class="bg-emerald-50 p-3 rounded-lg border border-emerald-200 text-emerald-900 font-semibold">
-                        <i class="fa-solid fa-basket-shopping text-emerald-600"></i> 【方案 2：從容補給出發】搭乘 09:05 較晚公車，於由布院站擁有整整 1 小時充足時間在超商採買行動糧與水！
+                <div class="p-4 sm:p-6 space-y-3 text-xs sm:text-sm">
+                    <div class="bg-emerald-50 p-2.5 rounded-lg border border-emerald-200 text-emerald-900 font-semibold">
+                        <i class="fa-solid fa-basket-shopping text-emerald-600"></i> 【從容補給出發】搭乘 09:05 較晚公車，於由布院站擁有整整 1 小時充足時間在超商採買行動糧與水！
                     </div>
-                    <div class="space-y-2 border-l-2 border-amber-500 pl-4">
+                    <div class="space-y-2 border-l-2 border-amber-500 pl-3 sm:pl-4">
                         <div class="flex justify-between">
                             <span class="font-semibold text-amber-900">07:01 - 07:59</span>
                             <span>JR 久大本線（大分 ➔ 由布院）</span>
                         </div>
-                        <div class="flex justify-between bg-amber-100/60 p-2 rounded font-bold text-amber-900">
+                        <div class="flex justify-between bg-amber-100/60 p-1.5 sm:p-2 rounded font-bold text-amber-900">
                             <span>07:59 - 09:00</span>
                             <span>車站周邊與便利商店採買登頂行動糧、水分與能量飲（1小時）</span>
                         </div>
@@ -275,12 +288,12 @@
                             <span class="font-semibold text-amber-900">09:05 - 09:20</span>
                             <span>站前搭乘龜之井巴士 36 號 ➔ 抵達「由布登山口」</span>
                         </div>
-                        <div class="flex justify-between font-bold text-amber-900 bg-amber-100/60 p-2 rounded">
+                        <div class="flex justify-between font-bold text-amber-900 bg-amber-100/60 p-1.5 sm:p-2 rounded">
                             <span>09:30 - 14:30~15:00</span>
                             <span>由布岳健行（正面登山口 ➔ マタエ ➔ 東峰 ➔ 原路下山，約 5-5.5h）</span>
                         </div>
                     </div>
-                    <div class="bg-amber-50 p-3 rounded-lg text-xs space-y-1 text-amber-900">
+                    <div class="bg-amber-50 p-2.5 rounded-lg text-[11px] sm:text-xs space-y-1 text-amber-900">
                         <p class="font-bold">下山公車時刻（龜之井巴士 36 號）：</p>
                         <p>• 首選：15:08 發車 ➔ 15:21 抵達嶽本（金鱗湖入口） / 15:25 抵達由布院站</p>
                         <p>• 備案：16:08 發車 ➔ 16:21 抵達嶽本（金鱗湖入口） / 16:25 抵達由布院站</p>
@@ -293,16 +306,17 @@
 
             <!-- Day 6 -->
             <div class="bg-white rounded-xl border border-amber-100 shadow-sm overflow-hidden">
-                <div class="bg-amber-600 text-white px-6 py-3 flex justify-between items-center">
-                    <h3 class="font-bold text-lg">Day 6 | 11/23 (週二) 金鱗湖散步 ➔ 由布院之森 2 號 ➔ 博多半日採買</h3>
-                    <span class="text-xs bg-amber-700 px-2 py-1 rounded">宿：博多站周邊飯店</span>
+                <div class="bg-amber-600 text-white px-4 sm:px-6 py-2.5 sm:py-3 flex justify-between items-center">
+                    <h3 class="font-bold text-sm sm:text-lg">Day 6 | 11/23 (週二) 金鱗湖散步 ➔ 由布院之森 2 號 ➔ 博多半日採買</h3>
+                    <span class="text-[10px] sm:text-xs bg-amber-700 px-2 py-0.5 rounded">宿：博多站周邊飯店</span>
                 </div>
-                <div class="p-6 space-y-3 text-sm">
-                    <p>• <strong>08:00 - 09:30</strong> 漫步清晨清幽的【金鱗湖】拍照 ➔ 沿「湯之坪街道」散步（現蒸溫泉饅頭、金賞可樂餅）。</p>
-                    <p>• <strong>09:30 - 11:30</strong> 辦理退房，車站周邊採買 B-speak 蛋糕捲與在地伴手禮。</p>
+                <div class="p-4 sm:p-6 space-y-2.5 text-xs sm:text-sm">
+                    <p>• <strong>07:00</strong> 漫步清晨清幽的「金鱗湖」拍照。</p>
+                    <p>• <strong>09:30 退房</strong> ➔ 沿「湯之坪街道」一路向車站方向散步（品嚐現蒸溫泉饅頭或金賞可樂餅）。</p>
+                    <p>• <strong>09:30 - 11:30</strong> 車站周邊採買 B-speak 蛋糕捲與在地伴手禮。</p>
                     <p>• <strong>12:01 - 14:19</strong> 搭乘【由布院之森 2 號】享用車上甜點與景觀 ➔ 返抵博多站。</p>
                     <p>• <strong>14:30 之後</strong> 飯店辦理入住並領取寄達的大行李，展開博多市區購物：</p>
-                    <ul class="list-disc pl-5 text-xs text-amber-800 space-y-1">
+                    <ul class="list-disc pl-5 text-[11px] sm:text-xs text-amber-800 space-y-1">
                         <li>AMU PLAZA / 博多阪急（服飾、雜貨、Tokyu Hands）</li>
                         <li>KITTE 博多 / OIOI（Uniqlo、GU、大創）</li>
                         <li>Yodobashi 博多（3C 家電、動漫模型、戶外用品補給）</li>
@@ -313,65 +327,65 @@
 
             <!-- Day 7 -->
             <div class="bg-white rounded-xl border border-amber-100 shadow-sm overflow-hidden">
-                <div class="bg-amber-600 text-white px-6 py-3 flex justify-between items-center">
-                    <h3 class="font-bold text-lg">Day 7 | 11/24 (週三) 博多站周邊 ➔ 福岡機場 ➔ 溫暖的家</h3>
-                    <span class="text-xs bg-amber-700 px-2 py-1 rounded">返程</span>
+                <div class="bg-amber-600 text-white px-4 sm:px-6 py-2.5 sm:py-3 flex justify-between items-center">
+                    <h3 class="font-bold text-sm sm:text-lg">Day 7 | 11/24 (週三) 博多站周邊 ➔ 福岡機場 ➔ 溫暖的家</h3>
+                    <span class="text-[10px] sm:text-xs bg-amber-700 px-2 py-0.5 rounded">返程</span>
                 </div>
-                <div class="p-6 text-sm space-y-2">
+                <div class="p-4 sm:p-6 text-xs sm:text-sm space-y-2">
                     <p>• 早上於博多站周邊進行最後補給與採買。</p>
                     <p>• 博多站搭乘福岡市營地下鐵，僅需 5 分鐘直達「福岡機場站」。</p>
-                    <p>• 辦理登機手續，帶著滿滿的火山健行與溫泉回憶搭機返回台北。</p>
+                    <p>• 辦理登機手續，帶著滿滿的火山健行與溫泉回憶搭機返回台北溫暖的家。</p>
                 </div>
             </div>
         </section>
 
         <!-- TAB 3: TRANSPORTATION & LOGISTICS -->
-        <section id="content-transport" class="tab-content hidden space-y-6">
-            <div class="bg-white p-6 rounded-xl border border-amber-100 shadow-sm">
-                <h3 class="text-lg font-bold text-amber-900 mb-4 border-l-4 border-amber-500 pl-3">JR 全九州 Pass 3 日券與指定席劃位清單</h3>
+        <section id="content-transport" class="tab-content hidden space-y-4 sm:space-y-6">
+            <div class="bg-white p-4 sm:p-6 rounded-xl border border-amber-100 shadow-sm">
+                <h3 class="text-base sm:text-lg font-bold text-amber-900 mb-3 sm:mb-4 border-l-4 border-amber-500 pl-3">JR 全九州 Pass 3 日券與指定席劃位清單</h3>
                 <div class="overflow-x-auto">
-                    <table class="w-full text-sm text-left border-collapse">
+                    <table class="w-full text-xs sm:text-sm text-left border-collapse">
                         <thead>
                             <tr class="bg-amber-100/60 text-amber-900">
-                                <th class="p-3 border border-amber-200">日期</th>
-                                <th class="p-3 border border-amber-200">路線／列車名稱</th>
-                                <th class="p-3 border border-amber-200">預計區間</th>
-                                <th class="p-3 border border-amber-200">劃位狀態</th>
+                                <th class="p-2 sm:p-3 border border-amber-200">日期</th>
+                                <th class="p-2 sm:p-3 border border-amber-200">路線／列車名稱</th>
+                                <th class="p-2 sm:p-3 border border-amber-200">預計區間</th>
+                                <th class="p-2 sm:p-3 border border-amber-200">劃位狀態</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="p-3 border border-amber-100 font-bold">D3 (11/20)</td>
-                                <td class="p-3 border border-amber-100">櫻花號 Sakura 552 號</td>
-                                <td class="p-3 border border-amber-100">鹿兒島中央 (12:42) ➔ 熊本 (13:28)</td>
-                                <td class="p-3 border border-amber-100 text-amber-700 font-semibold">Pass D1 / 待劃位</td>
+                                <td class="p-2 sm:p-3 border border-amber-100 font-bold">D3 (11/20)</td>
+                                <td class="p-2 sm:p-3 border border-amber-100">櫻花號 Sakura 552 號</td>
+                                <td class="p-2 sm:p-3 border border-amber-100">鹿兒島中央 (12:42) ➔ 熊本 (13:28)</td>
+                                <td class="p-2 sm:p-3 border border-amber-100 text-amber-700 font-semibold">Pass D1 / 鹿兒島中央站劃位</td>
                             </tr>
                             <tr class="bg-amber-50/40">
-                                <td class="p-3 border border-amber-100 font-bold">D4 (11/21)</td>
-                                <td class="p-3 border border-amber-100">九州橫斷特急 4 號</td>
-                                <td class="p-3 border border-amber-100">阿蘇 (16:45) ➔ 大分 (18:21)</td>
-                                <td class="p-3 border border-amber-100 text-amber-700 font-semibold">Pass D2 / 待劃位</td>
+                                <td class="p-2 sm:p-3 border border-amber-100 font-bold">D4 (11/21)</td>
+                                <td class="p-2 sm:p-3 border border-amber-100">九州橫斷特急 4 號</td>
+                                <td class="p-2 sm:p-3 border border-amber-100">阿蘇 (16:45) ➔ 大分 (18:21)</td>
+                                <td class="p-2 sm:p-3 border border-amber-100 text-amber-700 font-semibold">Pass D2 / 待劃位</td>
                             </tr>
                             <tr>
-                                <td class="p-3 border border-amber-100 font-bold">D5 (11/22)</td>
-                                <td class="p-3 border border-amber-100">JR 久大本線 普通車</td>
-                                <td class="p-3 border border-amber-100">大分 (07:01) ➔ 由布院 (07:59)</td>
-                                <td class="p-3 border border-amber-100 text-emerald-700 font-semibold">Pass D3 / 自由座</td>
+                                <td class="p-2 sm:p-3 border border-amber-100 font-bold">D5 (11/22)</td>
+                                <td class="p-2 sm:p-3 border border-amber-100">JR 久大本線 普通車</td>
+                                <td class="p-2 sm:p-3 border border-amber-100">大分 (07:01) ➔ 由布院 (07:59)</td>
+                                <td class="p-2 sm:p-3 border border-amber-100 text-emerald-700 font-semibold">Pass D3 / 自由座</td>
                             </tr>
                             <tr class="bg-amber-100/50">
-                                <td class="p-3 border border-amber-200 font-bold text-amber-950">D6 (11/23)</td>
-                                <td class="p-3 border border-amber-200 font-bold text-amber-950">由布院之森 2 號</td>
-                                <td class="p-3 border border-amber-200">由布院 (12:01) ➔ 博多 (14:19)</td>
-                                <td class="p-3 border border-amber-200 text-rose-600 font-bold">全車指定席（開賣即搶票）</td>
+                                <td class="p-2 sm:p-3 border border-amber-200 font-bold text-amber-950">D6 (11/23)</td>
+                                <td class="p-2 sm:p-3 border border-amber-200 font-bold text-amber-950">由布院之森 2 號</td>
+                                <td class="p-2 sm:p-3 border border-amber-200">由布院 (12:01) ➔ 博多 (14:19)</td>
+                                <td class="p-2 sm:p-3 border border-amber-200 text-rose-600 font-bold">全車指定席（開賣即搶票）</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
 
-            <div class="bg-white p-6 rounded-xl border border-amber-100 shadow-sm space-y-4">
-                <h3 class="text-lg font-bold text-amber-900 border-l-4 border-amber-500 pl-3">官方時刻表與預約頁面連結</h3>
-                <ul class="space-y-2 text-sm text-amber-800 underline">
+            <div class="bg-white p-4 sm:p-6 rounded-xl border border-amber-100 shadow-sm space-y-3">
+                <h3 class="text-base sm:text-lg font-bold text-amber-900 border-l-4 border-amber-500 pl-3">官方時刻表與預約頁面連結</h3>
+                <ul class="space-y-2 text-xs sm:text-sm text-amber-800 underline">
                     <li><a href="https://www.city-kirishima.jp/kirikan/kanko/bus/renzan.html" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> 霧島連山周遊巴士時刻表</a></li>
                     <li><a href="https://www.kamenoibus.com/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> 龜之井巴士 36 號（由布岳登山口）時刻表</a></li>
                     <li><a href="https://www.jrkyushu.co.jp/chinese/train/yufuin_no_mori.html" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> JR 九州 由布院之森官方劃位說明</a></li>
@@ -380,33 +394,33 @@
         </section>
 
         <!-- TAB 4: EXPENSES & SPLIT BILL -->
-        <section id="content-expenses" class="tab-content hidden space-y-6">
+        <section id="content-expenses" class="tab-content hidden space-y-4 sm:space-y-6">
             
             <!-- 成員與匯率設定 -->
-            <div class="bg-white p-5 rounded-xl border border-amber-100 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
-                <div class="flex items-center gap-3 w-full md:w-auto">
-                    <i class="fa-solid fa-users text-amber-600 text-xl"></i>
-                    <div>
-                        <label class="text-xs font-bold text-amber-800 block">旅伴成員 (用逗號分隔)</label>
-                        <input type="text" id="group-members" value="小明, 小華, 阿強" onchange="saveSettings()" class="border border-amber-200 rounded px-2 py-1 text-sm w-full md:w-64 focus:outline-none focus:ring-1 focus:ring-amber-500">
+            <div class="bg-white p-4 sm:p-5 rounded-xl border border-amber-100 shadow-sm flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
+                <div class="flex items-center gap-2.5 w-full md:w-auto">
+                    <i class="fa-solid fa-users text-amber-600 text-lg"></i>
+                    <div class="w-full">
+                        <label class="text-[11px] font-bold text-amber-800 block">旅伴成員 (逗號分隔)</label>
+                        <input type="text" id="group-members" value="小明, 小華, 阿強" onchange="saveSettings()" class="border border-amber-200 rounded px-2 py-1 text-xs sm:text-sm w-full md:w-64 focus:outline-none focus:ring-1 focus:ring-amber-500">
                     </div>
                 </div>
-                <div class="flex items-center gap-3 w-full md:w-auto">
-                    <i class="fa-solid fa-coins text-amber-600 text-xl"></i>
-                    <div>
-                        <label class="text-xs font-bold text-amber-800 block">日幣對台幣匯率 (1 JPY = ? TWD)</label>
-                        <input type="number" step="0.001" id="exchange-rate" value="0.215" onchange="saveSettings()" class="border border-amber-200 rounded px-2 py-1 text-sm w-28 focus:outline-none focus:ring-1 focus:ring-amber-500">
+                <div class="flex items-center gap-2.5 w-full md:w-auto">
+                    <i class="fa-solid fa-coins text-amber-600 text-lg"></i>
+                    <div class="w-full">
+                        <label class="text-[11px] font-bold text-amber-800 block">匯率 (1 JPY = ? TWD)</label>
+                        <input type="number" step="0.001" id="exchange-rate" value="0.215" onchange="saveSettings()" class="border border-amber-200 rounded px-2 py-1 text-xs sm:text-sm w-full md:w-28 focus:outline-none focus:ring-1 focus:ring-amber-500">
                     </div>
                 </div>
             </div>
 
             <!-- 新增記帳表單 -->
-            <div class="bg-white p-6 rounded-xl border border-amber-100 shadow-sm space-y-4">
-                <h3 class="text-lg font-bold text-amber-900 border-l-4 border-amber-500 pl-3">新增消費紀錄</h3>
-                <form id="expense-form" onsubmit="addExpense(event)" class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+            <div class="bg-white p-4 sm:p-6 rounded-xl border border-amber-100 shadow-sm space-y-3">
+                <h3 class="text-base sm:text-lg font-bold text-amber-900 border-l-4 border-amber-500 pl-3">新增消費紀錄</h3>
+                <form id="expense-form" onsubmit="addExpense(event)" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs sm:text-sm">
                     <div>
-                        <label class="block text-xs font-semibold text-amber-800 mb-1">日期</label>
-                        <select id="exp-day" class="w-full border border-amber-200 rounded p-2 focus:outline-none focus:ring-1 focus:ring-amber-500">
+                        <label class="block text-[11px] font-semibold text-amber-800 mb-1">日期</label>
+                        <select id="exp-day" class="w-full border border-amber-200 rounded p-1.5 focus:outline-none focus:ring-1 focus:ring-amber-500">
                             <option value="D1">Day 1 (11/18)</option>
                             <option value="D2">Day 2 (11/19)</option>
                             <option value="D3">Day 3 (11/20)</option>
@@ -417,12 +431,12 @@
                         </select>
                     </div>
                     <div>
-                        <label class="block text-xs font-semibold text-amber-800 mb-1">消費項目/內容</label>
-                        <input type="text" id="exp-item" placeholder="例如：由布院超商行動糧補給" required class="w-full border border-amber-200 rounded p-2 focus:outline-none focus:ring-1 focus:ring-amber-500">
+                        <label class="block text-[11px] font-semibold text-amber-800 mb-1">消費項目/內容</label>
+                        <input type="text" id="exp-item" placeholder="例如：由布院超商行動糧" required class="w-full border border-amber-200 rounded p-1.5 focus:outline-none focus:ring-1 focus:ring-amber-500">
                     </div>
                     <div>
-                        <label class="block text-xs font-semibold text-amber-800 mb-1">類別</label>
-                        <select id="exp-category" class="w-full border border-amber-200 rounded p-2 focus:outline-none focus:ring-1 focus:ring-amber-500">
+                        <label class="block text-[11px] font-semibold text-amber-800 mb-1">類別</label>
+                        <select id="exp-category" class="w-full border border-amber-200 rounded p-1.5 focus:outline-none focus:ring-1 focus:ring-amber-500">
                             <option value="餐飲">餐飲 🍱</option>
                             <option value="交通">交通 🚌</option>
                             <option value="門票">門票/活動 🎫</option>
@@ -432,25 +446,25 @@
                         </select>
                     </div>
                     <div>
-                        <label class="block text-xs font-semibold text-amber-800 mb-1">金額與幣別</label>
-                        <div class="flex gap-2">
-                            <input type="number" id="exp-amount" placeholder="金額" required step="any" class="w-full border border-amber-200 rounded p-2 focus:outline-none focus:ring-1 focus:ring-amber-500">
-                            <select id="exp-currency" class="border border-amber-200 rounded p-2 focus:outline-none focus:ring-1 focus:ring-amber-500 shrink-0">
+                        <label class="block text-[11px] font-semibold text-amber-800 mb-1">金額與幣別</label>
+                        <div class="flex gap-1.5">
+                            <input type="number" id="exp-amount" placeholder="金額" required step="any" class="w-full border border-amber-200 rounded p-1.5 focus:outline-none focus:ring-1 focus:ring-amber-500">
+                            <select id="exp-currency" class="border border-amber-200 rounded p-1.5 focus:outline-none focus:ring-1 focus:ring-amber-500 shrink-0">
                                 <option value="JPY">日幣 (¥)</option>
                                 <option value="TWD">台幣 ($)</option>
                             </select>
                         </div>
                     </div>
                     <div>
-                        <label class="block text-xs font-semibold text-amber-800 mb-1">先付錢的人 (付款人)</label>
-                        <select id="exp-payer" class="w-full border border-amber-200 rounded p-2 focus:outline-none focus:ring-1 focus:ring-amber-500"></select>
+                        <label class="block text-[11px] font-semibold text-amber-800 mb-1">付款人</label>
+                        <select id="exp-payer" class="w-full border border-amber-200 rounded p-1.5 focus:outline-none focus:ring-1 focus:ring-amber-500"></select>
                     </div>
                     <div>
-                        <label class="block text-xs font-semibold text-amber-800 mb-1">分攤成員 (預設全體平分)</label>
-                        <div id="exp-split-members" class="flex flex-wrap gap-2 pt-1 text-xs"></div>
+                        <label class="block text-[11px] font-semibold text-amber-800 mb-1">分攤成員</label>
+                        <div id="exp-split-members" class="flex flex-wrap gap-1.5 pt-1 text-[11px]"></div>
                     </div>
-                    <div class="md:col-span-3 text-right">
-                        <button type="submit" class="bg-amber-600 hover:bg-amber-700 text-white font-bold px-6 py-2 rounded-lg shadow-sm transition">
+                    <div class="sm:col-span-2 md:col-span-3 text-right pt-2">
+                        <button type="submit" class="w-full sm:w-auto bg-amber-600 hover:bg-amber-700 text-white font-bold px-6 py-2 rounded-lg shadow-sm transition">
                             <i class="fa-solid fa-plus"></i> 新增紀錄
                         </button>
                     </div>
@@ -458,46 +472,46 @@
             </div>
 
             <!-- 自動分帳結算面板 -->
-            <div class="bg-amber-50/80 p-6 rounded-xl border border-amber-200 shadow-sm space-y-4">
-                <h3 class="text-lg font-bold text-amber-900 flex items-center gap-2">
+            <div class="bg-amber-50/80 p-4 sm:p-6 rounded-xl border border-amber-200 shadow-sm space-y-3">
+                <h3 class="text-base sm:text-lg font-bold text-amber-900 flex items-center gap-2">
                     <i class="fa-solid fa-scale-balanced text-amber-600"></i> 分帳結算總覽 (以台幣 TWD 結算)
                 </h3>
-                <div id="split-summary-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <div id="split-summary-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                     <!-- JS 動態生成每人應補/應收金額 -->
                 </div>
             </div>
 
             <!-- 每日消費明細表 -->
-            <div class="bg-white p-6 rounded-xl border border-amber-100 shadow-sm space-y-4">
-                <div class="flex justify-between items-center">
-                    <h3 class="text-lg font-bold text-amber-900 border-l-4 border-amber-500 pl-3">每日消費明細</h3>
+            <div class="bg-white p-4 sm:p-6 rounded-xl border border-amber-100 shadow-sm space-y-3">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1">
+                    <h3 class="text-base sm:text-lg font-bold text-amber-900 border-l-4 border-amber-500 pl-3">每日消費明細</h3>
                     <div class="text-xs text-amber-800">
-                        總累積花費：<span id="total-expenses-jpy" class="font-bold text-amber-900">¥0</span> / <span id="total-expenses-twd" class="font-bold text-amber-900">NT$0</span>
+                        總花費：<span id="total-expenses-jpy" class="font-bold text-amber-900">¥0</span> / <span id="total-expenses-twd" class="font-bold text-amber-900">NT$0</span>
                     </div>
                 </div>
 
-                <!-- 依天數篩選按鈕 -->
-                <div class="flex gap-2 overflow-x-auto pb-2 text-xs">
-                    <button onclick="filterExpenses('ALL', this)" class="exp-filter-btn px-3 py-1.5 rounded-full bg-amber-600 text-white font-bold">全部天數</button>
-                    <button onclick="filterExpenses('D1', this)" class="exp-filter-btn px-3 py-1.5 rounded-full bg-amber-100 text-amber-800">D1</button>
-                    <button onclick="filterExpenses('D2', this)" class="exp-filter-btn px-3 py-1.5 rounded-full bg-amber-100 text-amber-800">D2</button>
-                    <button onclick="filterExpenses('D3', this)" class="exp-filter-btn px-3 py-1.5 rounded-full bg-amber-100 text-amber-800">D3</button>
-                    <button onclick="filterExpenses('D4', this)" class="exp-filter-btn px-3 py-1.5 rounded-full bg-amber-100 text-amber-800">D4</button>
-                    <button onclick="filterExpenses('D5', this)" class="exp-filter-btn px-3 py-1.5 rounded-full bg-amber-100 text-amber-800">D5</button>
-                    <button onclick="filterExpenses('D6', this)" class="exp-filter-btn px-3 py-1.5 rounded-full bg-amber-100 text-amber-800">D6</button>
-                    <button onclick="filterExpenses('D7', this)" class="exp-filter-btn px-3 py-1.5 rounded-full bg-amber-100 text-amber-800">D7</button>
+                <!-- 依天數篩選按鈕 (手機版可橫向滑動) -->
+                <div class="flex gap-1.5 overflow-x-auto pb-1 text-xs no-scrollbar">
+                    <button onclick="filterExpenses('ALL', this)" class="exp-filter-btn shrink-0 px-2.5 py-1 rounded-full bg-amber-600 text-white font-bold">全天數</button>
+                    <button onclick="filterExpenses('D1', this)" class="exp-filter-btn shrink-0 px-2.5 py-1 rounded-full bg-amber-100 text-amber-800">D1</button>
+                    <button onclick="filterExpenses('D2', this)" class="exp-filter-btn shrink-0 px-2.5 py-1 rounded-full bg-amber-100 text-amber-800">D2</button>
+                    <button onclick="filterExpenses('D3', this)" class="exp-filter-btn shrink-0 px-2.5 py-1 rounded-full bg-amber-100 text-amber-800">D3</button>
+                    <button onclick="filterExpenses('D4', this)" class="exp-filter-btn shrink-0 px-2.5 py-1 rounded-full bg-amber-100 text-amber-800">D4</button>
+                    <button onclick="filterExpenses('D5', this)" class="exp-filter-btn shrink-0 px-2.5 py-1 rounded-full bg-amber-100 text-amber-800">D5</button>
+                    <button onclick="filterExpenses('D6', this)" class="exp-filter-btn shrink-0 px-2.5 py-1 rounded-full bg-amber-100 text-amber-800">D6</button>
+                    <button onclick="filterExpenses('D7', this)" class="exp-filter-btn shrink-0 px-2.5 py-1 rounded-full bg-amber-100 text-amber-800">D7</button>
                 </div>
 
                 <div class="overflow-x-auto">
-                    <table class="w-full text-sm text-left border-collapse">
+                    <table class="w-full text-xs sm:text-sm text-left border-collapse whitespace-nowrap">
                         <thead>
                             <tr class="bg-amber-100/60 text-amber-900">
-                                <th class="p-2.5 border border-amber-200">天數</th>
-                                <th class="p-2.5 border border-amber-200">項目/類別</th>
-                                <th class="p-2.5 border border-amber-200">金額</th>
-                                <th class="p-2.5 border border-amber-200">付款人</th>
-                                <th class="p-2.5 border border-amber-200">分攤對象</th>
-                                <th class="p-2.5 border border-amber-200 text-center">操作</th>
+                                <th class="p-2 border border-amber-200">天數</th>
+                                <th class="p-2 border border-amber-200">項目/類別</th>
+                                <th class="p-2 border border-amber-200">金額</th>
+                                <th class="p-2 border border-amber-200">付款人</th>
+                                <th class="p-2 border border-amber-200">分攤對象</th>
+                                <th class="p-2 border border-amber-200 text-center">刪除</th>
                             </tr>
                         </thead>
                         <tbody id="expense-table-body">
@@ -510,6 +524,10 @@
         </section>
 
     </main>
+
+    <footer class="bg-amber-900 text-amber-200 text-center py-3 text-xs">
+        九州 7 天 6 夜火山健行與溫泉之旅 © 2027 行程計畫
+    </footer>
 
     <!-- JavaScript 邏輯處理 -->
     <script>
@@ -532,13 +550,13 @@
             if (plan === 'planA') {
                 planA.classList.remove('hidden');
                 planB.classList.add('hidden');
-                btnA.className = 'px-4 py-2 rounded-lg font-bold bg-amber-600 text-white';
-                btnB.className = 'px-4 py-2 rounded-lg font-bold bg-amber-100 text-amber-800';
+                btnA.className = 'px-3 py-1.5 rounded-lg font-bold bg-amber-600 text-white text-xs';
+                btnB.className = 'px-3 py-1.5 rounded-lg font-bold bg-amber-100 text-amber-800 text-xs';
             } else {
                 planA.classList.add('hidden');
                 planB.classList.remove('hidden');
-                btnB.className = 'px-4 py-2 rounded-lg font-bold bg-orange-600 text-white';
-                btnA.className = 'px-4 py-2 rounded-lg font-bold bg-amber-100 text-amber-800';
+                btnB.className = 'px-3 py-1.5 rounded-lg font-bold bg-orange-600 text-white text-xs';
+                btnA.className = 'px-3 py-1.5 rounded-lg font-bold bg-amber-100 text-amber-800 text-xs';
             }
         }
 
@@ -583,7 +601,7 @@
 
             payerSelect.innerHTML = members.map(m => `<option value="${m}">${m}</option>`).join('');
             splitContainer.innerHTML = members.map(m => `
-                <label class="inline-flex items-center gap-1 cursor-pointer bg-amber-50 px-2 py-1 rounded border border-amber-200">
+                <label class="inline-flex items-center gap-1 cursor-pointer bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
                     <input type="checkbox" name="split-member" value="${m}" checked class="rounded text-amber-600 focus:ring-amber-500">
                     <span>${m}</span>
                 </label>
@@ -636,9 +654,9 @@
         function filterExpenses(day, btnEl) {
             currentFilter = day;
             document.querySelectorAll('.exp-filter-btn').forEach(btn => {
-                btn.className = 'exp-filter-btn px-3 py-1.5 rounded-full bg-amber-100 text-amber-800';
+                btn.className = 'exp-filter-btn shrink-0 px-2.5 py-1 rounded-full bg-amber-100 text-amber-800';
             });
-            btnEl.className = 'exp-filter-btn px-3 py-1.5 rounded-full bg-amber-600 text-white font-bold';
+            btnEl.className = 'exp-filter-btn shrink-0 px-2.5 py-1 rounded-full bg-amber-600 text-white font-bold';
             renderExpenses();
         }
 
@@ -652,22 +670,22 @@
             const filtered = currentFilter === 'ALL' ? expenses : expenses.filter(e => e.day === currentFilter);
             
             if (filtered.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="6" class="p-4 text-center text-amber-700/60">尚無記帳紀錄</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="6" class="p-3 text-center text-amber-700/60">尚無記帳紀錄</td></tr>`;
             } else {
                 tbody.innerHTML = filtered.map(exp => {
                     const symbol = exp.currency === 'JPY' ? '¥' : 'NT$';
                     return `
                         <tr class="border-b border-amber-50 hover:bg-amber-50/30">
-                            <td class="p-2.5 font-bold text-amber-800">${exp.day}</td>
-                            <td class="p-2.5">
+                            <td class="p-2 font-bold text-amber-800">${exp.day}</td>
+                            <td class="p-2">
                                 <span class="font-semibold">${exp.item}</span>
-                                <span class="text-xs text-amber-600 block">[${exp.category}]</span>
+                                <span class="text-[10px] text-amber-600 block">[${exp.category}]</span>
                             </td>
-                            <td class="p-2.5 font-bold">${symbol}${exp.amount.toLocaleString()}</td>
-                            <td class="p-2.5 text-amber-900">${exp.payer}</td>
-                            <td class="p-2.5 text-xs text-amber-800">${exp.splitMembers.join(', ')}</td>
-                            <td class="p-2.5 text-center">
-                                <button onclick="deleteExpense(${exp.id})" class="text-rose-600 hover:text-rose-800" title="刪除此筆">
+                            <td class="p-2 font-bold">${symbol}${exp.amount.toLocaleString()}</td>
+                            <td class="p-2 text-amber-900">${exp.payer}</td>
+                            <td class="p-2 text-[11px] text-amber-800">${exp.splitMembers.join(', ')}</td>
+                            <td class="p-2 text-center">
+                                <button onclick="deleteExpense(${exp.id})" class="text-rose-600 hover:text-rose-800 px-2 py-1" title="刪除此筆">
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
                             </td>
@@ -712,12 +730,12 @@
                 const balance = paid[m] - owed[m];
                 const isPositive = balance >= 0;
                 return `
-                    <div class="bg-white p-4 rounded-lg border border-amber-100 shadow-sm space-y-1">
-                        <div class="font-bold text-amber-950 text-base">${m}</div>
-                        <div class="text-xs text-amber-700">先代墊金額：NT$ ${Math.round(paid[m]).toLocaleString()}</div>
-                        <div class="text-xs text-amber-700">應分攤金額：NT$ ${Math.round(owed[m]).toLocaleString()}</div>
-                        <div class="pt-2 border-t border-amber-50 flex justify-between items-center text-sm">
-                            <span class="font-semibold text-amber-900">最終結算：</span>
+                    <div class="bg-white p-3 sm:p-4 rounded-lg border border-amber-100 shadow-sm space-y-1">
+                        <div class="font-bold text-amber-950 text-sm sm:text-base">${m}</div>
+                        <div class="text-[11px] sm:text-xs text-amber-700">先代墊：NT$ ${Math.round(paid[m]).toLocaleString()}</div>
+                        <div class="text-[11px] sm:text-xs text-amber-700">應分攤：NT$ ${Math.round(owed[m]).toLocaleString()}</div>
+                        <div class="pt-1.5 border-t border-amber-50 flex justify-between items-center text-xs sm:text-sm">
+                            <span class="font-semibold text-amber-900">結算：</span>
                             <span class="font-bold ${isPositive ? 'text-emerald-600' : 'text-rose-600'}">
                                 ${isPositive ? `找回 NT$ ${Math.round(balance).toLocaleString()}` : `補繳 NT$ ${Math.round(Math.abs(balance)).toLocaleString()}`}
                             </span>
