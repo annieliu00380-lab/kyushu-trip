@@ -25,17 +25,6 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
-        /* 地圖連結樣式 */
-        .map-link {
-            color: #0284C7;
-            text-decoration: underline;
-            text-underline-offset: 2px;
-            font-weight: 600;
-            transition: color 0.2s;
-        }
-        .map-link:hover {
-            color: #0369A1;
-        }
     </style>
 </head>
 <body class="text-amber-950 font-sans leading-relaxed min-h-screen flex flex-col justify-between">
@@ -50,7 +39,7 @@
                 <p class="text-[11px] sm:text-xs text-amber-100 mt-0.5">日期：2027/11/18 - 11/24 | 霧島韓國岳・阿蘇火山・由布岳・由布院一泊二食</p>
             </div>
             <div class="mt-2 sm:mt-0 bg-amber-700/90 px-2.5 py-1 rounded border border-amber-400 text-[11px] sm:text-xs">
-                <span class="text-amber-200 font-semibold">JR Pass 3日券：</span>D3 下午啟用 - D5
+                <span class="text-amber-200 font-semibold">JR Pass 3日券：</span>D3 - D5 使用
             </div>
         </div>
         
@@ -78,39 +67,6 @@
 
         <!-- TAB 1: OVERVIEW -->
         <section id="content-overview" class="tab-content space-y-4 sm:space-y-6">
-            
-            <!-- 天氣資訊概覽列 -->
-            <div class="bg-sky-50 border border-sky-200 p-4 rounded-xl shadow-sm">
-                <div class="flex items-center justify-between mb-2">
-                    <h3 class="font-bold text-sky-900 text-sm sm:text-base flex items-center gap-2">
-                        <i class="fa-solid fa-cloud-sun text-sky-600"></i> 九州重點區域實時氣候預報
-                    </h3>
-                    <span class="text-[10px] sm:text-xs text-sky-600">自動取得即時氣候數據</span>
-                </div>
-                <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center text-xs" id="weather-cards">
-                    <div class="bg-white p-2 rounded border border-sky-100">
-                        <div class="font-bold text-slate-700">霧島 (韓國岳)</div>
-                        <div id="weather-kirishima" class="text-sky-700 font-semibold mt-1"><i class="fa-solid fa-spinner fa-spin"></i></div>
-                    </div>
-                    <div class="bg-white p-2 rounded border border-sky-100">
-                        <div class="font-bold text-slate-700">熊本市</div>
-                        <div id="weather-kumamoto" class="text-sky-700 font-semibold mt-1"><i class="fa-solid fa-spinner fa-spin"></i></div>
-                    </div>
-                    <div class="bg-white p-2 rounded border border-sky-100">
-                        <div class="font-bold text-slate-700">阿蘇山</div>
-                        <div id="weather-aso" class="text-sky-700 font-semibold mt-1"><i class="fa-solid fa-spinner fa-spin"></i></div>
-                    </div>
-                    <div class="bg-white p-2 rounded border border-sky-100">
-                        <div class="font-bold text-slate-700">由布院 / 由布岳</div>
-                        <div id="weather-yufuin" class="text-sky-700 font-semibold mt-1"><i class="fa-solid fa-spinner fa-spin"></i></div>
-                    </div>
-                    <div class="bg-white p-2 rounded border border-sky-100 col-span-2 sm:col-span-1">
-                        <div class="font-bold text-slate-700">博多 (福岡)</div>
-                        <div id="weather-fukuoka" class="text-sky-700 font-semibold mt-1"><i class="fa-solid fa-spinner fa-spin"></i></div>
-                    </div>
-                </div>
-            </div>
-
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                 <div class="bg-white p-4 rounded-xl border border-amber-100 shadow-sm flex items-start gap-3">
                     <div class="p-2.5 bg-amber-100 text-amber-700 rounded-lg shrink-0">
@@ -118,7 +74,7 @@
                     </div>
                     <div>
                         <h3 class="font-bold text-sm sm:text-base text-amber-900">票券與劃位重點</h3>
-                        <p class="text-xs text-amber-700 mt-1">• JR 全九州 3 日券 (D3下午-D5)<br>• D3 中午 <a href="https://www.google.com/maps/search/?api=1&query=鹿兒島中央站" target="_blank" class="map-link"><i class="fa-solid fa-location-dot"></i> 鹿兒島中央站</a>兌換啟用<br>• 由布院之森 2 號（<span class="text-rose-600 font-bold">D6 12:01 發車，待劃位</span>）</p>
+                        <p class="text-xs text-amber-700 mt-1">• JR 全九州 3 日券 (D3-D5)<br>• D3 鹿兒島中央站兌換/取票<br>• 由布院之森 2 號（<span class="text-rose-600 font-bold">D6 12:01 發車，待劃位</span>）</p>
                     </div>
                 </div>
 
@@ -128,7 +84,7 @@
                     </div>
                     <div>
                         <h3 class="font-bold text-sm sm:text-base text-amber-900">雙火山＋名峰健行</h3>
-                        <p class="text-xs text-amber-700 mt-1">• D2 <a href="https://www.google.com/maps/search/?api=1&query=韓國岳" target="_blank" class="map-link">韓國岳</a>－<a href="https://www.google.com/maps/search/?api=1&query=大浪池" target="_blank" class="map-link">大浪池</a>環行<br>• D4 <a href="https://www.google.com/maps/search/?api=1&query=阿蘇中岳火口" target="_blank" class="map-link">阿蘇中岳火口</a>＋<a href="https://www.google.com/maps/search/?api=1&query=砂千里ヶ浜" target="_blank" class="map-link">砂千里</a><br>• D5 <a href="https://www.google.com/maps/search/?api=1&query=由布岳" target="_blank" class="map-link">由布岳東峰</a></p>
+                        <p class="text-xs text-amber-700 mt-1">• D2 韓國岳－大浪池環行<br>• D4 阿蘇中岳火口（或上色見熊野座神社）<br>• D5 由布岳東峰（從容補給出發）</p>
                     </div>
                 </div>
 
@@ -148,37 +104,37 @@
                 <div class="relative border-l-2 border-amber-200 ml-3 sm:ml-4 space-y-5">
                     <div class="ml-5 sm:ml-6 relative">
                         <span class="absolute -left-8 sm:-left-9 top-0.5 bg-amber-500 text-white rounded-full w-5 h-5 sm:w-6 sm:h-6 text-[10px] sm:text-xs flex items-center justify-center font-bold">1</span>
-                        <h4 class="font-bold text-sm sm:text-base text-amber-800">11/18 (週四) Day 1：抵達<a href="https://www.google.com/maps/search/?api=1&query=鹿兒島機場" target="_blank" class="map-link">鹿兒島機場</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=霧島溫泉鄉" target="_blank" class="map-link">霧島溫泉鄉</a></h4>
-                        <p class="text-xs sm:text-sm text-amber-700/80"><a href="https://www.google.com/maps/search/?api=1&query=丸尾瀑布" target="_blank" class="map-link">丸尾瀑布</a>、<a href="https://www.google.com/maps/search/?api=1&query=霧島溫泉市場" target="_blank" class="map-link">丸尾溫泉市場蒸氣美食</a> | 宿：<a href="https://www.google.com/maps/search/?api=1&query=霧島國際飯店" target="_blank" class="map-link">Kirishima Kokusai Hotel（霧島國際飯店）</a></p>
+                        <h4 class="font-bold text-sm sm:text-base text-amber-800">11/18 (週四) Day 1：抵達鹿兒島機場 ➔ 霧島溫泉鄉</h4>
+                        <p class="text-xs sm:text-sm text-amber-700/80">丸尾瀑布、丸尾溫泉市場蒸氣美食 | 宿：Kirishima Kokusai Hotel（霧島國際飯店）</p>
                     </div>
                     <div class="ml-5 sm:ml-6 relative">
                         <span class="absolute -left-8 sm:-left-9 top-0.5 bg-amber-500 text-white rounded-full w-5 h-5 sm:w-6 sm:h-6 text-[10px] sm:text-xs flex items-center justify-center font-bold">2</span>
-                        <h4 class="font-bold text-sm sm:text-base text-amber-800">11/19 (週五) Day 2：<a href="https://www.google.com/maps/search/?api=1&query=韓國岳" target="_blank" class="map-link">韓國岳</a> – <a href="https://www.google.com/maps/search/?api=1&query=大浪池" target="_blank" class="map-link">大浪池</a>火山健行 ➔ 返回丸尾溫泉</h4>
-                        <p class="text-xs sm:text-sm text-amber-700/80"><a href="https://www.google.com/maps/search/?api=1&query=えびの高原" target="_blank" class="map-link">蝦野高原</a>、韓國岳大浪池環行 (5.5h) | 宿：<a href="https://www.google.com/maps/search/?api=1&query=霧島國際飯店" target="_blank" class="map-link">Kirishima Kokusai Hotel（連住第 2 晚）</a></p>
+                        <h4 class="font-bold text-sm sm:text-base text-amber-800">11/19 (週五) Day 2：韓國岳 – 大浪池火山健行 ➔ 返回丸尾溫泉</h4>
+                        <p class="text-xs sm:text-sm text-amber-700/80">蝦野高原、韓國岳大浪池環行 (5.5h) | 宿：Kirishima Kokusai Hotel（連住第 2 晚）</p>
                     </div>
                     <div class="ml-5 sm:ml-6 relative">
                         <span class="absolute -left-8 sm:-left-9 top-0.5 bg-orange-500 text-white rounded-full w-5 h-5 sm:w-6 sm:h-6 text-[10px] sm:text-xs flex items-center justify-center font-bold">3</span>
-                        <h4 class="font-bold text-sm sm:text-base text-orange-800">11/20 (週六) Day 3：丸尾 ➔ <a href="https://www.google.com/maps/search/?api=1&query=國分站" target="_blank" class="map-link">國分</a>/<a href="https://www.google.com/maps/search/?api=1&query=隼人站" target="_blank" class="map-link">隼人</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=鹿兒島神宮" target="_blank" class="map-link">鹿兒島神宮</a> ➔ 中午換Pass/新幹線 ➔ <a href="https://www.google.com/maps/search/?api=1&query=熊本城" target="_blank" class="map-link">熊本城</a> [Pass D1下午啟用]</h4>
-                        <p class="text-xs sm:text-sm text-amber-700/80">上午自費交通參拜鹿兒島神宮，中午抵達鹿兒島中央站兌換 Pass & 吃黑豚豬排、下午正式使用 Pass 搭新幹線至熊本 | 宿：<a href="https://www.google.com/maps/search/?api=1&query=熊本站" target="_blank" class="map-link">熊本站周邊</a></p>
+                        <h4 class="font-bold text-sm sm:text-base text-orange-800">11/20 (週六) Day 3：丸尾 ➔ 國分/隼人 ➔ 鹿兒島神宮 ➔ 換Pass/新幹線 ➔ 熊本城 [Pass D1]</h4>
+                        <p class="text-xs sm:text-sm text-amber-700/80">參拜鹿兒島神宮、鹿兒島中央站黑豚豬排與領JR Pass、新幹線至熊本、熊本城 | 宿：熊本站周邊</p>
                     </div>
                     <div class="ml-5 sm:ml-6 relative">
                         <span class="absolute -left-8 sm:-left-9 top-0.5 bg-orange-500 text-white rounded-full w-5 h-5 sm:w-6 sm:h-6 text-[10px] sm:text-xs flex items-center justify-center font-bold">4</span>
-                        <h4 class="font-bold text-sm sm:text-base text-orange-800">11/21 (週日) Day 4：熊本 ➔ <a href="https://www.google.com/maps/search/?api=1&query=阿蘇山" target="_blank" class="map-link">阿蘇火山</a> / 備案 ➔ <a href="https://www.google.com/maps/search/?api=1&query=大分站" target="_blank" class="map-link">大分</a> [Pass D2]</h4>
-                        <p class="text-xs sm:text-sm text-amber-700/80">阿蘇火口與砂千里健行（或<a href="https://www.google.com/maps/search/?api=1&query=上色見熊野座神社" target="_blank" class="map-link">上色見熊野座神社</a>）、大分寄送大行李至博多 | 宿：大分站周邊</p>
+                        <h4 class="font-bold text-sm sm:text-base text-orange-800">11/21 (週日) Day 4：熊本 ➔ 阿蘇火山 / 備案（南阿蘇鐵道與上色見熊野座神社） ➔ 大分 [Pass D2]</h4>
+                        <p class="text-xs sm:text-sm text-amber-700/80">阿蘇火口健行或雨天南阿蘇鐵道/神社體驗、大分寄送大行李至博多 | 宿：大分站周邊</p>
                     </div>
                     <div class="ml-5 sm:ml-6 relative">
                         <span class="absolute -left-8 sm:-left-9 top-0.5 bg-orange-500 text-white rounded-full w-5 h-5 sm:w-6 sm:h-6 text-[10px] sm:text-xs flex items-center justify-center font-bold">5</span>
-                        <h4 class="font-bold text-sm sm:text-base text-orange-800">11/22 (週一) Day 5：大分 ➔ 充裕採買 ➔ <a href="https://www.google.com/maps/search/?api=1&query=由布岳" target="_blank" class="map-link">由布岳</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=由布院溫泉" target="_blank" class="map-link">由布院溫泉</a> [Pass D3]</h4>
-                        <p class="text-xs sm:text-sm text-amber-700/80"><a href="https://www.google.com/maps/search/?api=1&query=由布院站" target="_blank" class="map-link">由布院站</a> 1 小時充裕採買、登由布岳東峰、下山入住溫泉旅館享用一泊二食 | 宿：由布院溫泉旅館</p>
+                        <h4 class="font-bold text-sm sm:text-base text-orange-800">11/22 (週一) Day 5：大分 ➔ 充裕採買 ➔ 由布岳 ➔ 由布院溫泉 [Pass D3]</h4>
+                        <p class="text-xs sm:text-sm text-amber-700/80">由布院站 1 小時充裕採買、登由布岳東峰、下山入住溫泉旅館享用一泊二食 | 宿：由布院溫泉旅館</p>
                     </div>
                     <div class="ml-5 sm:ml-6 relative">
                         <span class="absolute -left-8 sm:-left-9 top-0.5 bg-amber-500 text-white rounded-full w-5 h-5 sm:w-6 sm:h-6 text-[10px] sm:text-xs flex items-center justify-center font-bold">6</span>
-                        <h4 class="font-bold text-sm sm:text-base text-amber-800">11/23 (週二) Day 6：<a href="https://www.google.com/maps/search/?api=1&query=金鱗湖" target="_blank" class="map-link">金鱗湖</a> ➔ 退房 ➔ 由布院之森 2 號 ➔ <a href="https://www.google.com/maps/search/?api=1&query=博多站" target="_blank" class="map-link">博多</a>購物</h4>
-                        <p class="text-xs sm:text-sm text-amber-700/80">07:00 金鱗湖散步、09:30 退房與<a href="https://www.google.com/maps/search/?api=1&query=湯之坪街道" target="_blank" class="map-link">湯之坪街道</a>、12:01 由布院之森、博多市區購物 | 宿：博多站周邊</p>
+                        <h4 class="font-bold text-sm sm:text-base text-amber-800">11/23 (週二) Day 6：金鱗湖 ➔ 退房 ➔ 由布院之森 2 號 ➔ 博多購物</h4>
+                        <p class="text-xs sm:text-sm text-amber-700/80">07:00 金鱗湖散步、09:30 退房與湯之坪街道、12:01 由布院之森、博多市區購物 | 宿：博多站周邊</p>
                     </div>
                     <div class="ml-5 sm:ml-6 relative">
                         <span class="absolute -left-8 sm:-left-9 top-0.5 bg-amber-500 text-white rounded-full w-5 h-5 sm:w-6 sm:h-6 text-[10px] sm:text-xs flex items-center justify-center font-bold">7</span>
-                        <h4 class="font-bold text-sm sm:text-base text-amber-800">11/24 (週三) Day 7：博多站周邊 ➔ <a href="https://www.google.com/maps/search/?api=1&query=福岡機場" target="_blank" class="map-link">福岡機場</a> ➔ 台北</h4>
+                        <h4 class="font-bold text-sm sm:text-base text-amber-800">11/24 (週三) Day 7：博多站周邊 ➔ 福岡機場 ➔ 台北</h4>
                         <p class="text-xs sm:text-sm text-amber-700/80">博多最後採買、地鐵 5 分鐘直達福岡機場搭機返台</p>
                     </div>
                 </div>
@@ -190,21 +146,21 @@
             <!-- Day 1 -->
             <div class="bg-white rounded-xl border border-amber-100 shadow-sm overflow-hidden">
                 <div class="bg-amber-600 text-white px-4 sm:px-6 py-2.5 sm:py-3 flex justify-between items-center">
-                    <h3 class="font-bold text-sm sm:text-lg">Day 1 | 11/18 (週四) 抵達<a href="https://www.google.com/maps/search/?api=1&query=鹿兒島機場" target="_blank" class="underline text-amber-100">鹿兒島機場</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=霧島溫泉鄉" target="_blank" class="underline text-amber-100">霧島溫泉鄉</a></h3>
-                    <span class="text-[10px] sm:text-xs bg-amber-700 px-2 py-0.5 rounded">宿：<a href="https://www.google.com/maps/search/?api=1&query=霧島國際飯店" target="_blank" class="underline text-white">Kirishima Kokusai Hotel</a></span>
+                    <h3 class="font-bold text-sm sm:text-lg">Day 1 | 11/18 (週四) 抵達鹿兒島機場 ➔ 霧島溫泉鄉</h3>
+                    <span class="text-[10px] sm:text-xs bg-amber-700 px-2 py-0.5 rounded">宿：Kirishima Kokusai Hotel</span>
                 </div>
                 <div class="p-4 sm:p-6 space-y-3 text-xs sm:text-sm">
                     <div class="flex gap-2 sm:gap-4 border-b border-amber-50 pb-2.5">
                         <span class="font-bold text-amber-700 w-20 sm:w-24 shrink-0"><i class="fa-solid fa-bus"></i> 交通指引</span>
-                        <div><a href="https://www.google.com/maps/search/?api=1&query=鹿兒島機場" target="_blank" class="map-link">鹿兒島機場</a> 2 號月台搭乘「霧島機場巴士（いわさきバス）」直達「<a href="https://www.google.com/maps/search/?api=1&query=丸尾温泉バス停" target="_blank" class="map-link">丸尾溫泉</a>」（約 30 分鐘，單程 ¥720）。</div>
+                        <div><a href="https://www.google.com/maps/search/?api=1&query=鹿兒島機場" target="_blank" class="text-amber-800 underline font-semibold"><i class="fa-solid fa-location-dot"></i> 鹿兒島機場</a> 2 號月台搭乘「霧島機場巴士（いわさきバス）」直達「<a href="https://www.google.com/maps/search/?api=1&query=丸尾溫泉" target="_blank" class="text-amber-800 underline"><i class="fa-solid fa-location-dot"></i> 丸尾溫泉</a>」（約 30 分鐘，單程 ¥720）。</div>
                     </div>
                     <div class="flex gap-2 sm:gap-4 border-b border-amber-50 pb-2.5">
-                        <span class="font-bold text-orange-700 w-20 sm:w-24 shrink-0"><i class="fa-solid fa-utensils"></i> <a href="https://www.google.com/maps/search/?api=1&query=霧島溫泉市場" target="_blank" class="map-link">丸尾溫泉市場</a></span>
-                        <div>走訪<a href="https://www.google.com/maps/search/?api=1&query=丸尾瀑布" target="_blank" class="map-link">丸尾瀑布</a>、品嚐蒸氣美食（溫泉蒸蛋、溫泉地瓜、黑豬肉包）。</div>
+                        <span class="font-bold text-orange-700 w-20 sm:w-24 shrink-0"><i class="fa-solid fa-utensils"></i> 丸尾溫泉市場</span>
+                        <div>走訪 <a href="https://www.google.com/maps/search/?api=1&query=丸尾瀑布" target="_blank" class="text-amber-800 underline"><i class="fa-solid fa-location-dot"></i> 丸尾瀑布</a>、品嚐 <a href="https://www.google.com/maps/search/?api=1&query=丸尾溫泉市場" target="_blank" class="text-amber-800 underline"><i class="fa-solid fa-location-dot"></i> 丸尾溫泉市場</a> 蒸氣美食（溫泉蒸蛋、溫泉地瓜、黑豬肉包）。</div>
                     </div>
                     <div class="flex gap-2 sm:gap-4">
                         <span class="font-bold text-rose-700 w-20 sm:w-24 shrink-0"><i class="fa-solid fa-store"></i> 晚餐推薦</span>
-                        <div>「<a href="https://www.google.com/maps/search/?api=1&query=焼肉厨房菜の実" target="_blank" class="map-link">焼肉 厨房 菜の実</a>」（建議預約）或於溫泉飯店內享用黑豬肉料理。</div>
+                        <div><a href="https://www.google.com/maps/search/?api=1&query=焼肉+厨房+菜の実" target="_blank" class="text-amber-800 underline"><i class="fa-solid fa-location-dot"></i> 焼肉 厨房 菜の実</a>（建議預約）或於 <a href="https://www.google.com/maps/search/?api=1&query=霧島國際飯店" target="_blank" class="text-amber-800 underline"><i class="fa-solid fa-location-dot"></i> 霧島國際飯店</a> 內享用黑豬肉料理。</div>
                     </div>
                 </div>
             </div>
@@ -212,12 +168,12 @@
             <!-- Day 2 -->
             <div class="bg-white rounded-xl border border-amber-100 shadow-sm overflow-hidden">
                 <div class="bg-amber-600 text-white px-4 sm:px-6 py-2.5 sm:py-3 flex justify-between items-center">
-                    <h3 class="font-bold text-sm sm:text-lg">Day 2 | 11/19 (週五) <a href="https://www.google.com/maps/search/?api=1&query=韓國岳" target="_blank" class="underline text-amber-100">韓國岳</a> – <a href="https://www.google.com/maps/search/?api=1&query=大浪池" target="_blank" class="underline text-amber-100">大浪池</a>火山健行 ➔ 返回丸尾溫泉</h3>
-                    <span class="text-[10px] sm:text-xs bg-amber-700 px-2 py-0.5 rounded">宿：<a href="https://www.google.com/maps/search/?api=1&query=霧島國際飯店" target="_blank" class="underline text-white">Kirishima Kokusai Hotel</a></span>
+                    <h3 class="font-bold text-sm sm:text-lg">Day 2 | 11/19 (週五) 韓國岳 – 大浪池火山健行 ➔ 返回丸尾溫泉</h3>
+                    <span class="text-[10px] sm:text-xs bg-amber-700 px-2 py-0.5 rounded">宿：Kirishima Kokusai Hotel</span>
                 </div>
                 <div class="p-4 sm:p-6 space-y-3 text-xs sm:text-sm">
                     <div class="bg-amber-50 p-2.5 sm:p-3 rounded-lg border border-amber-200 text-amber-900">
-                        <strong><i class="fa-solid fa-star"></i> 行程亮點：</strong> 入住【<a href="https://www.google.com/maps/search/?api=1&query=霧島國際飯店" target="_blank" class="map-link">Kirishima Kokusai Hotel（霧島國際飯店）</a>】，爬完山直接回飯店泡湯舒緩肌肉，連住兩晚不用拖著行李轉車！出發前請先至丸尾 <a href="https://www.google.com/maps/search/?api=1&query=Lawson+霧島丸尾" target="_blank" class="map-link">Lawson</a> 備妥午餐。
+                        <strong><i class="fa-solid fa-star"></i> 行程亮點：</strong> 入住【<a href="https://www.google.com/maps/search/?api=1&query=霧島國際飯店" target="_blank" class="underline font-bold"><i class="fa-solid fa-location-dot"></i> Kirishima Kokusai Hotel（霧島國際飯店）</a>】，爬完山直接回飯店泡湯舒緩肌肉，連住兩晚不用拖著行李轉車！出發前請先至 <a href="https://www.google.com/maps/search/?api=1&query=Lawson+丸尾溫泉店" target="_blank" class="underline"><i class="fa-solid fa-location-dot"></i> 丸尾 Lawson</a> 備妥午餐。
                     </div>
                     <div class="space-y-2 border-l-2 border-amber-500 pl-3 sm:pl-4 my-2">
                         <div class="flex justify-between">
@@ -226,11 +182,11 @@
                         </div>
                         <div class="flex justify-between">
                             <span class="font-semibold text-amber-900">08:56</span>
-                            <span>抵達「<a href="https://www.google.com/maps/search/?api=1&query=えびの高原" target="_blank" class="map-link">蝦野高原（えびの高原）</a>」</span>
+                            <span>抵達「<a href="https://www.google.com/maps/search/?api=1&query=えびの高原" target="_blank" class="text-amber-800 underline"><i class="fa-solid fa-location-dot"></i> 蝦野高原（えびの高原）</a>」</span>
                         </div>
                         <div class="flex justify-between font-bold text-amber-900 bg-amber-100/60 p-1.5 sm:p-2 rounded">
                             <span>09:00 - 14:30</span>
-                            <span>韓國岳 – 大浪池環形健行（約 5 - 5.5 小時）</span>
+                            <span><a href="https://www.google.com/maps/search/?api=1&query=韓國岳" target="_blank" class="underline"><i class="fa-solid fa-location-dot"></i> 韓國岳</a> – <a href="https://www.google.com/maps/search/?api=1&query=大浪池" target="_blank" class="underline"><i class="fa-solid fa-location-dot"></i> 大浪池</a> 環形健行（約 5 - 5.5 小時）</span>
                         </div>
                         <div class="flex justify-between">
                             <span class="font-semibold text-amber-900">16:00</span>
@@ -240,53 +196,49 @@
                 </div>
             </div>
 
-            <!-- Day 3 (更新：改去鹿兒島神宮 + 註記上午 Pass 未啟用需自費) -->
+            <!-- Day 3 -->
             <div class="bg-white rounded-xl border border-amber-100 shadow-sm overflow-hidden">
                 <div class="bg-orange-600 text-white px-4 sm:px-6 py-2.5 sm:py-3 flex justify-between items-center">
-                    <h3 class="font-bold text-sm sm:text-lg">Day 3 | 11/20 (週六) 丸尾 ➔ <a href="https://www.google.com/maps/search/?api=1&query=鹿兒島神宮" target="_blank" class="underline text-orange-100">鹿兒島神宮</a> ➔ 中午兌換Pass/新幹線 ➔ <a href="https://www.google.com/maps/search/?api=1&query=熊本城" target="_blank" class="underline text-orange-100">熊本城</a> [Pass D1下午啟用]</h3>
-                    <span class="text-[10px] sm:text-xs bg-orange-700 px-2 py-0.5 rounded">宿：<a href="https://www.google.com/maps/search/?api=1&query=熊本站" target="_blank" class="underline text-white">熊本站周邊飯店</a></span>
+                    <h3 class="font-bold text-sm sm:text-lg">Day 3 | 11/20 (週六) 鹿兒島神宮 ➔ 兌換票券/新幹線 ➔ 熊本城 [Pass D1]</h3>
+                    <span class="text-[10px] sm:text-xs bg-orange-700 px-2 py-0.5 rounded">宿：熊本站周邊飯店</span>
                 </div>
                 <div class="p-4 sm:p-6 space-y-3 text-xs sm:text-sm">
-                    <!-- Pass 啟用警語備註 -->
-                    <div class="bg-rose-50 p-2.5 sm:p-3 rounded-lg border border-rose-200 text-rose-900 text-xs">
-                        <i class="fa-solid fa-circle-exclamation text-rose-600"></i> <strong>【關鍵備註：JR Pass 啟用說明】</strong><br>
-                        JR 全九州 3 日券須抵達「鹿兒島中央站」綠色窗口或自動售票機兌換後才能使用。<strong>本日上午所有交通（公車＋JR電車）均為自費金額（每人約 ¥1,880）</strong>，中午換領 Pass 後正式啟用，搭乘新幹線前往熊本完全免費！
-                    </div>
-
                     <div class="space-y-2 border-l-2 border-amber-500 pl-3 sm:pl-4 my-2">
                         <div class="flex justify-between">
-                            <span class="font-semibold text-amber-900">08:58 - 09:52</span>
-                            <span>於「丸尾③」搭公車 ➔ 抵達 <a href="https://www.google.com/maps/search/?api=1&query=國分站" target="_blank" class="map-link">JR 國分站</a>（自費公車 ¥1,170）</span>
+                            <span class="font-semibold text-amber-900">08:19</span>
+                            <span>於「丸尾」巴士站搭乘前往國分站方向之巴士</span>
                         </div>
                         <div class="flex justify-between">
-                            <span class="font-semibold text-amber-900">10:00 - 10:11</span>
-                            <span>國分站搭 JR 電車（自費 ¥230）➔ 抵達 <a href="https://www.google.com/maps/search/?api=1&query=隼人站" target="_blank" class="map-link">JR 隼人站</a>（亦可搭計程車直達神宮）</span>
+                            <span class="font-semibold text-amber-900">09:49</span>
+                            <span>抵達 <a href="https://www.google.com/maps/search/?api=1&query=JR+國分站" target="_blank" class="text-amber-800 underline"><i class="fa-solid fa-location-dot"></i> JR 國分站</a></span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="font-semibold text-amber-900">09:55 - 10:00</span>
+                            <span>搭乘電車至 <a href="https://www.google.com/maps/search/?api=1&query=JR+隼人站" target="_blank" class="text-amber-800 underline"><i class="fa-solid fa-location-dot"></i> JR 隼人站</a>（或自國分站直接搭計程車前往神宮）</span>
                         </div>
                         <div class="flex justify-between font-bold text-amber-900 bg-amber-100/60 p-1.5 sm:p-2 rounded">
-                            <span>10:15 - 11:15</span>
-                            <span>參拜大隅國一之宮【<a href="https://www.google.com/maps/search/?api=1&query=鹿兒島神宮" target="_blank" class="map-link">鹿兒島神宮</a>】（隼人站步行約 15 分鐘）</span>
+                            <span>10:10 - 11:00</span>
+                            <span>參拜【<a href="https://www.google.com/maps/search/?api=1&query=鹿兒島神宮" target="_blank" class="underline"><i class="fa-solid fa-location-dot"></i> 鹿兒島神宮</a>】（隼人站步行約 15 分鐘可達）</span>
                         </div>
                         <div class="flex justify-between">
-                            <span class="font-semibold text-amber-900">11:32 - 12:12</span>
-                            <span>返回 JR 隼人站搭乘 JR 日豐本線普通電車（自費 ¥480）➔ 抵達<a href="https://www.google.com/maps/search/?api=1&query=鹿兒島中央站" target="_blank" class="map-link">鹿兒島中央站</a></span>
+                            <span class="font-semibold text-amber-900">11:15 - 12:00</span>
+                            <span>返回 JR 隼人站搭乘 JR 日豐本線電車 ➔ 抵達 <a href="https://www.google.com/maps/search/?api=1&query=鹿兒島中央站" target="_blank" class="text-amber-800 underline"><i class="fa-solid fa-location-dot"></i> 鹿兒島中央站</a></span>
                         </div>
                     </div>
-
                     <div class="bg-orange-50 p-2.5 rounded-lg border border-orange-200 text-orange-950">
-                        <strong><i class="fa-solid fa-ticket"></i> 中午正式領取 Pass 與劃位：</strong><br>
-                        抵達鹿兒島中央站後，請先至綠色窗口／指定自動售票機兌換【JR 全九州 3 日 Pass】，並預先劃位後續特急（含 D6 由布院之森）。
+                        <strong><i class="fa-solid fa-ticket"></i> JR 全九州 Pass 兌換與劃位：</strong> 抵達鹿兒島中央站後，請先至綠色窗口或指定自動售票機領取／兌換【JR 全九州 3 日 Pass】，並預先劃位後續特急列車。
                     </div>
-                    <p>• <strong>午餐享用：</strong> 鹿兒島中央站品嚐黑豚豬排（<a href="https://www.google.com/maps/search/?api=1&query=とんかつ川久" target="_blank" class="map-link">川久</a> 或 <a href="https://www.google.com/maps/search/?api=1&query=とんかつ竹亭+鹿兒島中央" target="_blank" class="map-link">竹亭</a>）。</p>
-                    <p>• <strong>13:40 - 14:26</strong> 【啟用 Pass】搭乘新幹線 Sakura 554 號直達<a href="https://www.google.com/maps/search/?api=1&query=熊本站" target="_blank" class="map-link">熊本站</a>。</p>
-                    <p>• <strong>下午行程：</strong> 搭乘熊本路面電車參觀【<a href="https://www.google.com/maps/search/?api=1&query=熊本城" target="_blank" class="map-link">熊本城</a>】與<a href="https://www.google.com/maps/search/?api=1&query=桜の馬場+城彩苑" target="_blank" class="map-link">櫻之馬場城彩苑</a>。</p>
+                    <p>• <strong>午餐享用：</strong> 鹿兒島中央站品嚐黑豚豬排（<a href="https://www.google.com/maps/search/?api=1&query=黑豚豬排+川久" target="_blank" class="text-amber-800 underline"><i class="fa-solid fa-location-dot"></i> 川久</a> 或 <a href="https://www.google.com/maps/search/?api=1&query=黑豚豬排+竹亭" target="_blank" class="text-amber-800 underline"><i class="fa-solid fa-location-dot"></i> 竹亭</a>）。</p>
+                    <p>• <strong>12:42 - 13:28</strong> 搭乘新幹線 Sakura 552 號直達 <a href="https://www.google.com/maps/search/?api=1&query=熊本站" target="_blank" class="text-amber-800 underline"><i class="fa-solid fa-location-dot"></i> 熊本站</a>。</p>
+                    <p>• <strong>下午行程：</strong> 搭乘熊本路面電車參觀【<a href="https://www.google.com/maps/search/?api=1&query=熊本城" target="_blank" class="text-amber-800 underline"><i class="fa-solid fa-location-dot"></i> 熊本城</a>】與 <a href="https://www.google.com/maps/search/?api=1&query=櫻之馬場城彩苑" target="_blank" class="text-amber-800 underline"><i class="fa-solid fa-location-dot"></i> 櫻之馬場城彩苑</a>。</p>
                 </div>
             </div>
 
             <!-- Day 4 -->
             <div class="bg-white rounded-xl border border-amber-100 shadow-sm overflow-hidden">
                 <div class="bg-orange-600 text-white px-4 sm:px-6 py-2.5 sm:py-3 flex justify-between items-center">
-                    <h3 class="font-bold text-sm sm:text-lg">Day 4 | 11/21 (週日) 熊本 ➔ <a href="https://www.google.com/maps/search/?api=1&query=阿蘇山" target="_blank" class="underline text-orange-100">阿蘇火山</a> / 備案 ➔ <a href="https://www.google.com/maps/search/?api=1&query=大分站" target="_blank" class="underline text-orange-100">大分</a> [Pass D2]</h3>
-                    <span class="text-[10px] sm:text-xs bg-orange-700 px-2 py-0.5 rounded">宿：<a href="https://www.google.com/maps/search/?api=1&query=大分站" target="_blank" class="underline text-white">大分站周邊飯店</a></span>
+                    <h3 class="font-bold text-sm sm:text-lg">Day 4 | 11/21 (週日) 熊本 ➔ 阿蘇火山 / 備案（南阿蘇鐵道與神社） ➔ 大分 [Pass D2]</h3>
+                    <span class="text-[10px] sm:text-xs bg-orange-700 px-2 py-0.5 rounded">宿：大分站周邊飯店</span>
                 </div>
                 <div class="p-4 sm:p-6 space-y-3 text-xs sm:text-sm">
                     <div class="bg-amber-50 p-2.5 sm:p-3 rounded-lg border border-amber-200 text-amber-900">
@@ -295,20 +247,65 @@
 
                     <div class="flex gap-2 my-2">
                         <button onclick="toggleAso('planA')" id="btn-planA" class="px-3 py-1.5 rounded-lg font-bold bg-amber-600 text-white text-xs">方案 A：晴天阿蘇中岳</button>
-                        <button onclick="toggleAso('planB')" id="btn-planB" class="px-3 py-1.5 rounded-lg font-bold bg-amber-100 text-amber-800 text-xs">方案 B：雨天備案（上色見熊野座）</button>
+                        <button onclick="toggleAso('planB')" id="btn-planB" class="px-3 py-1.5 rounded-lg font-bold bg-amber-100 text-amber-800 text-xs">方案 B：詳細時間表（南阿蘇鐵道/神社）</button>
                     </div>
 
+                    <!-- 方案 A -->
                     <div id="aso-planA" class="space-y-1.5 border-l-2 border-amber-500 pl-3 sm:pl-4">
-                        <p><strong>07:15 - 08:39</strong> 【JR 豐肥本線】熊本站 ➔ <a href="https://www.google.com/maps/search/?api=1&query=阿蘇站" target="_blank" class="map-link">阿蘇站</a>（使用 Pass）。</p>
-                        <p><strong>09:45 - 10:20</strong> 產交巴士至<a href="https://www.google.com/maps/search/?api=1&query=阿蘇山上ターミナル" target="_blank" class="map-link">阿蘇山上 Terminal</a>。</p>
-                        <p><strong>10:20 - 15:00 阿蘇健行：</strong> <a href="https://www.google.com/maps/search/?api=1&query=阿蘇中岳火口" target="_blank" class="map-link">中岳火口</a>、<a href="https://www.google.com/maps/search/?api=1&query=砂千里ヶ浜" target="_blank" class="map-link">砂千里</a>健行 4.5 小時。</p>
+                        <p><strong>07:15 - 08:39</strong> 【JR 豐肥本線】<a href="https://www.google.com/maps/search/?api=1&query=熊本站" target="_blank" class="text-amber-800 underline"><i class="fa-solid fa-location-dot"></i> 熊本站</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=阿蘇站" target="_blank" class="text-amber-800 underline"><i class="fa-solid fa-location-dot"></i> 阿蘇站</a>（使用 Pass）。</p>
+                        <p><strong>09:45 - 10:20</strong> 產交巴士至 <a href="https://www.google.com/maps/search/?api=1&query=阿蘇山上Terminal" target="_blank" class="text-amber-800 underline"><i class="fa-solid fa-location-dot"></i> 阿蘇山上 Terminal</a>。</p>
+                        <p><strong>10:20 - 15:00 阿蘇健行：</strong> <a href="https://www.google.com/maps/search/?api=1&query=阿蘇中岳火口" target="_blank" class="text-amber-800 underline"><i class="fa-solid fa-location-dot"></i> 中岳火口</a>、<a href="https://www.google.com/maps/search/?api=1&query=砂千里" target="_blank" class="text-amber-800 underline"><i class="fa-solid fa-location-dot"></i> 砂千里</a> 健行 4.5 小時。</p>
                         <p><strong>15:25 - 16:13</strong> 巴士返回阿蘇站。</p>
-                        <p><strong>16:45 - 18:21</strong> 九州橫斷特急 4 號（阿蘇 ➔ 大分）。</p>
+                        <p><strong>16:45 - 18:21</strong> 九州橫斷特急 4 號（阿蘇 ➔ <a href="https://www.google.com/maps/search/?api=1&query=大分站" target="_blank" class="text-amber-800 underline"><i class="fa-solid fa-location-dot"></i> 大分站</a>）。</p>
                     </div>
 
-                    <div id="aso-planB" class="hidden space-y-1.5 border-l-2 border-orange-500 pl-3 sm:pl-4">
-                        <p>雨天或火山氣體超標時：搭乘南阿蘇鐵道 ➔ 轉計程車前往【<a href="https://www.google.com/maps/search/?api=1&query=上色見熊野座神社" target="_blank" class="map-link">上色見熊野座神社</a>】參拜。</p>
-                        <p>午後返回阿蘇站，搭乘 16:45 九州橫斷特急 4 號至大分。</p>
+                    <!-- 方案 B：詳細時間表 -->
+                    <div id="aso-planB" class="hidden space-y-3 border-l-2 border-orange-500 pl-3 sm:pl-4">
+                        <div class="space-y-2">
+                            <div>
+                                <p class="font-bold text-amber-900">07:15 - 08:39 【JR 豐肥本線】熊本站 ➔ 阿蘇站</p>
+                                <p class="text-[11px] text-amber-700">說明：抵達阿蘇站後，請將大件行李寄存在 <a href="https://www.google.com/maps/search/?api=1&query=阿蘇站" target="_blank" class="underline"><i class="fa-solid fa-location-dot"></i> 阿蘇站</a> 置物櫃，減輕隨身負擔。</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-amber-900">09:12 - 09:32 【JR 豐肥本線（往熊本方向）】阿蘇站 ➔ 立野站</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-amber-900">09:42 - 10:15 【南阿蘇鐵道】<a href="https://www.google.com/maps/search/?api=1&query=立野站" target="_blank" class="underline"><i class="fa-solid fa-location-dot"></i> 立野站</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=高森站" target="_blank" class="underline"><i class="fa-solid fa-location-dot"></i> 高森站</a></p>
+                                <p class="text-[11px] text-amber-700">說明：可使用全九州 JR Pass 自由搭乘一般列車。</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-amber-900">10:20 - 10:35 【計程車】高森站 ➔ 上色見熊野座神社</p>
+                                <p class="text-[11px] text-amber-700">說明：車程約 10 分鐘（單程約 ¥1,800–¥2,200）。建議下車時向司機預約 11:30 回程接駁。</p>
+                            </div>
+                            <div class="bg-amber-100/60 p-2 rounded">
+                                <p class="font-bold text-amber-950">10:35 - 11:30 【神社參拜】<a href="https://www.google.com/maps/search/?api=1&query=上色見熊野座神社" target="_blank" class="underline"><i class="fa-solid fa-location-dot"></i> 上色見熊野座神社</a></p>
+                                <p class="text-[11px] text-amber-800">說明：漫步穿過神秘的苔蘚石燈籠參道，參拜穿戶岩（停留約 50–60 分鐘）。</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-amber-900">11:30 - 11:45 【計程車】神社 ➔ 返回高森站周邊</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-amber-900">11:45 - 13:30 【午餐享用】高森站周邊名物</p>
+                                <p class="text-[11px] text-amber-700">推薦：品嚐高森赤牛丼（<a href="https://www.google.com/maps/search/?api=1&query=高森+赤牛丼" target="_blank" class="underline"><i class="fa-solid fa-location-dot"></i> 赤牛丼</a>）或傳統高森田樂燒（<a href="https://www.google.com/maps/search/?api=1&query=高森田樂保存會" target="_blank" class="underline"><i class="fa-solid fa-location-dot"></i> 圍爐裏烤物</a>）。</p>
+                            </div>
+                            <div class="bg-orange-50 p-2 rounded border border-orange-200">
+                                <p class="font-bold text-orange-900">13:40 - 14:11 【南阿蘇鐵道 Torokko 觀光小火車（ゆうすげ號）】高森站 ➔ 立野站</p>
+                                <p class="text-[11px] text-orange-800">說明：需預約與加購。搭乘開放式小火車吹風，欣賞阿蘇火山群與第一白川橋樑絕景（持 Pass 需另加購乘車券與指定席費）。</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-amber-900">14:27 - 14:52 【JR 豐肥本線】立野站 ➔ 阿蘇站</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-amber-900">14:52 - 16:30 【阿蘇站周邊】取行李、採買伴手禮</p>
+                                <p class="text-[11px] text-amber-700">說明：阿蘇站旁「<a href="https://www.google.com/maps/search/?api=1&query=道の駅阿蘇" target="_blank" class="underline"><i class="fa-solid fa-location-dot"></i> 道の駅阿蘇</a>」可購買濃郁的阿蘇牛奶、布丁與生乳捲。</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-amber-900">16:45 - 18:21 【JR 九州橫斷特急 4 號】阿蘇站 ➔ 大分站</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-amber-900">18:30 之後 飯店辦理入住，並將大件行李以黑貓宅急便托運至 Day 6 博多飯店</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -316,17 +313,17 @@
             <!-- Day 5 -->
             <div class="bg-white rounded-xl border border-amber-100 shadow-sm overflow-hidden">
                 <div class="bg-orange-600 text-white px-4 sm:px-6 py-2.5 sm:py-3 flex justify-between items-center">
-                    <h3 class="font-bold text-sm sm:text-lg">Day 5 | 11/22 (週一) 大分 ➔ 充裕採買 ➔ <a href="https://www.google.com/maps/search/?api=1&query=由布岳" target="_blank" class="underline text-orange-100">由布岳</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=由布院溫泉" target="_blank" class="underline text-orange-100">由布院溫泉</a> [Pass D3]</h3>
+                    <h3 class="font-bold text-sm sm:text-lg">Day 5 | 11/22 (週一) 大分 ➔ 充裕採買 ➔ 由布岳 ➔ 由布院溫泉 [Pass D3]</h3>
                     <span class="text-[10px] sm:text-xs bg-orange-700 px-2 py-0.5 rounded">宿：由布院溫泉旅館</span>
                 </div>
                 <div class="p-4 sm:p-6 space-y-3 text-xs sm:text-sm">
                     <div class="bg-emerald-50 p-2.5 rounded-lg border border-emerald-200 text-emerald-900 font-semibold">
-                        <i class="fa-solid fa-basket-shopping text-emerald-600"></i> 【從容補給出發】搭乘 09:05 較晚公車，於<a href="https://www.google.com/maps/search/?api=1&query=由布院站" target="_blank" class="map-link">由布院站</a>擁有整整 1 小時充足時間在超商採買行動糧與水！
+                        <i class="fa-solid fa-basket-shopping text-emerald-600"></i> 【從容補給出發】搭乘 09:05 較晚公車，於 <a href="https://www.google.com/maps/search/?api=1&query=由布院站" target="_blank" class="underline"><i class="fa-solid fa-location-dot"></i> 由布院站</a> 擁有整整 1 小時充足時間在超商採買行動糧與水！
                     </div>
                     <div class="space-y-2 border-l-2 border-amber-500 pl-3 sm:pl-4">
                         <div class="flex justify-between">
                             <span class="font-semibold text-amber-900">07:01 - 07:59</span>
-                            <span>JR 久大本線（大分 ➔ 由布院）</span>
+                            <span>JR 久大本線（<a href="https://www.google.com/maps/search/?api=1&query=大分站" target="_blank" class="text-amber-800 underline"><i class="fa-solid fa-location-dot"></i> 大分</a> ➔ 由布院）</span>
                         </div>
                         <div class="flex justify-between bg-amber-100/60 p-1.5 sm:p-2 rounded font-bold text-amber-900">
                             <span>07:59 - 09:00</span>
@@ -334,16 +331,16 @@
                         </div>
                         <div class="flex justify-between">
                             <span class="font-semibold text-amber-900">09:05 - 09:20</span>
-                            <span>站前搭乘龜之井巴士 36 號 ➔ 抵達「<a href="https://www.google.com/maps/search/?api=1&query=由布登山口バス停" target="_blank" class="map-link">由布登山口</a>」</span>
+                            <span>站前搭乘龜之井巴士 36 號 ➔ 抵達「<a href="https://www.google.com/maps/search/?api=1&query=由布登山口" target="_blank" class="text-amber-800 underline"><i class="fa-solid fa-location-dot"></i> 由布登山口</a>」</span>
                         </div>
                         <div class="flex justify-between font-bold text-amber-900 bg-amber-100/60 p-1.5 sm:p-2 rounded">
                             <span>09:30 - 14:30~15:00</span>
-                            <span><a href="https://www.google.com/maps/search/?api=1&query=由布岳" target="_blank" class="map-link">由布岳</a>健行（正面登山口 ➔ マタエ ➔ 東峰 ➔ 原路下山，約 5-5.5h）</span>
+                            <span><a href="https://www.google.com/maps/search/?api=1&query=由布岳" target="_blank" class="underline"><i class="fa-solid fa-location-dot"></i> 由布岳</a>健行（正面登山口 ➔ マタエ ➔ 東峰 ➔ 原路下山，約 5-5.5h）</span>
                         </div>
                     </div>
                     <div class="bg-amber-50 p-2.5 rounded-lg text-[11px] sm:text-xs space-y-1 text-amber-900">
                         <p class="font-bold">下山公車時刻（龜之井巴士 36 號）：</p>
-                        <p>• 首選：15:08 發車 ➔ 15:21 抵達嶽本（<a href="https://www.google.com/maps/search/?api=1&query=金鱗湖" target="_blank" class="map-link">金鱗湖</a>入口） / 15:25 抵達由布院站</p>
+                        <p>• 首選：15:08 發車 ➔ 15:21 抵達嶽本（<a href="https://www.google.com/maps/search/?api=1&query=金鱗湖" target="_blank" class="underline"><i class="fa-solid fa-location-dot"></i> 金鱗湖入口</a>） / 15:25 抵達由布院站</p>
                         <p>• 備案：16:08 發車 ➔ 16:21 抵達嶽本（金鱗湖入口） / 16:25 抵達由布院站</p>
                     </div>
                     <p class="text-xs text-amber-800">
@@ -355,183 +352,241 @@
             <!-- Day 6 -->
             <div class="bg-white rounded-xl border border-amber-100 shadow-sm overflow-hidden">
                 <div class="bg-amber-600 text-white px-4 sm:px-6 py-2.5 sm:py-3 flex justify-between items-center">
-                    <h3 class="font-bold text-sm sm:text-lg">Day 6 | 11/23 (週二) <a href="https://www.google.com/maps/search/?api=1&query=金鱗湖" target="_blank" class="underline text-amber-100">金鱗湖</a>散步 ➔ 由布院之森 2 號 ➔ <a href="https://www.google.com/maps/search/?api=1&query=博多站" target="_blank" class="underline text-amber-100">博多</a>半日採買</h3>
-                    <span class="text-[10px] sm:text-xs bg-amber-700 px-2 py-0.5 rounded">宿：<a href="https://www.google.com/maps/search/?api=1&query=博多站" target="_blank" class="underline text-white">博多站周邊飯店</a></span>
+                    <h3 class="font-bold text-sm sm:text-lg">Day 6 | 11/23 (週二) 金鱗湖散步 ➔ 由布院之森 2 號 ➔ 博多半日採買</h3>
+                    <span class="text-[10px] sm:text-xs bg-amber-700 px-2 py-0.5 rounded">宿：博多站周邊飯店</span>
                 </div>
                 <div class="p-4 sm:p-6 space-y-2.5 text-xs sm:text-sm">
-                    <p>• <strong>07:00</strong> 漫步清晨清幽的「<a href="https://www.google.com/maps/search/?api=1&query=金鱗湖" target="_blank" class="map-link">金鱗湖</a>」拍照。</p>
-                    <p>• <strong>09:30 退房</strong> ➔ 沿「<a href="https://www.google.com/maps/search/?api=1&query=湯之坪街道" target="_blank" class="map-link">湯之坪街道</a>」一路向車站方向散步（品嚐現蒸溫泉饅頭或金賞可樂餅）。</p>
-                    <p>• <strong>09:30 - 11:30</strong> 車站周邊採買 <a href="https://www.google.com/maps/search/?api=1&query=B-speak+由布院" target="_blank" class="map-link">B-speak</a> 蛋糕捲與在地伴手禮。</p>
-                    <p>• <strong>12:01 - 14:19</strong> 搭乘【由布院之森 2 號】享用車上甜點與景觀 ➔ 返抵<a href="https://www.google.com/maps/search/?api=1&query=博多站" target="_blank" class="map-link">博多站</a>。</p>
-                    <p>• <strong>下午：</strong> 飯店 Check-in 領取 Day 4 寄達的大行李，隨後於天神/博多車站一帶逛街購物與享用豚骨拉麵。</p>
+                    <p>• <strong>07:00</strong> 漫步清晨清幽的「<a href="https://www.google.com/maps/search/?api=1&query=金鱗湖" target="_blank" class="text-amber-800 underline"><i class="fa-solid fa-location-dot"></i> 金鱗湖</a>」拍照。</p>
+                    <p>• <strong>09:30 退房</strong> ➔ 沿「<a href="https://www.google.com/maps/search/?api=1&query=湯之坪街道" target="_blank" class="text-amber-800 underline"><i class="fa-solid fa-location-dot"></i> 湯之坪街道</a>」一路向車站方向散步（品嚐現蒸溫泉饅頭或金賞可樂餅）。</p>
+                    <p>• <strong>09:30 - 11:30</strong> 車站周邊採買 <a href="https://www.google.com/maps/search/?api=1&query=B-speak+由布院" target="_blank" class="text-amber-800 underline"><i class="fa-solid fa-location-dot"></i> B-speak</a> 蛋糕捲與在地伴手禮。</p>
+                    <p>• <strong>12:01 - 14:19</strong> 搭乘【由布院之森 2 號】享用車上甜點與景觀 ➔ 返抵 <a href="https://www.google.com/maps/search/?api=1&query=博多站" target="_blank" class="text-amber-800 underline"><i class="fa-solid fa-location-dot"></i> 博多站</a>。</p>
+                    <p>• <strong>14:30 之後</strong> 飯店辦理入住並領取寄達的大行李，展開博多市區購物：</p>
+                    <ul class="list-disc pl-5 text-[11px] sm:text-xs text-amber-800 space-y-1">
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=AMU+PLAZA+博多" target="_blank" class="underline"><i class="fa-solid fa-location-dot"></i> AMU PLAZA</a> / <a href="https://www.google.com/maps/search/?api=1&query=博多阪急" target="_blank" class="underline"><i class="fa-solid fa-location-dot"></i> 博多阪急</a>（服飾、雜貨、Tokyu Hands）</li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=KITTE博多" target="_blank" class="underline"><i class="fa-solid fa-location-dot"></i> KITTE 博多</a> / OIOI（Uniqlo、GU、大創）</li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=Yodobashi+博多" target="_blank" class="underline"><i class="fa-solid fa-location-dot"></i> Yodobashi 博多</a>（3C 家電、動漫模型、戶外用品補給）</li>
+                    </ul>
+                    <p>• <strong>晚餐推薦：</strong> 博多牛腸鍋（Motsunabe）、水瀧雞肉鍋，或一雙豚骨拉麵。</p>
                 </div>
             </div>
 
             <!-- Day 7 -->
             <div class="bg-white rounded-xl border border-amber-100 shadow-sm overflow-hidden">
                 <div class="bg-amber-600 text-white px-4 sm:px-6 py-2.5 sm:py-3 flex justify-between items-center">
-                    <h3 class="font-bold text-sm sm:text-lg">Day 7 | 11/24 (週三) 博多市區採買 ➔ <a href="https://www.google.com/maps/search/?api=1&query=福岡機場" target="_blank" class="underline text-amber-100">福岡機場</a> ➔ 台北</h3>
-                    <span class="text-[10px] sm:text-xs bg-amber-700 px-2 py-0.5 rounded">返家日</span>
+                    <h3 class="font-bold text-sm sm:text-lg">Day 7 | 11/24 (週三) 博多站周邊 ➔ 福岡機場 ➔ 溫暖的家</h3>
+                    <span class="text-[10px] sm:text-xs bg-amber-700 px-2 py-0.5 rounded">返程</span>
                 </div>
-                <div class="p-4 sm:p-6 space-y-2.5 text-xs sm:text-sm">
-                    <p>• <strong>上午：</strong> 博多站 AMU PLAZA / 博多阪急最後補貨採買伴手禮。</p>
-                    <p>• <strong>12:00：</strong> 搭乘福岡地下鐵機場線（僅需 5 分鐘）直達<a href="https://www.google.com/maps/search/?api=1&query=福岡機場" target="_blank" class="map-link">福岡機場</a>國際線航廈。</p>
-                    <p>• 辦理登機與免稅店購物，搭機返回台北溫暖的家，結束精彩的九州火山溫泉之旅！</p>
+                <div class="p-4 sm:p-6 text-xs sm:text-sm space-y-2">
+                    <p>• 早上於博多站周邊進行最後補給與採買。</p>
+                    <p>• 博多站搭乘福岡市營地下鐵，僅需 5 分鐘直達「<a href="https://www.google.com/maps/search/?api=1&query=福岡機場" target="_blank" class="text-amber-800 underline"><i class="fa-solid fa-location-dot"></i> 福岡機場站</a>」。</p>
+                    <p>• 辦理登機手續，帶著滿滿的火山健行與溫泉回憶搭機返回台北溫暖的家。</p>
                 </div>
             </div>
         </section>
 
-        <!-- TAB 3: TRANSPORTATION -->
+        <!-- TAB 3: TRANSPORTATION & LOGISTICS -->
         <section id="content-transport" class="tab-content hidden space-y-4 sm:space-y-6">
             <div class="bg-white p-4 sm:p-6 rounded-xl border border-amber-100 shadow-sm">
-                <h3 class="text-base sm:text-lg font-bold text-amber-900 mb-3 border-l-4 border-amber-500 pl-3">JR Pass 3 日券極致活用規劃 (D3下午 - D5)</h3>
+                <h3 class="text-base sm:text-lg font-bold text-amber-900 mb-3 sm:mb-4 border-l-4 border-amber-500 pl-3">JR 全九州 Pass 3 日券與指定席劃位清單</h3>
                 <div class="overflow-x-auto">
-                    <table class="w-full text-left text-xs sm:text-sm border-collapse">
+                    <table class="w-full text-xs sm:text-sm text-left border-collapse">
                         <thead>
-                            <tr class="bg-amber-100/70 text-amber-900 border-b border-amber-200">
-                                <th class="p-2 sm:p-2.5">日期</th>
-                                <th class="p-2 sm:p-2.5">搭乘區間</th>
-                                <th class="p-2 sm:p-2.5">預定車種/車次</th>
-                                <th class="p-2 sm:p-2.5"> Pass 狀態</th>
+                            <tr class="bg-amber-100/60 text-amber-900">
+                                <th class="p-2 sm:p-3 border border-amber-200">日期</th>
+                                <th class="p-2 sm:p-3 border border-amber-200">路線／列車名稱</th>
+                                <th class="p-2 sm:p-3 border border-amber-200">預計區間</th>
+                                <th class="p-2 sm:p-3 border border-amber-200">劃位狀態</th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-amber-100">
-                            <tr class="bg-rose-50/50">
-                                <td class="p-2 sm:p-2.5 font-bold text-rose-800">D3 上午</td>
-                                <td class="p-2 sm:p-2.5">丸尾 ➔ 國分 ➔ 隼人(鹿兒島神宮) ➔ 鹿兒島中央</td>
-                                <td class="p-2 sm:p-2.5">公車 + JR 日豐本線普通電車</td>
-                                <td class="p-2 sm:p-2.5"><span class="text-rose-700 bg-rose-100 px-1.5 py-0.5 rounded font-bold">全額自費 (約¥1,880)</span></td>
+                        <tbody>
+                            <tr>
+                                <td class="p-2 sm:p-3 border border-amber-100 font-bold">D3 (11/20)</td>
+                                <td class="p-2 sm:p-3 border border-amber-100">櫻花號 Sakura 552 號</td>
+                                <td class="p-2 sm:p-3 border border-amber-100">鹿兒島中央 (12:42) ➔ 熊本 (13:28)</td>
+                                <td class="p-2 sm:p-3 border border-amber-100 text-amber-700 font-semibold">Pass D1 / 鹿兒島中央站劃位</td>
+                            </tr>
+                            <tr class="bg-amber-50/40">
+                                <td class="p-2 sm:p-3 border border-amber-100 font-bold">D4 (11/21)</td>
+                                <td class="p-2 sm:p-3 border border-amber-100">九州橫斷特急 4 號</td>
+                                <td class="p-2 sm:p-3 border border-amber-100">阿蘇 (16:45) ➔ 大分 (18:21)</td>
+                                <td class="p-2 sm:p-3 border border-amber-100 text-amber-700 font-semibold">Pass D2 / 待劃位</td>
                             </tr>
                             <tr>
-                                <td class="p-2 sm:p-2.5 font-bold text-amber-800">D3 (11/20) 下午</td>
-                                <td class="p-2 sm:p-2.5">鹿兒島中央 ➔ 熊本</td>
-                                <td class="p-2 sm:p-2.5">九州新幹線 Sakura 554號 (13:40-14:26)</td>
-                                <td class="p-2 sm:p-2.5"><span class="text-emerald-700 bg-emerald-100 px-1.5 py-0.5 rounded font-semibold">Pass 正式啟用（免費）</span></td>
+                                <td class="p-2 sm:p-3 border border-amber-100 font-bold">D5 (11/22)</td>
+                                <td class="p-2 sm:p-3 border border-amber-100">JR 久大本線 普通車</td>
+                                <td class="p-2 sm:p-3 border border-amber-100">大分 (07:01) ➔ 由布院 (07:59)</td>
+                                <td class="p-2 sm:p-3 border border-amber-100 text-emerald-700 font-semibold">Pass D3 / 自由座</td>
                             </tr>
-                            <tr>
-                                <td class="p-2 sm:p-2.5 font-bold text-amber-800">D4 (11/21)</td>
-                                <td class="p-2 sm:p-2.5">熊本 ➔ 阿蘇</td>
-                                <td class="p-2 sm:p-2.5">JR 豐肥本線普通/特急 (07:15-08:39)</td>
-                                <td class="p-2 sm:p-2.5"><span class="text-emerald-700 bg-emerald-100 px-1.5 py-0.5 rounded font-semibold">Pass 免費搭乘</span></td>
-                            </tr>
-                            <tr>
-                                <td class="p-2 sm:p-2.5 font-bold text-amber-800">D4 (11/21)</td>
-                                <td class="p-2 sm:p-2.5">阿蘇 ➔ 大分</td>
-                                <td class="p-2 sm:p-2.5">九州橫斷特急 4號 (16:45-18:21)</td>
-                                <td class="p-2 sm:p-2.5"><span class="text-emerald-700 bg-emerald-100 px-1.5 py-0.5 rounded font-semibold">Pass 免費搭乘</span></td>
-                            </tr>
-                            <tr>
-                                <td class="p-2 sm:p-2.5 font-bold text-amber-800">D5 (11/22)</td>
-                                <td class="p-2 sm:p-2.5">大分 ➔ 由布院</td>
-                                <td class="p-2 sm:p-2.5">JR 久大本線普通列車 (07:01-07:59)</td>
-                                <td class="p-2 sm:p-2.5"><span class="text-emerald-700 bg-emerald-100 px-1.5 py-0.5 rounded font-semibold">Pass 免費搭乘</span></td>
+                            <tr class="bg-amber-100/50">
+                                <td class="p-2 sm:p-3 border border-amber-200 font-bold text-amber-950">D6 (11/23)</td>
+                                <td class="p-2 sm:p-3 border border-amber-200 font-bold text-amber-950">由布院之森 2 號</td>
+                                <td class="p-2 sm:p-3 border border-amber-200">由布院 (12:01) ➔ 博多 (14:19)</td>
+                                <td class="p-2 sm:p-3 border border-amber-200 text-rose-600 font-bold">全車指定席（開賣即搶票）</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+            </div>
+
+            <div class="bg-white p-4 sm:p-6 rounded-xl border border-amber-100 shadow-sm space-y-3">
+                <h3 class="text-base sm:text-lg font-bold text-amber-900 border-l-4 border-amber-500 pl-3">官方時刻表與預約頁面連結</h3>
+                <ul class="space-y-2 text-xs sm:text-sm text-amber-800 underline">
+                    <li><a href="https://www.city-kirishima.jp/kirikan/kanko/bus/renzan.html" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> 霧島連山周遊巴士時刻表</a></li>
+                    <li><a href="https://www.mt-aso.info/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> 南阿蘇鐵道與 Torokko 觀光小火車預約官網</a></li>
+                    <li><a href="https://www.kamenoibus.com/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> 龜之井巴士 36 號（由布岳登山口）時刻表</a></li>
+                    <li><a href="https://www.jrkyushu.co.jp/chinese/train/yufuin_no_mori.html" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> JR 九州 由布院之森官方劃位說明</a></li>
+                </ul>
             </div>
         </section>
 
-        <!-- TAB 4: EXPENSES & ACCOUNTING -->
+        <!-- TAB 4: EXPENSES & SPLIT BILL -->
         <section id="content-expenses" class="tab-content hidden space-y-4 sm:space-y-6">
-            <div class="bg-white p-4 sm:p-6 rounded-xl border border-amber-100 shadow-sm space-y-4">
-                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-amber-100 pb-3">
-                    <div>
-                        <h3 class="text-base sm:text-lg font-bold text-amber-900"><i class="fa-solid fa-coins text-amber-500"></i> 旅遊花費記帳與分帳計算機</h3>
-                        <p class="text-xs text-amber-700">輸入每日各項支出，自動計算總金額與每人平攤費用。</p>
-                    </div>
-                    <div class="flex items-center gap-2 bg-amber-50 p-2 rounded-lg border border-amber-200">
-                        <label for="member-count" class="text-xs font-bold text-amber-900">同行人數：</label>
-                        <input type="number" id="member-count" min="1" value="2" onchange="calculateExpenses()" class="w-12 text-center border border-amber-300 rounded px-1 py-0.5 text-sm bg-white font-bold text-amber-900">
-                        <span class="text-xs text-amber-800">人</span>
+            
+            <!-- 成員與匯率設定 -->
+            <div class="bg-white p-4 sm:p-5 rounded-xl border border-amber-100 shadow-sm flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
+                <div class="flex items-center gap-2.5 w-full md:w-auto">
+                    <i class="fa-solid fa-users text-amber-600 text-lg"></i>
+                    <div class="w-full">
+                        <label class="text-[11px] font-bold text-amber-800 block">旅伴成員 (逗號分隔)</label>
+                        <input type="text" id="group-members" value="小明, 小華, 阿強" onchange="saveSettings()" class="border border-amber-200 rounded px-2 py-1 text-xs sm:text-sm w-full md:w-64 focus:outline-none focus:ring-1 focus:ring-amber-500">
                     </div>
                 </div>
+                <div class="flex items-center gap-2.5 w-full md:w-auto">
+                    <i class="fa-solid fa-coins text-amber-600 text-lg"></i>
+                    <div class="w-full">
+                        <label class="text-[11px] font-bold text-amber-800 block">匯率 (1 JPY = ? TWD)</label>
+                        <input type="number" step="0.001" id="exchange-rate" value="0.215" onchange="saveSettings()" class="border border-amber-200 rounded px-2 py-1 text-xs sm:text-sm w-full md:w-28 focus:outline-none focus:ring-1 focus:ring-amber-500">
+                    </div>
+                </div>
+            </div>
 
-                <!-- 記帳輸入表單 -->
-                <div class="grid grid-cols-1 sm:grid-cols-4 gap-2 bg-amber-50/50 p-3 rounded-lg border border-amber-200/60 text-xs">
+            <!-- 新增記帳表單 -->
+            <div class="bg-white p-4 sm:p-6 rounded-xl border border-amber-100 shadow-sm space-y-3">
+                <h3 class="text-base sm:text-lg font-bold text-amber-900 border-l-4 border-amber-500 pl-3">新增消費紀錄</h3>
+                <form id="expense-form" onsubmit="addExpense(event)" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs sm:text-sm">
                     <div>
-                        <label class="block font-semibold mb-1 text-amber-900">項目說明</label>
-                        <input type="text" id="exp-name" placeholder="例：D3上午自費電車票" class="w-full border border-amber-300 rounded px-2 py-1.5 bg-white">
-                    </div>
-                    <div>
-                        <label class="block font-semibold mb-1 text-amber-900">金額 (日幣 JPY)</label>
-                        <input type="number" id="exp-amount" placeholder="例：1880" class="w-full border border-amber-300 rounded px-2 py-1.5 bg-white">
-                    </div>
-                    <div>
-                        <label class="block font-semibold mb-1 text-amber-900">分類</label>
-                        <select id="exp-category" class="w-full border border-amber-300 rounded px-2 py-1.5 bg-white">
-                            <option value="交通">交通票券</option>
-                            <option value="餐飲">餐飲美食</option>
-                            <option value="住宿">飯店住宿</option>
-                            <option value="門票">門票體驗</option>
-                            <option value="購物">購物採買</option>
-                            <option value="其他">其他雜項</option>
+                        <label class="block text-[11px] font-semibold text-amber-800 mb-1">日期</label>
+                        <select id="exp-day" class="w-full border border-amber-200 rounded p-1.5 focus:outline-none focus:ring-1 focus:ring-amber-500">
+                            <option value="D1">Day 1 (11/18)</option>
+                            <option value="D2">Day 2 (11/19)</option>
+                            <option value="D3">Day 3 (11/20)</option>
+                            <option value="D4">Day 4 (11/21)</option>
+                            <option value="D5">Day 5 (11/22)</option>
+                            <option value="D6">Day 6 (11/23)</option>
+                            <option value="D7">Day 7 (11/24)</option>
                         </select>
                     </div>
-                    <div class="flex items-end">
-                        <button onclick="addExpense()" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-1.5 px-3 rounded shadow-sm transition text-xs">
-                            <i class="fa-solid fa-plus"></i> 新增此筆花費
+                    <div>
+                        <label class="block text-[11px] font-semibold text-amber-800 mb-1">消費項目/內容</label>
+                        <input type="text" id="exp-item" placeholder="例如：高森赤牛丼午餐" required class="w-full border border-amber-200 rounded p-1.5 focus:outline-none focus:ring-1 focus:ring-amber-500">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-semibold text-amber-800 mb-1">類別</label>
+                        <select id="exp-category" class="w-full border border-amber-200 rounded p-1.5 focus:outline-none focus:ring-1 focus:ring-amber-500">
+                            <option value="餐飲">餐飲 🍱</option>
+                            <option value="交通">交通 🚌</option>
+                            <option value="門票">門票/活動 🎫</option>
+                            <option value="住宿">住宿 🏨</option>
+                            <option value="購物">購物/伴手禮 🛍️</option>
+                            <option value="其他">其他 💡</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-semibold text-amber-800 mb-1">金額與幣別</label>
+                        <div class="flex gap-1.5">
+                            <input type="number" id="exp-amount" placeholder="金額" required step="any" class="w-full border border-amber-200 rounded p-1.5 focus:outline-none focus:ring-1 focus:ring-amber-500">
+                            <select id="exp-currency" class="border border-amber-200 rounded p-1.5 focus:outline-none focus:ring-1 focus:ring-amber-500 shrink-0">
+                                <option value="JPY">日幣 (¥)</option>
+                                <option value="TWD">台幣 ($)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-semibold text-amber-800 mb-1">付款人</label>
+                        <select id="exp-payer" class="w-full border border-amber-200 rounded p-1.5 focus:outline-none focus:ring-1 focus:ring-amber-500"></select>
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-semibold text-amber-800 mb-1">分攤成員</label>
+                        <div id="exp-split-members" class="flex flex-wrap gap-1.5 pt-1 text-[11px]"></div>
+                    </div>
+                    <div class="sm:col-span-2 md:col-span-3 text-right pt-2">
+                        <button type="submit" class="w-full sm:w-auto bg-amber-600 hover:bg-amber-700 text-white font-bold px-6 py-2 rounded-lg shadow-sm transition">
+                            <i class="fa-solid fa-plus"></i> 新增紀錄
                         </button>
                     </div>
+                </form>
+            </div>
+
+            <!-- 自動分帳結算面板 -->
+            <div class="bg-amber-50/80 p-4 sm:p-6 rounded-xl border border-amber-200 shadow-sm space-y-3">
+                <h3 class="text-base sm:text-lg font-bold text-amber-900 flex items-center gap-2">
+                    <i class="fa-solid fa-scale-balanced text-amber-600"></i> 分帳結算總覽 (以台幣 TWD 結算)
+                </h3>
+                <div id="split-summary-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                    <!-- JS 動態生成每人應補/應收金額 -->
+                </div>
+            </div>
+
+            <!-- 每日消費明細表 -->
+            <div class="bg-white p-4 sm:p-6 rounded-xl border border-amber-100 shadow-sm space-y-3">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1">
+                    <h3 class="text-base sm:text-lg font-bold text-amber-900 border-l-4 border-amber-500 pl-3">每日消費明細</h3>
+                    <div class="text-xs text-amber-800">
+                        總花費：<span id="total-expenses-jpy" class="font-bold text-amber-900">¥0</span> / <span id="total-expenses-twd" class="font-bold text-amber-900">NT$0</span>
+                    </div>
                 </div>
 
-                <!-- 費用彙整卡片 -->
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                    <div class="bg-amber-50 p-3 rounded-lg border border-amber-200 text-center">
-                        <span class="text-[11px] text-amber-700 font-semibold block">總花費累計</span>
-                        <span id="total-expense" class="text-lg sm:text-xl font-bold text-amber-900">¥ 0</span>
-                    </div>
-                    <div class="bg-orange-50 p-3 rounded-lg border border-orange-200 text-center">
-                        <span class="text-[11px] text-orange-700 font-semibold block">每人平均應付 (AA制)</span>
-                        <span id="per-person-expense" class="text-lg sm:text-xl font-bold text-orange-900">¥ 0</span>
-                    </div>
-                    <div class="bg-amber-100/50 p-3 rounded-lg border border-amber-200 text-center col-span-2 sm:col-span-1">
-                        <span class="text-[11px] text-amber-800 font-semibold block">記帳筆數</span>
-                        <span id="expense-count" class="text-lg sm:text-xl font-bold text-amber-900">0 筆</span>
-                    </div>
+                <!-- 依天數篩選按鈕 (手機版可橫向滑動) -->
+                <div class="flex gap-1.5 overflow-x-auto pb-1 text-xs no-scrollbar">
+                    <button onclick="filterExpenses('ALL', this)" class="exp-filter-btn shrink-0 px-2.5 py-1 rounded-full bg-amber-600 text-white font-bold">全天數</button>
+                    <button onclick="filterExpenses('D1', this)" class="exp-filter-btn shrink-0 px-2.5 py-1 rounded-full bg-amber-100 text-amber-800">D1</button>
+                    <button onclick="filterExpenses('D2', this)" class="exp-filter-btn shrink-0 px-2.5 py-1 rounded-full bg-amber-100 text-amber-800">D2</button>
+                    <button onclick="filterExpenses('D3', this)" class="exp-filter-btn shrink-0 px-2.5 py-1 rounded-full bg-amber-100 text-amber-800">D3</button>
+                    <button onclick="filterExpenses('D4', this)" class="exp-filter-btn shrink-0 px-2.5 py-1 rounded-full bg-amber-100 text-amber-800">D4</button>
+                    <button onclick="filterExpenses('D5', this)" class="exp-filter-btn shrink-0 px-2.5 py-1 rounded-full bg-amber-100 text-amber-800">D5</button>
+                    <button onclick="filterExpenses('D6', this)" class="exp-filter-btn shrink-0 px-2.5 py-1 rounded-full bg-amber-100 text-amber-800">D6</button>
+                    <button onclick="filterExpenses('D7', this)" class="exp-filter-btn shrink-0 px-2.5 py-1 rounded-full bg-amber-100 text-amber-800">D7</button>
                 </div>
 
-                <!-- 費用明細表格 -->
                 <div class="overflow-x-auto">
-                    <table class="w-full text-left text-xs border-collapse">
+                    <table class="w-full text-xs sm:text-sm text-left border-collapse whitespace-nowrap">
                         <thead>
-                            <tr class="bg-amber-100/70 text-amber-900 border-b border-amber-200">
-                                <th class="p-2">分類</th>
-                                <th class="p-2">項目名稱</th>
-                                <th class="p-2 text-right">金額 (JPY)</th>
-                                <th class="p-2 text-center">操作</th>
+                            <tr class="bg-amber-100/60 text-amber-900">
+                                <th class="p-2 border border-amber-200">天數</th>
+                                <th class="p-2 border border-amber-200">項目/類別</th>
+                                <th class="p-2 border border-amber-200">金額</th>
+                                <th class="p-2 border border-amber-200">付款人</th>
+                                <th class="p-2 border border-amber-200">分攤對象</th>
+                                <th class="p-2 border border-amber-200 text-center">刪除</th>
                             </tr>
                         </thead>
-                        <tbody id="expense-list" class="divide-y divide-amber-100">
-                            <!-- 記帳項目會動態寫入此處 -->
-                            <tr id="empty-row">
-                                <td colspan="4" class="p-4 text-center text-amber-600/70">尚無記帳紀錄，請從上方新增花費。</td>
-                            </tr>
+                        <tbody id="expense-table-body">
+                            <!-- JS 動態渲染列 -->
                         </tbody>
                     </table>
                 </div>
             </div>
+
         </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-amber-900 text-amber-200 text-center py-3 text-[11px] sm:text-xs border-t border-amber-800 mt-6">
-        <p>九州 7 天 6 夜火山健行與溫泉之旅 HandBook &copy; 2027</p>
+    <footer class="bg-amber-900 text-amber-200 text-center py-3 text-xs">
+        九州 7 天 6 夜火山健行與溫泉之旅 © 2027 行程計畫
     </footer>
 
-    <!-- JavaScript 頁籤切換與動態功能 -->
+    <!-- JavaScript 邏輯處理 -->
     <script>
-        // Tab 切換邏輯
-        function switchTab(tabId) {
+        // 頁籤切換
+        function switchTab(tabName) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
             document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-
-            document.getElementById('content-' + tabId).classList.remove('hidden');
-            document.getElementById('tab-' + tabId).classList.add('active');
+            
+            document.getElementById('content-' + tabName).classList.remove('hidden');
+            document.getElementById('tab-' + tabName).classList.add('active');
         }
 
-        // Day 4 阿蘇火山方案切換
+        // 阿蘇 Plan A / Plan B 切換
         function toggleAso(plan) {
             const planA = document.getElementById('aso-planA');
             const planB = document.getElementById('aso-planB');
@@ -541,98 +596,201 @@
             if (plan === 'planA') {
                 planA.classList.remove('hidden');
                 planB.classList.add('hidden');
-                btnA.className = "px-3 py-1.5 rounded-lg font-bold bg-amber-600 text-white text-xs";
-                btnB.className = "px-3 py-1.5 rounded-lg font-bold bg-amber-100 text-amber-800 text-xs";
+                btnA.className = 'px-3 py-1.5 rounded-lg font-bold bg-amber-600 text-white text-xs';
+                btnB.className = 'px-3 py-1.5 rounded-lg font-bold bg-amber-100 text-amber-800 text-xs';
             } else {
                 planA.classList.add('hidden');
                 planB.classList.remove('hidden');
-                btnA.className = "px-3 py-1.5 rounded-lg font-bold bg-amber-100 text-amber-800 text-xs";
-                btnB.className = "px-3 py-1.5 rounded-lg font-bold bg-orange-600 text-white text-xs";
+                btnB.className = 'px-3 py-1.5 rounded-lg font-bold bg-orange-600 text-white text-xs';
+                btnA.className = 'px-3 py-1.5 rounded-lg font-bold bg-amber-100 text-amber-800 text-xs';
             }
         }
 
-        // 天氣預報動態載入 (使用 Open-Meteo API 免費免金鑰)
-        async function fetchWeather() {
-            const locations = {
-                kirishima: { lat: 31.91, lon: 130.87 },
-                kumamoto: { lat: 32.80, lon: 130.70 },
-                aso: { lat: 32.88, lon: 131.10 },
-                yufuin: { lat: 33.26, lon: 131.35 },
-                fukuoka: { lat: 33.59, lon: 130.40 }
-            };
+        /* --- 記帳與分帳的核心邏輯 --- */
+        let expenses = JSON.parse(localStorage.getItem('kyushu_2027_expenses')) || [];
+        let currentFilter = 'ALL';
 
-            for (const [key, loc] of Object.entries(locations)) {
-                try {
-                    const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${loc.lat}&longitude=${loc.lon}&current_weather=true`);
-                    const data = await res.json();
-                    if (data.current_weather) {
-                        const temp = Math.round(data.current_weather.temperature);
-                        document.getElementById(`weather-${key}`).innerHTML = `${temp}°C`;
-                    }
-                } catch (e) {
-                    document.getElementById(`weather-${key}`).innerText = "--°C";
-                }
-            }
+        // 初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            loadSettings();
+            updateMemberDropdowns();
+            renderExpenses();
+        });
+
+        // 讀取/儲存設定
+        function saveSettings() {
+            const members = document.getElementById('group-members').value;
+            const rate = document.getElementById('exchange-rate').value;
+            localStorage.setItem('kyushu_2027_members', members);
+            localStorage.setItem('kyushu_2027_rate', rate);
+            updateMemberDropdowns();
+            renderExpenses();
         }
 
-        // 記帳系統 logic
-        let expenses = [];
+        function loadSettings() {
+            const savedMembers = localStorage.getItem('kyushu_2027_members');
+            const savedRate = localStorage.getItem('kyushu_2027_rate');
+            if (savedMembers) document.getElementById('group-members').value = savedMembers;
+            if (savedRate) document.getElementById('exchange-rate').value = savedRate;
+        }
 
-        function addExpense() {
-            const name = document.getElementById('exp-name').value.trim();
-            const amount = parseFloat(document.getElementById('exp-amount').value);
+        // 取得成員清單
+        function getMembers() {
+            return document.getElementById('group-members').value.split(',').map(m => m.trim()).filter(m => m);
+        }
+
+        // 更新付款人與分攤人核取框
+        function updateMemberDropdowns() {
+            const members = getMembers();
+            const payerSelect = document.getElementById('exp-payer');
+            const splitContainer = document.getElementById('exp-split-members');
+
+            payerSelect.innerHTML = members.map(m => `<option value="${m}">${m}</option>`).join('');
+            splitContainer.innerHTML = members.map(m => `
+                <label class="inline-flex items-center gap-1 cursor-pointer bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
+                    <input type="checkbox" name="split-member" value="${m}" checked class="rounded text-amber-600 focus:ring-amber-500">
+                    <span>${m}</span>
+                </label>
+            `).join('');
+        }
+
+        // 新增紀錄
+        function addExpense(e) {
+            e.preventDefault();
+            const day = document.getElementById('exp-day').value;
+            const item = document.getElementById('exp-item').value;
             const category = document.getElementById('exp-category').value;
+            const amount = parseFloat(document.getElementById('exp-amount').value);
+            const currency = document.getElementById('exp-currency').value;
+            const payer = document.getElementById('exp-payer').value;
+            
+            const splitMembers = Array.from(document.querySelectorAll('input[name="split-member"]:checked')).map(cb => cb.value);
 
-            if (!name || isNaN(amount) || amount <= 0) {
-                alert('請輸入有效的項目名稱與金額！');
+            if (splitMembers.length === 0) {
+                alert('請至少選擇一位分攤成員！');
                 return;
             }
 
-            expenses.push({ id: Date.now(), name, amount, category });
-            document.getElementById('exp-name').value = '';
-            document.getElementById('exp-amount').value = '';
-            
+            const newExpense = {
+                id: Date.now(),
+                day,
+                item,
+                category,
+                amount,
+                currency,
+                payer,
+                splitMembers
+            };
+
+            expenses.push(newExpense);
+            localStorage.setItem('kyushu_2027_expenses', JSON.stringify(expenses));
+            document.getElementById('expense-form').reset();
+            updateMemberDropdowns();
             renderExpenses();
         }
 
+        // 刪除紀錄
         function deleteExpense(id) {
-            expenses = expenses.filter(item => item.id !== id);
+            expenses = expenses.filter(exp => exp.id !== id);
+            localStorage.setItem('kyushu_2027_expenses', JSON.stringify(expenses));
             renderExpenses();
         }
 
+        // 依天數過濾
+        function filterExpenses(day, btnEl) {
+            currentFilter = day;
+            document.querySelectorAll('.exp-filter-btn').forEach(btn => {
+                btn.className = 'exp-filter-btn shrink-0 px-2.5 py-1 rounded-full bg-amber-100 text-amber-800';
+            });
+            btnEl.className = 'exp-filter-btn shrink-0 px-2.5 py-1 rounded-full bg-amber-600 text-white font-bold';
+            renderExpenses();
+        }
+
+        // 渲染表格與算帳
         function renderExpenses() {
-            const list = document.getElementById('expense-list');
-            if (expenses.length === 0) {
-                list.innerHTML = `<tr id="empty-row"><td colspan="4" class="p-4 text-center text-amber-600/70">尚無記帳紀錄，請從上方新增花費。</td></tr>`;
+            const tbody = document.getElementById('expense-table-body');
+            const rate = parseFloat(document.getElementById('exchange-rate').value) || 0.215;
+            const members = getMembers();
+
+            // 1. 渲染消費明細表格
+            const filtered = currentFilter === 'ALL' ? expenses : expenses.filter(e => e.day === currentFilter);
+            
+            if (filtered.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="6" class="p-3 text-center text-amber-700/60">尚無記帳紀錄</td></tr>`;
             } else {
-                list.innerHTML = expenses.map(item => `
-                    <tr>
-                        <td class="p-2"><span class="bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded text-[10px] font-semibold">${item.category}</span></td>
-                        <td class="p-2 font-medium text-amber-900">${item.name}</td>
-                        <td class="p-2 text-right font-bold text-amber-900">¥ ${item.amount.toLocaleString()}</td>
-                        <td class="p-2 text-center">
-                            <button onclick="deleteExpense(${item.id})" class="text-rose-500 hover:text-rose-700 px-1"><i class="fa-solid fa-trash-can"></i></button>
-                        </td>
-                    </tr>
-                `).join('');
+                tbody.innerHTML = filtered.map(exp => {
+                    const symbol = exp.currency === 'JPY' ? '¥' : 'NT$';
+                    return `
+                        <tr class="border-b border-amber-50 hover:bg-amber-50/30">
+                            <td class="p-2 font-bold text-amber-800">${exp.day}</td>
+                            <td class="p-2">
+                                <span class="font-semibold">${exp.item}</span>
+                                <span class="text-[10px] text-amber-600 block">[${exp.category}]</span>
+                            </td>
+                            <td class="p-2 font-bold">${symbol}${exp.amount.toLocaleString()}</td>
+                            <td class="p-2 text-amber-900">${exp.payer}</td>
+                            <td class="p-2 text-[11px] text-amber-800">${exp.splitMembers.join(', ')}</td>
+                            <td class="p-2 text-center">
+                                <button onclick="deleteExpense(${exp.id})" class="text-rose-600 hover:text-rose-800 px-2 py-1" title="刪除此筆">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    `;
+                }).join('');
             }
-            calculateExpenses();
+
+            // 2. 計算累積總金額
+            let totalJPY = 0;
+            let totalTWD = 0;
+            expenses.forEach(e => {
+                if (e.currency === 'JPY') {
+                    totalJPY += e.amount;
+                    totalTWD += e.amount * rate;
+                } else {
+                    totalTWD += e.amount;
+                    totalJPY += e.amount / rate;
+                }
+            });
+            document.getElementById('total-expenses-jpy').innerText = `¥${Math.round(totalJPY).toLocaleString()}`;
+            document.getElementById('total-expenses-twd').innerText = `NT$${Math.round(totalTWD).toLocaleString()}`;
+
+            // 3. 核心分帳算帳邏輯 (以 TWD 為統一基準)
+            const paid = {};
+            const owed = {};
+            members.forEach(m => { paid[m] = 0; owed[m] = 0; });
+
+            expenses.forEach(e => {
+                const amountInTWD = e.currency === 'JPY' ? e.amount * rate : e.amount;
+                if (paid[e.payer] !== undefined) paid[e.payer] += amountInTWD;
+                
+                const perPerson = amountInTWD / e.splitMembers.length;
+                e.splitMembers.forEach(m => {
+                    if (owed[m] !== undefined) owed[m] += perPerson;
+                });
+            });
+
+            // 4. 渲染分帳結果
+            const summaryGrid = document.getElementById('split-summary-grid');
+            summaryGrid.innerHTML = members.map(m => {
+                const balance = paid[m] - owed[m];
+                const isPositive = balance >= 0;
+                return `
+                    <div class="bg-white p-3 sm:p-4 rounded-lg border border-amber-100 shadow-sm space-y-1">
+                        <div class="font-bold text-amber-950 text-sm sm:text-base">${m}</div>
+                        <div class="text-[11px] sm:text-xs text-amber-700">先代墊：NT$ ${Math.round(paid[m]).toLocaleString()}</div>
+                        <div class="text-[11px] sm:text-xs text-amber-700">應分攤：NT$ ${Math.round(owed[m]).toLocaleString()}</div>
+                        <div class="pt-1.5 border-t border-amber-50 flex justify-between items-center text-xs sm:text-sm">
+                            <span class="font-semibold text-amber-900">結算：</span>
+                            <span class="font-bold ${isPositive ? 'text-emerald-600' : 'text-rose-600'}">
+                                ${isPositive ? `找回 NT$ ${Math.round(balance).toLocaleString()}` : `補繳 NT$ ${Math.round(Math.abs(balance)).toLocaleString()}`}
+                            </span>
+                        </div>
+                    </div>
+                `;
+            }).join('');
         }
-
-        function calculateExpenses() {
-            const total = expenses.reduce((sum, item) => sum + item.amount, 0);
-            const members = parseInt(document.getElementById('member-count').value) || 1;
-            const perPerson = Math.round(total / members);
-
-            document.getElementById('total-expense').innerText = `¥ ${total.toLocaleString()}`;
-            document.getElementById('per-person-expense').innerText = `¥ ${perPerson.toLocaleString()}`;
-            document.getElementById('expense-count').innerText = `${expenses.length} 筆`;
-        }
-
-        // 初始化
-        window.onload = function() {
-            fetchWeather();
-        };
     </script>
 </body>
 </html>
+  
