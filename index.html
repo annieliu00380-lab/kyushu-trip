@@ -47,10 +47,10 @@
                 <h1 class="text-lg sm:text-2xl font-bold flex items-center gap-2">
                     <i class="fa-solid fa-mountain text-amber-200"></i> 九州 7 天 6 夜火山健行與溫泉之旅
                 </h1>
-                <p class="text-[11px] sm:text-xs text-amber-100 mt-0.5">日期：2027/11/18 - 11/24 | 霧島韓國岳・阿蘇火山・由布岳・由布院一泊二食</p>
+                <p class="text-[11px] sm:text-xs text-amber-100 mt-0.5">日期：2027/11/18 - 11/24 | 霧島韓國岳・阿蘇火山・上色見熊野座神社・熊本城</p>
             </div>
             <div class="mt-2 sm:mt-0 bg-amber-700/90 px-2.5 py-1 rounded border border-amber-400 text-[11px] sm:text-xs">
-                <span class="text-amber-200 font-semibold">票券策略：</span>全程單買 / 電子票券 / IC卡（免排隊換Pass）
+                <span class="text-amber-200 font-semibold">住宿與票券策略：</span>熊本連住3晚免拖行李・全程單買/IC卡
             </div>
         </div>
         
@@ -64,7 +64,7 @@
                     <i class="fa-solid fa-calendar-days"></i> 每日詳細行程
                 </button>
                 <button onclick="switchTab('transport')" id="tab-transport" class="tab-btn py-2.5 flex items-center gap-1.5">
-                    <i class="fa-solid fa-bus"></i> 交通與劃位規劃
+                    <i class="fa-solid fa-bus"></i> 交通時刻與購票
                 </button>
                 <button onclick="switchTab('expenses')" id="tab-expenses" class="tab-btn py-2.5 flex items-center gap-1.5 text-amber-900 font-bold">
                     <i class="fa-solid fa-calculator"></i> 每日記帳與分帳
@@ -101,8 +101,8 @@
                         <div id="weather-aso" class="text-sky-700 font-semibold mt-1"><i class="fa-solid fa-spinner fa-spin"></i></div>
                     </div>
                     <div class="bg-white p-2 rounded border border-sky-100">
-                        <div class="font-bold text-slate-700">由布院 / 由布岳</div>
-                        <div id="weather-yufuin" class="text-sky-700 font-semibold mt-1"><i class="fa-solid fa-spinner fa-spin"></i></div>
+                        <div class="font-bold text-slate-700">南阿蘇 (高森)</div>
+                        <div id="weather-takamori" class="text-sky-700 font-semibold mt-1"><i class="fa-solid fa-spinner fa-spin"></i></div>
                     </div>
                     <div class="bg-white p-2 rounded border border-sky-100 col-span-2 sm:col-span-1">
                         <div class="font-bold text-slate-700">博多 (福岡)</div>
@@ -114,11 +114,11 @@
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                 <div class="bg-white p-4 rounded-xl border border-amber-100 shadow-sm flex items-start gap-3">
                     <div class="p-2.5 bg-amber-100 text-amber-700 rounded-lg shrink-0">
-                        <i class="fa-solid fa-ticket text-lg"></i>
+                        <i class="fa-solid fa-hotel text-lg"></i>
                     </div>
                     <div>
-                        <h3 class="font-bold text-sm sm:text-base text-amber-900">購票與劃位重點</h3>
-                        <p class="text-xs text-amber-700 mt-1">• 全程單買車票，行程彈性無拘束<br>• D3 鹿兒島中央 ➔ 熊本：單買 <span class="text-amber-800 font-bold">Mizuho 606 號 (14:01發)</span> 新幹線直達<br>• D6 由布院之森 2 號：（<span class="text-rose-600 font-bold">乘車前 30 天 09:00 開賣即搶</span>）</p>
+                        <h3 class="font-bold text-sm sm:text-base text-amber-900">零行李移動壓力（定點連住）</h3>
+                        <p class="text-xs text-amber-700 mt-1">• D1–D2：霧島溫泉連住 2 晚<br>• D3–D5：<span class="text-amber-900 font-bold">熊本站連住 3 晚</span>，免寄黑貓宅急便、每天輕裝往返阿蘇與南阿蘇<br>• D6：博多站住 1 晚</p>
                     </div>
                 </div>
 
@@ -127,18 +127,18 @@
                         <i class="fa-solid fa-person-hiking text-lg"></i>
                     </div>
                     <div>
-                        <h3 class="font-bold text-sm sm:text-base text-amber-900">雙火山＋名峰健行</h3>
-                        <p class="text-xs text-amber-700 mt-1">• D2 <a href="https://www.google.com/maps/search/?api=1&query=韓國岳" target="_blank" class="map-link">韓國岳</a>－<a href="https://www.google.com/maps/search/?api=1&query=大浪池" target="_blank" class="map-link">大浪池</a>環行<br>• D4 <a href="https://www.google.com/maps/search/?api=1&query=阿蘇中岳火口" target="_blank" class="map-link">阿蘇中岳火口</a>＋<a href="https://www.google.com/maps/search/?api=1&query=砂千里ヶ浜" target="_blank" class="map-link">砂千里</a><br>• D5 <a href="https://www.google.com/maps/search/?api=1&query=由布岳" target="_blank" class="map-link">由布岳東峰</a></p>
+                        <h3 class="font-bold text-sm sm:text-base text-amber-900">火山健行＋秘境神社</h3>
+                        <p class="text-xs text-amber-700 mt-1">• D2 <a href="https://www.google.com/maps/search/?api=1&query=韓國岳" target="_blank" class="map-link">韓國岳</a>－<a href="https://www.google.com/maps/search/?api=1&query=大浪池" target="_blank" class="map-link">大浪池</a>環行 (5.5h)<br>• D4 <a href="https://www.google.com/maps/search/?api=1&query=阿蘇中岳火口" target="_blank" class="map-link">阿蘇中岳火口</a>＋<a href="https://www.google.com/maps/search/?api=1&query=砂千里ヶ浜" target="_blank" class="map-link">砂千里</a><br>• D5 南阿蘇鐵道＋<a href="https://www.google.com/maps/search/?api=1&query=上色見熊野座神社" target="_blank" class="map-link">上色見熊野座神社</a></p>
                     </div>
                 </div>
 
                 <div class="bg-white p-4 rounded-xl border border-amber-100 shadow-sm flex items-start gap-3">
                     <div class="p-2.5 bg-yellow-100 text-yellow-800 rounded-lg shrink-0">
-                        <i class="fa-solid fa-truck-ramp-box text-lg"></i>
+                        <i class="fa-solid fa-ticket text-lg"></i>
                     </div>
                     <div>
-                        <h3 class="font-bold text-sm sm:text-base text-amber-900">大行李托運策略</h3>
-                        <p class="text-xs text-amber-700 mt-1">Day 3 晚上或 Day 4 早上，請熊本飯店透過黑貓宅急便寄往 Day 6 博多飯店，輕裝登阿蘇火山、由布岳與入住由布院溫泉。</p>
+                        <h3 class="font-bold text-sm sm:text-base text-amber-900">超彈性單買票券策略</h3>
+                        <p class="text-xs text-amber-700 mt-1">• 全程不用買 JR Pass，省錢又免換票<br>• D3 鹿兒島中央➔熊本：Mizuho 606 號 (14:01)<br>• D6 熊本➔博多：九州新幹線班次密集，隨到隨搭僅 35 分鐘</p>
                     </div>
                 </div>
             </div>
@@ -149,7 +149,7 @@
                     <div class="ml-5 sm:ml-6 relative">
                         <span class="absolute -left-8 sm:-left-9 top-0.5 bg-amber-500 text-white rounded-full w-5 h-5 sm:w-6 sm:h-6 text-[10px] sm:text-xs flex items-center justify-center font-bold">1</span>
                         <h4 class="font-bold text-sm sm:text-base text-amber-800">11/18 (週四) Day 1：抵達<a href="https://www.google.com/maps/search/?api=1&query=鹿兒島機場" target="_blank" class="map-link">鹿兒島機場</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=霧島溫泉鄉" target="_blank" class="map-link">霧島溫泉鄉</a></h4>
-                        <p class="text-xs sm:text-sm text-amber-700/80"><a href="https://www.google.com/maps/search/?api=1&query=丸尾瀑布" target="_blank" class="map-link">丸尾瀑布</a>、<a href="https://www.google.com/maps/search/?api=1&query=霧島溫泉市場" target="_blank" class="map-link">丸尾溫泉市場蒸氣美食</a> | 宿：<a href="https://www.google.com/maps/search/?api=1&query=霧島國際飯店" target="_blank" class="map-link">Kirishima Kokusai Hotel（霧島國際飯店）</a></p>
+                        <p class="text-xs sm:text-sm text-amber-700/80"><a href="https://www.google.com/maps/search/?api=1&query=丸尾瀑布" target="_blank" class="map-link">丸尾瀑布</a>、<a href="https://www.google.com/maps/search/?api=1&query=霧島溫泉市場" target="_blank" class="map-link">丸尾溫泉市場蒸氣美食</a> | 宿：<a href="https://www.google.com/maps/search/?api=1&query=霧島國際飯店" target="_blank" class="map-link">Kirishima Kokusai Hotel（第 1 晚）</a></p>
                     </div>
                     <div class="ml-5 sm:ml-6 relative">
                         <span class="absolute -left-8 sm:-left-9 top-0.5 bg-amber-500 text-white rounded-full w-5 h-5 sm:w-6 sm:h-6 text-[10px] sm:text-xs flex items-center justify-center font-bold">2</span>
@@ -158,23 +158,23 @@
                     </div>
                     <div class="ml-5 sm:ml-6 relative">
                         <span class="absolute -left-8 sm:-left-9 top-0.5 bg-orange-500 text-white rounded-full w-5 h-5 sm:w-6 sm:h-6 text-[10px] sm:text-xs flex items-center justify-center font-bold">3</span>
-                        <h4 class="font-bold text-sm sm:text-base text-orange-800">11/20 (週六) Day 3：丸尾 ➔ 霧島神宮站 ➔ <a href="https://www.google.com/maps/search/?api=1&query=鹿兒島神宮" target="_blank" class="map-link">鹿兒島神宮</a> ➔ 鹿兒島中央黑豚 (45分) ➔ 新幹線 Mizuho 直達<a href="https://www.google.com/maps/search/?api=1&query=熊本城" target="_blank" class="map-link">熊本城</a></h4>
-                        <p class="text-xs sm:text-sm text-amber-700/80">公車＋JR電車參拜鹿兒島神宮、鹿兒島中央站享受 45 分鐘充裕黑豚豬排午餐、搭乘 Mizuho 606 號直達熊本 | 宿：<a href="https://www.google.com/maps/search/?api=1&query=熊本站" target="_blank" class="map-link">熊本站周邊</a></p>
+                        <h4 class="font-bold text-sm sm:text-base text-orange-800">11/20 (週六) Day 3：丸尾 ➔ <a href="https://www.google.com/maps/search/?api=1&query=鹿兒島神宮" target="_blank" class="map-link">鹿兒島神宮</a> ➔ 鹿兒島中央黑豚 (45分) ➔ 新幹線 Mizuho ➔ 熊本</h4>
+                        <p class="text-xs sm:text-sm text-amber-700/80">參拜鹿兒島神宮、鹿兒島中央站吃黑豚豬排、搭乘 Mizuho 606 號直達熊本 | 宿：<a href="https://www.google.com/maps/search/?api=1&query=熊本站" target="_blank" class="map-link">熊本站周邊（連住第 1 晚）</a></p>
                     </div>
                     <div class="ml-5 sm:ml-6 relative">
                         <span class="absolute -left-8 sm:-left-9 top-0.5 bg-orange-500 text-white rounded-full w-5 h-5 sm:w-6 sm:h-6 text-[10px] sm:text-xs flex items-center justify-center font-bold">4</span>
-                        <h4 class="font-bold text-sm sm:text-base text-orange-800">11/21 (週日) Day 4：熊本 ➔ <a href="https://www.google.com/maps/search/?api=1&query=阿蘇山" target="_blank" class="map-link">阿蘇火山</a> / 備案 ➔ <a href="https://www.google.com/maps/search/?api=1&query=大分站" target="_blank" class="map-link">大分</a></h4>
-                        <p class="text-xs sm:text-sm text-amber-700/80">阿蘇火口與砂千里健行（或<a href="https://www.google.com/maps/search/?api=1&query=上色見熊野座神社" target="_blank" class="map-link">上色見熊野座神社</a>）、搭乘九州橫斷特急至大分 | 宿：大分站周邊</p>
+                        <h4 class="font-bold text-sm sm:text-base text-orange-800">11/21 (週日) Day 4：熊本 ➔ <a href="https://www.google.com/maps/search/?api=1&query=阿蘇山" target="_blank" class="map-link">阿蘇火山</a>健行 ➔ 返回熊本</h4>
+                        <p class="text-xs sm:text-sm text-amber-700/80">08:25 橫斷特急 ➔ 10:45 上山巴士 ➔ 中岳火口/砂千里健行 ➔ 15:30 下山巴士返熊本 | 宿：<a href="https://www.google.com/maps/search/?api=1&query=熊本站" target="_blank" class="map-link">熊本站周邊（連住第 2 晚）</a></p>
                     </div>
                     <div class="ml-5 sm:ml-6 relative">
                         <span class="absolute -left-8 sm:-left-9 top-0.5 bg-orange-500 text-white rounded-full w-5 h-5 sm:w-6 sm:h-6 text-[10px] sm:text-xs flex items-center justify-center font-bold">5</span>
-                        <h4 class="font-bold text-sm sm:text-base text-orange-800">11/22 (週一) Day 5：大分 ➔ 充裕採買 ➔ <a href="https://www.google.com/maps/search/?api=1&query=由布岳" target="_blank" class="map-link">由布岳</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=由布院溫泉" target="_blank" class="map-link">由布院溫泉</a></h4>
-                        <p class="text-xs sm:text-sm text-amber-700/80"><a href="https://www.google.com/maps/search/?api=1&query=由布院站" target="_blank" class="map-link">由布院站</a> 1 小時充裕採買、登由布岳東峰、下山入住溫泉旅館享用一泊二食 | 宿：由布院溫泉旅館</p>
+                        <h4 class="font-bold text-sm sm:text-base text-orange-800">11/22 (週一) Day 5：熊本 ➔ 南阿蘇鐵道 ➔ <a href="https://www.google.com/maps/search/?api=1&query=上色見熊野座神社" target="_blank" class="map-link">上色見熊野座神社</a> ➔ 返回熊本</h4>
+                        <p class="text-xs sm:text-sm text-amber-700/80">08:48 豐肥本線轉 09:42 南阿蘇鐵道 ➔ 高森轉計程車參拜秘境神社與田樂午餐 ➔ 下午返熊本 | 宿：<a href="https://www.google.com/maps/search/?api=1&query=熊本站" target="_blank" class="map-link">熊本站周邊（連住第 3 晚）</a></p>
                     </div>
                     <div class="ml-5 sm:ml-6 relative">
                         <span class="absolute -left-8 sm:-left-9 top-0.5 bg-amber-500 text-white rounded-full w-5 h-5 sm:w-6 sm:h-6 text-[10px] sm:text-xs flex items-center justify-center font-bold">6</span>
-                        <h4 class="font-bold text-sm sm:text-base text-amber-800">11/23 (週二) Day 6：<a href="https://www.google.com/maps/search/?api=1&query=金鱗湖" target="_blank" class="map-link">金鱗湖</a> ➔ 退房 ➔ 由布院之森 2 號 ➔ <a href="https://www.google.com/maps/search/?api=1&query=博多站" target="_blank" class="map-link">博多</a>購物</h4>
-                        <p class="text-xs sm:text-sm text-amber-700/80">07:00 金鱗湖散步、09:30 退房與<a href="https://www.google.com/maps/search/?api=1&query=湯之坪街道" target="_blank" class="map-link">湯之坪街道</a>、12:01 由布院之森、博多市區購物 | 宿：博多站周邊</p>
+                        <h4 class="font-bold text-sm sm:text-base text-amber-800">11/23 (週二，國定假日) Day 6：<a href="https://www.google.com/maps/search/?api=1&query=熊本城" target="_blank" class="map-link">熊本城</a>、<a href="https://www.google.com/maps/search/?api=1&query=桜の馬場+城彩苑" target="_blank" class="map-link">城彩苑</a> ➔ 新幹線返回<a href="https://www.google.com/maps/search/?api=1&query=博多站" target="_blank" class="map-link">博多</a></h4>
+                        <p class="text-xs sm:text-sm text-amber-700/80">上午悠閒參觀熊本城與城彩苑、下午搭九州新幹線（35分鐘）直達博多購物吃牛腸鍋 | 宿：博多站周邊</p>
                     </div>
                     <div class="ml-5 sm:ml-6 relative">
                         <span class="absolute -left-8 sm:-left-9 top-0.5 bg-amber-500 text-white rounded-full w-5 h-5 sm:w-6 sm:h-6 text-[10px] sm:text-xs flex items-center justify-center font-bold">7</span>
@@ -243,12 +243,12 @@
             <!-- Day 3 -->
             <div class="bg-white rounded-xl border border-amber-100 shadow-sm overflow-hidden">
                 <div class="bg-orange-600 text-white px-4 sm:px-6 py-2.5 sm:py-3 flex justify-between items-center">
-                    <h3 class="font-bold text-sm sm:text-lg">Day 3 | 11/20 (週六) 丸尾 ➔ <a href="https://www.google.com/maps/search/?api=1&query=鹿兒島神宮" target="_blank" class="underline text-orange-100">鹿兒島神宮</a> ➔ 鹿兒島中央黑豚午餐 ➔ Mizuho 606 號 ➔ <a href="https://www.google.com/maps/search/?api=1&query=熊本城" target="_blank" class="underline text-orange-100">熊本城</a></h3>
-                    <span class="text-[10px] sm:text-xs bg-orange-700 px-2 py-0.5 rounded">宿：<a href="https://www.google.com/maps/search/?api=1&query=熊本站" target="_blank" class="underline text-white">熊本站周邊飯店</a></span>
+                    <h3 class="font-bold text-sm sm:text-lg">Day 3 | 11/20 (週六) 丸尾 ➔ <a href="https://www.google.com/maps/search/?api=1&query=鹿兒島神宮" target="_blank" class="underline text-orange-100">鹿兒島神宮</a> ➔ 鹿兒島中央黑豚 ➔ Mizuho 606 ➔ 熊本</h3>
+                    <span class="text-[10px] sm:text-xs bg-orange-700 px-2 py-0.5 rounded">宿：<a href="https://www.google.com/maps/search/?api=1&query=熊本站" target="_blank" class="underline text-white">熊本站周邊（連住第1晚）</a></span>
                 </div>
                 <div class="p-4 sm:p-6 space-y-3 text-xs sm:text-sm">
                     <div class="bg-amber-50 p-2.5 sm:p-3 rounded-lg border border-amber-200 text-amber-900 text-xs">
-                        <i class="fa-solid fa-clock text-amber-600"></i> <strong>精準時間軸規劃：</strong> 於鹿兒島中央站擁有整整 <strong>45 分鐘充裕時間</strong> 享受黑豚豬排大餐與臨櫃購票！
+                        <i class="fa-solid fa-suitcase-rolling text-amber-600"></i> <strong>連住優勢：</strong> 本日下午抵達熊本後將<strong>連住 3 晚</strong>，行李放進房間後即可輕鬆出門逛街！
                     </div>
 
                     <div class="space-y-2 border-l-2 border-amber-500 pl-3 sm:pl-4 my-2">
@@ -270,7 +270,7 @@
                         </div>
                         <div class="flex justify-between bg-orange-100/70 p-1.5 sm:p-2 rounded font-bold text-orange-950">
                             <span>13:16 - 13:55</span>
-                            <span>鹿兒島中央站內享用黑豚豬排午餐（川久/竹亭/123黑豚）與臨櫃購買新幹線車票（45分鐘）</span>
+                            <span>鹿兒島中央站內享用黑豚豬排午餐（川久/竹亭/123黑豚）與購票（45分鐘）</span>
                         </div>
                         <div class="flex justify-between font-bold text-amber-900 bg-amber-100/60 p-1.5 sm:p-2 rounded">
                             <span>14:01 - 14:44</span>
@@ -278,95 +278,109 @@
                         </div>
                     </div>
 
-                    <p>• <strong>下午行程：</strong> 搭乘熊本路面電車參觀【<a href="https://www.google.com/maps/search/?api=1&query=熊本城" target="_blank" class="map-link">熊本城</a>】與<a href="https://www.google.com/maps/search/?api=1&query=桜の馬場+城彩苑" target="_blank" class="map-link">櫻之馬場城彩苑</a>。</p>
+                    <p>• <strong>傍晚行程：</strong> 飯店 Check-in 放好行李，晚上搭熊本市電逛<a href="https://www.google.com/maps/search/?api=1&query=上通商店街+熊本" target="_blank" class="map-link">上下通商店街</a>，享用勝烈亭豬排或桂花拉麵。</p>
                 </div>
             </div>
 
-            <!-- Day 4 -->
+            <!-- Day 4 (詳細時刻表更新) -->
             <div class="bg-white rounded-xl border border-amber-100 shadow-sm overflow-hidden">
                 <div class="bg-orange-600 text-white px-4 sm:px-6 py-2.5 sm:py-3 flex justify-between items-center">
-                    <h3 class="font-bold text-sm sm:text-lg">Day 4 | 11/21 (週日) 熊本 ➔ <a href="https://www.google.com/maps/search/?api=1&query=阿蘇山" target="_blank" class="underline text-orange-100">阿蘇火山</a> / 備案 ➔ <a href="https://www.google.com/maps/search/?api=1&query=大分站" target="_blank" class="underline text-orange-100">大分</a></h3>
-                    <span class="text-[10px] sm:text-xs bg-orange-700 px-2 py-0.5 rounded">宿：<a href="https://www.google.com/maps/search/?api=1&query=大分站" target="_blank" class="underline text-white">大分站周邊飯店</a></span>
+                    <h3 class="font-bold text-sm sm:text-lg">Day 4 | 11/21 (週日) 熊本 ➔ <a href="https://www.google.com/maps/search/?api=1&query=阿蘇山" target="_blank" class="underline text-orange-100">阿蘇火山健行</a> ➔ 返回熊本</h3>
+                    <span class="text-[10px] sm:text-xs bg-orange-700 px-2 py-0.5 rounded">宿：<a href="https://www.google.com/maps/search/?api=1&query=熊本站" target="_blank" class="underline text-white">熊本站周邊（連住第2晚）</a></span>
                 </div>
                 <div class="p-4 sm:p-6 space-y-3 text-xs sm:text-sm">
-                    <div class="bg-amber-50 p-2.5 sm:p-3 rounded-lg border border-amber-200 text-amber-900">
-                        <strong><i class="fa-solid fa-truck"></i> 行李寄送：</strong> Day 3 晚上或 Day 4 早上，請熊本飯店櫃台辦理將大件行李托運（黑貓宅急便）至 Day 6 的博多飯店。
+                    <div class="bg-emerald-50 p-2.5 sm:p-3 rounded-lg border border-emerald-200 text-emerald-900">
+                        <strong><i class="fa-solid fa-person-hiking text-emerald-600"></i> 輕裝往返優勢：</strong> 大件行李留在熊本飯店，無需趕往大分，在阿蘇山上有充足時間漫步火口與草千里！
                     </div>
 
-                    <div class="flex gap-2 my-2">
-                        <button onclick="toggleAso('planA')" id="btn-planA" class="px-3 py-1.5 rounded-lg font-bold bg-amber-600 text-white text-xs">方案 A：晴天阿蘇中岳精華版</button>
-                        <button onclick="toggleAso('planB')" id="btn-planB" class="px-3 py-1.5 rounded-lg font-bold bg-amber-100 text-amber-800 text-xs">方案 B：雨天備案（上色見熊野座）</button>
-                    </div>
-
-                    <div id="aso-planA" class="space-y-1.5 border-l-2 border-amber-500 pl-3 sm:pl-4">
-                        <p><strong>08:25 - 09:56</strong> 【九州橫斷特急 1 號】熊本站 ➔ <a href="https://www.google.com/maps/search/?api=1&query=阿蘇站" target="_blank" class="map-link">阿蘇站</a>。</p>
-                        <p><strong>10:45 - 11:20</strong> 產交巴士至<a href="https://www.google.com/maps/search/?api=1&query=阿蘇山上ターミナル" target="_blank" class="map-link">阿蘇山上 Terminal</a>。</p>
-                        <p><strong>11:20 - 15:00 阿蘇精華健行：</strong> <a href="https://www.google.com/maps/search/?api=1&query=阿蘇中岳火口" target="_blank" class="map-link">中岳火口</a>、<a href="https://www.google.com/maps/search/?api=1&query=砂千里ヶ浜" target="_blank" class="map-link">砂千里</a>與草千里散步（約 3 - 3.5 小時）。</p>
-                        <p><strong>15:30 - 16:05</strong> 巴士返回阿蘇站。</p>
-                        <p><strong>16:48 - 18:27</strong> 【九州橫斷特急 4 號】阿蘇 ➔ 大分。</p>
-                    </div>
-
-                    <div id="aso-planB" class="hidden space-y-1.5 border-l-2 border-orange-500 pl-3 sm:pl-4">
-                        <p>雨天或火山氣體超標時：轉搭南阿蘇鐵道至高森站 ➔ 轉計程車前往【<a href="https://www.google.com/maps/search/?api=1&query=上色見熊野座神社" target="_blank" class="map-link">上色見熊野座神社</a>】參拜。</p>
-                        <p>午後返回阿蘇站，搭乘 16:48 九州橫斷特急 4 號至大分。</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Day 5 -->
-            <div class="bg-white rounded-xl border border-amber-100 shadow-sm overflow-hidden">
-                <div class="bg-orange-600 text-white px-4 sm:px-6 py-2.5 sm:py-3 flex justify-between items-center">
-                    <h3 class="font-bold text-sm sm:text-lg">Day 5 | 11/22 (週一) 大分 ➔ 充裕採買 ➔ <a href="https://www.google.com/maps/search/?api=1&query=由布岳" target="_blank" class="underline text-orange-100">由布岳</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=由布院溫泉" target="_blank" class="underline text-orange-100">由布院溫泉</a></h3>
-                    <span class="text-[10px] sm:text-xs bg-orange-700 px-2 py-0.5 rounded">宿：由布院溫泉旅館</span>
-                </div>
-                <div class="p-4 sm:p-6 space-y-3 text-xs sm:text-sm">
-                    <div class="bg-emerald-50 p-2.5 rounded-lg border border-emerald-200 text-emerald-900 font-semibold">
-                        <i class="fa-solid fa-basket-shopping text-emerald-600"></i> 【從容補給出發】搭乘 09:05 較晚公車，於<a href="https://www.google.com/maps/search/?api=1&query=由布院站" target="_blank" class="map-link">由布院站</a>擁有整整 1 小時充足時間在超商採買行動糧與水！
-                    </div>
-                    <div class="space-y-2 border-l-2 border-amber-500 pl-3 sm:pl-4">
+                    <div class="space-y-2 border-l-2 border-amber-500 pl-3 sm:pl-4 my-2">
                         <div class="flex justify-between">
-                            <span class="font-semibold text-amber-900">07:01 - 07:59</span>
-                            <span>JR 久大本線（大分 ➔ 由布院）</span>
-                        </div>
-                        <div class="flex justify-between bg-amber-100/60 p-1.5 sm:p-2 rounded font-bold text-amber-900">
-                            <span>07:59 - 09:00</span>
-                            <span>車站周邊與便利商店採買登頂行動糧、水分與能量飲（1小時）</span>
+                            <span class="font-semibold text-amber-900">08:25 - 09:56</span>
+                            <span>熊本站搭乘【九州橫斷特急 1 號】➔ 抵達 <a href="https://www.google.com/maps/search/?api=1&query=阿蘇站" target="_blank" class="map-link">JR 阿蘇站</a>（車程 1 小時 31 分）</span>
                         </div>
                         <div class="flex justify-between">
-                            <span class="font-semibold text-amber-900">09:05 - 09:20</span>
-                            <span>站前搭乘龜之井巴士 36 號 ➔ 抵達「<a href="https://www.google.com/maps/search/?api=1&query=由布登山口バス停" target="_blank" class="map-link">由布登山口</a>」</span>
+                            <span class="font-semibold text-amber-900">10:45 - 11:20</span>
+                            <span>阿蘇站前搭乘【產交巴士阿蘇火口線】➔ 抵達 <a href="https://www.google.com/maps/search/?api=1&query=阿蘇山上ターミナル" target="_blank" class="map-link">阿蘇山上 Terminal</a>（單程 ¥730）</span>
                         </div>
                         <div class="flex justify-between font-bold text-amber-900 bg-amber-100/60 p-1.5 sm:p-2 rounded">
-                            <span>09:30 - 14:30~15:00</span>
-                            <span><a href="https://www.google.com/maps/search/?api=1&query=由布岳" target="_blank" class="map-link">由布岳</a>健行（正面登山口 ➔ マタエ ➔ 東峰 ➔ 原路下山，約 5-5.5h）</span>
+                            <span>11:20 - 15:00</span>
+                            <span>【<a href="https://www.google.com/maps/search/?api=1&query=阿蘇中岳火口" target="_blank" class="map-link">阿蘇中岳火口</a>、<a href="https://www.google.com/maps/search/?api=1&query=砂千里ヶ浜" target="_blank" class="map-link">砂千里</a>與<a href="https://www.google.com/maps/search/?api=1&query=草千里ヶ浜" target="_blank" class="map-link">草千里</a>】精華健行與散步（停留 3 小時 40 分）</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="font-semibold text-amber-900">15:30 - 16:05</span>
+                            <span>阿蘇山上 Terminal 搭乘【產交巴士】下山 ➔ 返抵 JR 阿蘇站（最晚末班車 16:30）</span>
+                        </div>
+                        <div class="flex justify-between font-semibold text-amber-900">
+                            <span>16:45 - 18:10</span>
+                            <span>JR 阿蘇站搭乘豐肥本線普通列車（肥後大津同月台轉乘）➔ 返抵 <a href="https://www.google.com/maps/search/?api=1&query=熊本站" target="_blank" class="map-link">熊本站</a></span>
                         </div>
                     </div>
-                    <div class="bg-amber-50 p-2.5 rounded-lg text-[11px] sm:text-xs space-y-1 text-amber-900">
-                        <p class="font-bold">下山公車時刻（龜之井巴士 36 號）：</p>
-                        <p>• 首選：15:08 發車 ➔ 15:21 抵達嶽本（<a href="https://www.google.com/maps/search/?api=1&query=金鱗湖" target="_blank" class="map-link">金鱗湖</a>入口） / 15:25 抵達由布院站</p>
-                        <p>• 備案：16:08 發車 ➔ 16:21 抵達嶽本（金鱗湖入口） / 16:25 抵達由布院站</p>
-                    </div>
-                    <p class="text-xs text-amber-800">
-                        <strong>亮點：</strong> 下山後直奔由布院溫泉旅館辦理入住，享用日式一泊二食與私人風呂，徹底放鬆雙腿！
+                    <p class="text-[11px] sm:text-xs text-amber-800 bg-amber-50 p-2 rounded">
+                        <strong>回程彈性班次參考：</strong> 若提早下山可趕 <strong>15:56</strong>【阿蘇男孩! 4 號】（17:08 抵熊本）；若較晚下山則可搭 <strong>17:25</strong>【九州橫斷特急 6 號】（18:48 抵熊本）。
                     </p>
                 </div>
             </div>
 
-            <!-- Day 6 -->
+            <!-- Day 5 (詳細時刻表更新) -->
+            <div class="bg-white rounded-xl border border-amber-100 shadow-sm overflow-hidden">
+                <div class="bg-orange-600 text-white px-4 sm:px-6 py-2.5 sm:py-3 flex justify-between items-center">
+                    <h3 class="font-bold text-sm sm:text-lg">Day 5 | 11/22 (週一) 熊本 ➔ 南阿蘇鐵道 ➔ <a href="https://www.google.com/maps/search/?api=1&query=上色見熊野座神社" target="_blank" class="underline text-orange-100">上色見熊野座神社</a> ➔ 返回熊本</h3>
+                    <span class="text-[10px] sm:text-xs bg-orange-700 px-2 py-0.5 rounded">宿：<a href="https://www.google.com/maps/search/?api=1&query=熊本站" target="_blank" class="underline text-white">熊本站周邊（連住第3晚）</a></span>
+                </div>
+                <div class="p-4 sm:p-6 space-y-3 text-xs sm:text-sm">
+                    <div class="bg-amber-50 p-2.5 rounded-lg border border-amber-200 text-amber-900 text-xs">
+                        <i class="fa-solid fa-taxi text-amber-600"></i> <strong>計程車接駁貼士：</strong> 平日高森站計程車較少，從高森站搭計程車前往神社（約 10 分鐘 / ¥1,500-1,800）時，<strong>請直接與司機約定 11:45 回程接駁時間</strong>，或請高森站觀光案內所人員協助叫車。
+                    </div>
+                    <div class="space-y-2 border-l-2 border-amber-500 pl-3 sm:pl-4">
+                        <div class="flex justify-between">
+                            <span class="font-semibold text-amber-900">08:48 - 09:35</span>
+                            <span>熊本站搭乘 JR 豐肥本線普通列車（經肥後大津轉乘）➔ 抵達「<a href="https://www.google.com/maps/search/?api=1&query=立野站+熊本" target="_blank" class="map-link">JR 立野站</a>」</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="font-semibold text-amber-900">09:42 - 10:15</span>
+                            <span>立野站轉乘【<a href="https://www.google.com/maps/search/?api=1&query=南阿蘇鐵道+高森站" target="_blank" class="map-link">南阿蘇鐵道</a>】普通列車（單程 ¥550，沿途欣賞白川水源風景）➔ 抵達終點「高森站」</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="font-semibold text-amber-900">10:20 - 10:30</span>
+                            <span>高森站搭乘計程車前往【<a href="https://www.google.com/maps/search/?api=1&query=上色見熊野座神社" target="_blank" class="map-link">上色見熊野座神社</a>】（約 10 分鐘）</span>
+                        </div>
+                        <div class="flex justify-between font-bold text-amber-900 bg-amber-100/60 p-1.5 sm:p-2 rounded">
+                            <span>10:30 - 11:45</span>
+                            <span>參拜近百座石燈籠苔蘚參道、穿戶岩與《螢火之森》秘境（停留 1 小時 15 分）</span>
+                        </div>
+                        <div class="flex justify-between bg-orange-100/60 p-1.5 sm:p-2 rounded font-semibold text-orange-950">
+                            <span>12:00 - 14:15</span>
+                            <span>返回高森町享用午餐（推薦：<a href="https://www.google.com/maps/search/?api=1&query=高森田楽保存会" target="_blank" class="map-link">高森田樂保存會</a> 炭火鄉土料理或赤牛丼）＋<a href="https://www.google.com/maps/search/?api=1&query=高森湧水トンネル公園" target="_blank" class="map-link">湧水隧道公園</a></span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="font-semibold text-amber-900">14:34 - 15:05</span>
+                            <span>高森站搭乘【南阿蘇鐵道】普通列車 ➔ 返抵「立野站」（備案班次為 16:40 發車）</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="font-semibold text-amber-900">15:15 - 16:10</span>
+                            <span>立野站轉乘 JR 豐肥本線（經肥後大津轉乘）➔ 返抵 <a href="https://www.google.com/maps/search/?api=1&query=熊本站" target="_blank" class="map-link">熊本站</a></span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-amber-800">
+                        <strong>傍晚彈性活動：</strong> 回到熊本市區時間尚早，可前往<a href="https://www.google.com/maps/search/?api=1&query=水前寺成趣園" target="_blank" class="map-link">水前寺成趣園</a>散步或逛熊本站 AMU PLAZA。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Day 6 (更新為熊本城回博多) -->
             <div class="bg-white rounded-xl border border-amber-100 shadow-sm overflow-hidden">
                 <div class="bg-amber-600 text-white px-4 sm:px-6 py-2.5 sm:py-3 flex justify-between items-center">
-                    <h3 class="font-bold text-sm sm:text-lg">Day 6 | 11/23 (週二) <a href="https://www.google.com/maps/search/?api=1&query=金鱗湖" target="_blank" class="underline text-amber-100">金鱗湖</a>散步 ➔ 由布院之森 2 號 ➔ <a href="https://www.google.com/maps/search/?api=1&query=博多站" target="_blank" class="underline text-amber-100">博多</a>半日採買</h3>
+                    <h3 class="font-bold text-sm sm:text-lg">Day 6 | 11/23 (週二，國定假日) <a href="https://www.google.com/maps/search/?api=1&query=熊本城" target="_blank" class="underline text-amber-100">熊本城</a>、<a href="https://www.google.com/maps/search/?api=1&query=桜の馬場+城彩苑" target="_blank" class="underline text-amber-100">城彩苑</a> ➔ 新幹線返回<a href="https://www.google.com/maps/search/?api=1&query=博多站" target="_blank" class="underline text-amber-100">博多</a></h3>
                     <span class="text-[10px] sm:text-xs bg-amber-700 px-2 py-0.5 rounded">宿：<a href="https://www.google.com/maps/search/?api=1&query=博多站" target="_blank" class="underline text-white">博多站周邊飯店</a></span>
                 </div>
                 <div class="p-4 sm:p-6 space-y-2.5 text-xs sm:text-sm">
-                    <div class="bg-rose-50 p-2.5 rounded-lg border border-rose-200 text-rose-900 text-xs">
-                        <i class="fa-solid fa-fire text-rose-600"></i> <strong>劃位提醒：</strong> 本日為日本國定假日（勤勞感謝日），【由布院之森 2 號】極度熱門！請於乘車前 30 天台灣時間 09:00 準時上 JR 九州官網單買劃位。
+                    <div class="bg-sky-50 p-2.5 rounded-lg border border-sky-200 text-sky-900 text-xs">
+                        <i class="fa-solid fa-train text-sky-600"></i> <strong>超高速移動：</strong> 熊本至博多搭乘九州新幹線每小時有 2～3 班車，車程僅需 <strong>33～40 分鐘</strong>，無須搶特定觀光列車，行程極度輕鬆！
                     </div>
-                    <p>• <strong>07:00</strong> 漫步清晨清幽的「<a href="https://www.google.com/maps/search/?api=1&query=金鱗湖" target="_blank" class="map-link">金鱗湖</a>」拍照。</p>
-                    <p>• <strong>09:30 退房</strong> ➔ 沿「<a href="https://www.google.com/maps/search/?api=1&query=湯之坪街道" target="_blank" class="map-link">湯之坪街道</a>」一路向車站方向散步（品嚐現蒸溫泉饅頭或金賞可樂餅）。</p>
-                    <p>• <strong>09:30 - 11:30</strong> 車站周邊採買 <a href="https://www.google.com/maps/search/?api=1&query=B-speak+由布院" target="_blank" class="map-link">B-speak</a> 蛋糕捲與在地伴手禮。</p>
-                    <p>• <strong>12:01 - 14:19</strong> 搭乘【由布院之森 2 號】享用車上甜點與景觀 ➔ 返抵<a href="https://www.google.com/maps/search/?api=1&query=博多站" target="_blank" class="map-link">博多站</a>。</p>
-                    <p>• <strong>14:30 後：</strong> 飯店 Check-in 領取 Day 3/4 寄達的大行李，隨後於天神/博多車站一帶購物與享用牛腸鍋/豚骨拉麵。</p>
+                    <p>• <strong>09:00 退房寄行李：</strong> 辦理退房並將大行李寄放於熊本飯店櫃檯。</p>
+                    <p>• <strong>09:30 - 12:30 熊本城巡禮：</strong> 搭乘熊本路面電車前往參觀【<a href="https://www.google.com/maps/search/?api=1&query=熊本城" target="_blank" class="map-link">熊本城</a>】（天守閣、本丸御殿）與山腳下的【<a href="https://www.google.com/maps/search/?api=1&query=桜の馬場+城彩苑" target="_blank" class="map-link">櫻之馬場 城彩苑</a>】品嚐海膽可樂餅、馬肉可樂餅並採買熊本伴手禮。</p>
+                    <p>• <strong>13:30 - 14:15 搭乘九州新幹線：</strong> 返回熊本站領取行李，單買新幹線車票（約 ¥5,230）直達【<a href="https://www.google.com/maps/search/?api=1&query=博多站" target="_blank" class="map-link">博多站</a>】。</p>
+                    <p>• <strong>14:30 後 博多購物與美食：</strong> 博多飯店 Check-in，隨後逛博多站（AMU PLAZA、KITTE、阪急）或天神商圈，晚餐享用博多牛腸鍋（もつ鍋）或豚骨拉麵。</p>
                 </div>
             </div>
 
@@ -378,7 +392,7 @@
                 </div>
                 <div class="p-4 sm:p-6 space-y-2.5 text-xs sm:text-sm">
                     <p>• <strong>上午：</strong> 博多站 AMU PLAZA / 博多阪急最後補貨採買伴手禮。</p>
-                    <p>• <strong>12:00：</strong> 搭乘福岡地下鐵機場線（僅需 5 分鐘）直達<a href="https://www.google.com/maps/search/?api=1&query=福岡機場" target="_blank" class="map-link">福岡機場</a>國際線航廈。</p>
+                    <p>• <strong>12:00：</strong> 搭乘福岡地下鐵機場線（僅需 5 分鐘）直達<a href="https://www.google.com/maps/search/?api=1&query=福岡機場" target="_blank" class="map-link">福岡機場</a>，轉乘免費接駁車至國際線航廈。</p>
                     <p>• 辦理登機與免稅店購物，搭機返回台北溫暖的家，結束精彩的九州火山溫泉之旅！</p>
                 </div>
             </div>
@@ -387,15 +401,15 @@
         <!-- TAB 3: TRANSPORTATION -->
         <section id="content-transport" class="tab-content hidden space-y-4 sm:space-y-6">
             <div class="bg-white p-4 sm:p-6 rounded-xl border border-amber-100 shadow-sm">
-                <h3 class="text-base sm:text-lg font-bold text-amber-900 mb-3 border-l-4 border-amber-500 pl-3">長途列車購票與購票策略（全段單買）</h3>
+                <h3 class="text-base sm:text-lg font-bold text-amber-900 mb-3 border-l-4 border-amber-500 pl-3">全段鐵路與特色列車時刻彙整（免 Pass 單買/IC卡）</h3>
                 <div class="overflow-x-auto">
                     <table class="w-full text-left text-xs sm:text-sm border-collapse">
                         <thead>
                             <tr class="bg-amber-100/70 text-amber-900 border-b border-amber-200">
                                 <th class="p-2 sm:p-2.5">日期</th>
                                 <th class="p-2 sm:p-2.5">搭乘區間</th>
-                                <th class="p-2 sm:p-2.5">預定車種/車次</th>
-                                <th class="p-2 sm:p-2.5">建議購票方式</th>
+                                <th class="p-2 sm:p-2.5">預定車種 / 時刻</th>
+                                <th class="p-2 sm:p-2.5">購票與搭乘方式</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-amber-100">
@@ -403,31 +417,37 @@
                                 <td class="p-2 sm:p-2.5 font-bold text-amber-800">D3 (11/20) 下午</td>
                                 <td class="p-2 sm:p-2.5">鹿兒島中央 ➔ 熊本</td>
                                 <td class="p-2 sm:p-2.5">九州新幹線 Mizuho 606號 (14:01-14:44)</td>
-                                <td class="p-2 sm:p-2.5"><span class="text-amber-800 bg-amber-100 px-1.5 py-0.5 rounded font-bold">最速直達車！官網預購或現場單買</span></td>
+                                <td class="p-2 sm:p-2.5"><span class="text-amber-800 bg-amber-100 px-1.5 py-0.5 rounded font-bold">官網預購或現場單買指定席</span></td>
                             </tr>
                             <tr>
-                                <td class="p-2 sm:p-2.5 font-bold text-amber-800">D4 (11/21)</td>
+                                <td class="p-2 sm:p-2.5 font-bold text-amber-800">D4 (11/21) 去程</td>
                                 <td class="p-2 sm:p-2.5">熊本 ➔ 阿蘇</td>
                                 <td class="p-2 sm:p-2.5">九州橫斷特急 1號 (08:25-09:56)</td>
-                                <td class="p-2 sm:p-2.5"><span class="text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded font-semibold">現場或官網購票</span></td>
+                                <td class="p-2 sm:p-2.5"><span class="text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded font-semibold">現場或官網單買車票</span></td>
                             </tr>
                             <tr>
-                                <td class="p-2 sm:p-2.5 font-bold text-amber-800">D4 (11/21)</td>
-                                <td class="p-2 sm:p-2.5">阿蘇 ➔ 大分</td>
-                                <td class="p-2 sm:p-2.5">九州橫斷特急 4號 (16:48-18:27)</td>
-                                <td class="p-2 sm:p-2.5"><span class="text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded font-semibold">現場或官網購票</span></td>
-                            </tr>
-                            <tr>
-                                <td class="p-2 sm:p-2.5 font-bold text-amber-800">D5 (11/22)</td>
-                                <td class="p-2 sm:p-2.5">大分 ➔ 由布院</td>
-                                <td class="p-2 sm:p-2.5">JR 久大本線普通列車 (07:01-07:59)</td>
+                                <td class="p-2 sm:p-2.5 font-bold text-amber-800">D4 (11/21) 回程</td>
+                                <td class="p-2 sm:p-2.5">阿蘇 ➔ 熊本</td>
+                                <td class="p-2 sm:p-2.5">豐肥本線普通車 (16:45-18:10，肥後大津轉車)</td>
                                 <td class="p-2 sm:p-2.5"><span class="text-slate-600 bg-slate-100 px-1.5 py-0.5 rounded">直接刷 IC 卡進站</span></td>
                             </tr>
                             <tr>
-                                <td class="p-2 sm:p-2.5 font-bold text-amber-800">D6 (11/23)</td>
-                                <td class="p-2 sm:p-2.5">由布院 ➔ 博多</td>
-                                <td class="p-2 sm:p-2.5">由布院之森 2號 (12:01-14:19)</td>
-                                <td class="p-2 sm:p-2.5"><span class="text-rose-700 bg-rose-100 px-1.5 py-0.5 rounded font-bold">乘車前 30 天 09:00 官網搶購單買</span></td>
+                                <td class="p-2 sm:p-2.5 font-bold text-amber-800">D5 (11/22) 去程</td>
+                                <td class="p-2 sm:p-2.5">熊本 ➔ 立野 ➔ 高森</td>
+                                <td class="p-2 sm:p-2.5">豐肥本線 (08:48-09:35) 轉 南阿蘇鐵道 (09:42-10:15)</td>
+                                <td class="p-2 sm:p-2.5"><span class="text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded font-semibold">JR 刷 IC 卡；南阿蘇鐵道車上現金付費 (¥550)</span></td>
+                            </tr>
+                            <tr>
+                                <td class="p-2 sm:p-2.5 font-bold text-amber-800">D5 (11/22) 回程</td>
+                                <td class="p-2 sm:p-2.5">高森 ➔ 立野 ➔ 熊本</td>
+                                <td class="p-2 sm:p-2.5">南阿蘇鐵道 (14:34-15:05) 轉 豐肥本線 (15:15-16:10)</td>
+                                <td class="p-2 sm:p-2.5"><span class="text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded font-semibold">南阿蘇鐵道車上現金付費；JR 刷 IC 卡</span></td>
+                            </tr>
+                            <tr class="bg-amber-50/60">
+                                <td class="p-2 sm:p-2.5 font-bold text-amber-800">D6 (11/23) 下午</td>
+                                <td class="p-2 sm:p-2.5">熊本 ➔ 博多</td>
+                                <td class="p-2 sm:p-2.5">九州新幹線 Sakura / Mizuho / Tsubame (每小時 2-3 班，約 35 分)</td>
+                                <td class="p-2 sm:p-2.5"><span class="text-amber-800 bg-amber-100 px-1.5 py-0.5 rounded font-bold">現場售票機單買自由席/指定席（因國定假日建議提早買指定席）</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -454,11 +474,11 @@
                 <div class="grid grid-cols-1 sm:grid-cols-4 gap-2 bg-amber-50/50 p-3 rounded-lg border border-amber-200/60 text-xs">
                     <div>
                         <label class="block font-semibold mb-1 text-amber-900">項目說明</label>
-                        <input type="text" id="exp-name" placeholder="例：Mizuho新幹線指定席" class="w-full border border-amber-300 rounded px-2 py-1.5 bg-white">
+                        <input type="text" id="exp-name" placeholder="例：南阿蘇鐵道車票" class="w-full border border-amber-300 rounded px-2 py-1.5 bg-white">
                     </div>
                     <div>
                         <label class="block font-semibold mb-1 text-amber-900">金額 (日幣 JPY)</label>
-                        <input type="number" id="exp-amount" placeholder="例：7000" class="w-full border border-amber-300 rounded px-2 py-1.5 bg-white">
+                        <input type="number" id="exp-amount" placeholder="例：550" class="w-full border border-amber-300 rounded px-2 py-1.5 bg-white">
                     </div>
                     <div>
                         <label class="block font-semibold mb-1 text-amber-900">分類</label>
@@ -533,33 +553,13 @@
             document.getElementById('tab-' + tabId).classList.add('active');
         }
 
-        // Day 4 阿蘇火山方案切換
-        function toggleAso(plan) {
-            const planA = document.getElementById('aso-planA');
-            const planB = document.getElementById('aso-planB');
-            const btnA = document.getElementById('btn-planA');
-            const btnB = document.getElementById('btn-planB');
-
-            if (plan === 'planA') {
-                planA.classList.remove('hidden');
-                planB.classList.add('hidden');
-                btnA.className = "px-3 py-1.5 rounded-lg font-bold bg-amber-600 text-white text-xs";
-                btnB.className = "px-3 py-1.5 rounded-lg font-bold bg-amber-100 text-amber-800 text-xs";
-            } else {
-                planA.classList.add('hidden');
-                planB.classList.remove('hidden');
-                btnA.className = "px-3 py-1.5 rounded-lg font-bold bg-amber-100 text-amber-800 text-xs";
-                btnB.className = "px-3 py-1.5 rounded-lg font-bold bg-orange-600 text-white text-xs";
-            }
-        }
-
         // 天氣預報動態載入 (使用 Open-Meteo API 免費免金鑰)
         async function fetchWeather() {
             const locations = {
                 kirishima: { lat: 31.91, lon: 130.87 },
                 kumamoto: { lat: 32.80, lon: 130.70 },
                 aso: { lat: 32.88, lon: 131.10 },
-                yufuin: { lat: 33.26, lon: 131.35 },
+                takamori: { lat: 32.82, lon: 131.12 },
                 fukuoka: { lat: 33.59, lon: 130.40 }
             };
 
@@ -638,3 +638,4 @@
     </script>
 </body>
 </html>
+
